@@ -17,7 +17,7 @@ class Graph:
             self.graph[start] = {}
         self.graph[start][end] = weight
 
-    def dijkstra(self, start):
+    def dijkstra(self, start, finish):
         distance = {vertex: float('inf') for vertex in self.vertices}
         distance[start] = 0
 
@@ -37,6 +37,13 @@ class Graph:
             print(current_vertex)
             visited[current_vertex] = True
 
+            if current_vertex == finish:
+                path = [current_vertex]
+                while current_vertex != start:
+                    current_vertex = came_from[current_vertex]
+                    path.append(current_vertex)
+                return path[::-1] 
+
             if current_vertex in self.graph:
                 for next_vertex, weight in self.graph[current_vertex].items():
                     print(current_vertex, next_vertex)
@@ -46,7 +53,7 @@ class Graph:
                             came_from[next_vertex] = current_vertex
                             heapq.heappush(queue, (distance[next_vertex], next_vertex))
 
-        return came_from
+        return None
 
 g = Graph() # Create an instance of the Graph class
 
@@ -158,30 +165,9 @@ def process_data():
         data1, data2 = data
         data1 = data1.lower()
         data2 = data2.lower()
-        # Lakukan pemrosesan data di sini
-        # Misalnya, Anda dapat menyimpan data ke database atau melakukan operasi lainnya
-        response_data = {
-            'response': f'Data yang diterima: Data 1: {data1}, Data 2: {data2}'
-        }
-        # Contoh respons dengan data lat
-
-        current = data2
-        came = g.dijkstra(data1)
-    
-        print(current)
-        print(data2)
-        print(came)
-        path = [current]
-
-        while(True):
-            current = came[current]
-            path.append(current)
-            if (current != came[current]):
-                continue
-            else:
-                break
         
-        path = path[::-1]
+        path = g.dijkstra(data1, data2)
+
         print(path)
         
         for place in path:
