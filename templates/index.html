@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Input dan Respons JavaScript</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+<body>
+    <form id="data-form">
+        <label for="user-data">Masukkan Data:</label>
+        <input type="text" id="user-data-1" name="user-data-1">
+        <input type="text" id="user-data-2" name="user-data-2">
+        <input type="submit" value="Kirim">
+    </form>
+    <p id="response"></p>
+ 
+    </br>
+    <div id="map" style="height: 100vh; width: 100%;"></div>
+
+    
+
+    <script>
+        let map = L.map('map').setView([-7.275861870602128, 112.78094966850989], 18);
+        let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+        });
+        googleStreets.addTo(map);
+
+        let baseLayers = {
+            "G":googleStreets,
+            "1":googleStreets,
+            "2":googleStreets,
+        };
+
+        let control = L.control.layers(baseLayers).addTo(map);
+
+        function updateMap(data){
+            let polyline0 = L.polyline(data[0], { color: 'blue' });
+                let polyline1 = L.polyline(data[1], { color: 'blue' });
+                let polyline2 = L.polyline(data[2], { color: 'blue' });
+
+                let geojsonmap = {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "coordinates": [
+                            [
+                                [
+                                112.78073720330701,
+                                -7.275656970435648
+                                ],
+                                [
+                                112.78073720330701,
+                                -7.275861870602128
+                                ],
+                                [
+                                112.78094966850989,
+                                -7.275861870602128
+                                ],
+                                [
+                                112.78094966850989,
+                                -7.275656970435648
+                                ],
+                                [
+                                112.78073720330701,
+                                -7.275656970435648
+                                ]
+                            ]
+                        ],
+                            "type": "Polygon"
+                        }
+                        }
+                    ]
+                };
+
+                let geomap = L.geoJSON(geojsonmap);
+                let lantaiGup = L.layerGroup([googleStreets, polyline0]);
+                let lantai1up = L.layerGroup([googleStreets, polyline1]);
+                let lantai2up = L.layerGroup([googleStreets, polyline2]);
+
+                baseLayers = {}
+
+                control.remove(map);
+                baseLayers = {
+                    "G":lantaiGup,
+                    "1":lantai1up,
+                    "2":lantai2up,
+                };
+
+                control = L.control.layers(baseLayers).addTo(map);
+        };
+
+        document.getElementById("data-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let userData1 = document.getElementById("user-data-1").value;
+            let userData2 = document.getElementById("user-data-2").value;
+            sendDataToPython([userData1, userData2]);
+        });
+        
+        function sendDataToPython(data) {
+            fetch("/process_data", {
+                method: "POST",
+                body: JSON.stringify({ data: data }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                updateMap(data);
+            });
+        }
+    </script>
+</body>
+</html>
