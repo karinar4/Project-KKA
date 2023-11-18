@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="static/data/lantai_G.geojson"></script>
+    <script src="static/data/lantai_1.geojson"></script>
 </head>
 <body>
     <form id="data-form">
@@ -20,82 +22,45 @@
     </br>
     <div id="map" style="height: 100vh; width: 100%;"></div>
 
-    
-
     <script>
-        let map = L.map('map').setView([-7.275861870602128, 112.78094966850989], 18);
-        let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-            maxZoom: 20,
-            subdomains:['mt0','mt1','mt2','mt3']
-        });
-        googleStreets.addTo(map);
-
-        let baseLayers = {
-            "G":googleStreets,
-            "1":googleStreets,
-            "2":googleStreets,
-        };
-
-        let control = L.control.layers(baseLayers).addTo(map);
+        let map;
 
         function updateMap(data){
+            if (map && map.remove) {
+                map.off();
+                map.remove();
+            }
+            map = L.map('map').setView([-7.275861870602128, 112.78094966850989], 18);
+            let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+                maxZoom: 20,
+                subdomains:['mt0','mt1','mt2','mt3']
+            });
+            googleStreets.addTo(map);
+
+            let denahG = L.geoJSON(lantai_G);
+            let denah1 = L.geoJSON(lantai_1);
+
             let polyline0 = L.polyline(data[0], { color: 'blue' });
-                let polyline1 = L.polyline(data[1], { color: 'blue' });
-                let polyline2 = L.polyline(data[2], { color: 'blue' });
+            let polyline1 = L.polyline(data[1], { color: 'red' });
+            let polyline2 = L.polyline(data[2], { color: 'green' });
+            console.log(polyline0);
+            console.log(polyline1);
+            console.log(polyline2);
 
-                let geojsonmap = {
-                    "type": "FeatureCollection",
-                    "features": [
-                        {
-                        "type": "Feature",
-                        "properties": {},
-                        "geometry": {
-                            "coordinates": [
-                            [
-                                [
-                                112.78073720330701,
-                                -7.275656970435648
-                                ],
-                                [
-                                112.78073720330701,
-                                -7.275861870602128
-                                ],
-                                [
-                                112.78094966850989,
-                                -7.275861870602128
-                                ],
-                                [
-                                112.78094966850989,
-                                -7.275656970435648
-                                ],
-                                [
-                                112.78073720330701,
-                                -7.275656970435648
-                                ]
-                            ]
-                        ],
-                            "type": "Polygon"
-                        }
-                        }
-                    ]
-                };
+            let lantaiG = L.layerGroup([googleStreets, denahG, polyline0]);
+            let lantai1 = L.layerGroup([googleStreets, denah1, polyline1]);
+            let lantai2 = L.layerGroup([googleStreets, polyline2]);
 
-                let geomap = L.geoJSON(geojsonmap);
-                let lantaiGup = L.layerGroup([googleStreets, polyline0]);
-                let lantai1up = L.layerGroup([googleStreets, polyline1]);
-                let lantai2up = L.layerGroup([googleStreets, polyline2]);
+            let baseLayers = {
+                "G":lantaiG,
+                "1":lantai1,
+                "2":lantai2,
+            };
 
-                baseLayers = {}
-
-                control.remove(map);
-                baseLayers = {
-                    "G":lantaiGup,
-                    "1":lantai1up,
-                    "2":lantai2up,
-                };
-
-                control = L.control.layers(baseLayers).addTo(map);
+            let control = L.control.layers(baseLayers).addTo(map);
         };
+
+        updateMap([[],[],[]]);
 
         document.getElementById("data-form").addEventListener("submit", function(e) {
             e.preventDefault();
