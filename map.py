@@ -123,7 +123,7 @@ g.addVertex("zeiss vision center")
 g.addVertex("lift 12") #INI lift yg tembusnya ke dalem h&m nek ga salah
 
 # Add edges with weights
-#lantai 1
+#lantai G
 g.addEdge("h&m lantai g", "djournal coffee bar", 29)
 g.addEdge("djournal coffee bar", "h&m lantai g", 29)
 g.addEdge("h&m lantai g", "starbucks reserve", 29)
@@ -206,8 +206,8 @@ g.addEdge("loccitane", "elevatione", 9)
 
 
 #lantai 2
-g.addEdge("eskalator 12 1","lift 1",6)
-g.addEdge("lift 1","eskalator 12 1",6)
+g.addEdge("eskalator 11","lift 1",6)
+g.addEdge("lift 1","eskalator 11",6)
 g.addEdge("uniqlo","lift 1",15)
 g.addEdge("lift 1","uniqlo",15)
 g.addEdge("uniqlo","amarissa", 29)
@@ -252,6 +252,16 @@ g.addEdge("eskalator 23","miniso",9)
 g.addEdge("miniso","eskalator 23",9)
 g.addEdge("h&m lantai 1","lift 12", 16)
 g.addEdge("lift 12","h&m lantai 1",16)
+g.addEdge("fossil", "levi's", 5)
+g.addEdge("levi's","fossil",5)
+g.addEdge("fossil", "optik seis signature", 5)
+g.addEdge("optik seis signature","fossil",5)
+g.addEdge("optik seis signature","owl optical", 8)
+g.addEdge("owl optical","optik seis signature",8)
+g.addEdge("owl optical", "zeiss vision center", 6)
+g.addEdge("zeiss vision center","owl optical",6)
+g.addEdge("dr. specs", "zeiss vision center",5)
+g.addEdge("zeiss vision center","dr. specs",5)
 
 places = {
     "h&m lantai g": { # udh
