@@ -63,7 +63,7 @@ g = Graph() # Create an instance of the Graph class
 g.addVertex("h&m lantai g")
 g.addVertex("djournal coffee bar")
 g.addVertex("starbucks reserve")
-g.addVertex("mark&spencer")
+g.addVertex("mark & spencer")
 g.addVertex("pandora")
 g.addVertex("frank&co")
 g.addVertex("tumi")
@@ -71,7 +71,7 @@ g.addVertex("pintu keluar 10")
 g.addVertex("elemis")
 g.addVertex("miss mondial")
 g.addVertex("sociolla")
-g.addVertex("ling's sister jewellery")
+g.addVertex("ling's sister jewelery")
 g.addVertex("eskalator g1") #deket h&m
 g.addVertex("eskalator g2") #eska tengah lobby
 g.addVertex("melissa clube")
@@ -93,29 +93,34 @@ g.addVertex("loccitane") #INI JUGA BARU
 
 #lantai 1
 g.addVertex("eskalator 11") #dari deket lantai 1 yg deket max
-g.addVertex("lift 1")
+g.addVertex("lift 1") #ini yg terusan dari lift g
 g.addVertex("uniqlo")
 g.addVertex("amarissa")
 g.addVertex("eskalator 12") #ke lantai 2
-g.addVertex("bridges eyewear")
-g.addVertex("cheesecake")
+g.addVertex("bridges optical")
+g.addVertex("cheskee")
 g.addVertex("colorbox")
 g.addVertex("the executive")
 g.addVertex("kkv lantai 1")
-g.addVertex("urban")
-g.addVertex("koi")
+g.addVertex("urban & co")
+g.addVertex("koi the")
 g.addVertex("h&m lantai 1")
 g.addVertex("locknlock")
 g.addVertex("miniso")
 g.addVertex("carla")
 g.addVertex("parkiran") #?? gamudeng
 g.addVertex("eskalator 13") #eskalator deket miniso
-g.addVertex("spec")
-g.addVertex("stopngo")
-g.addVertex("levis")
-g.addVertex("watchclub")
+g.addVertex("dr. specs")
+g.addVertex("stop n go")
+g.addVertex("levi's")
+g.addVertex("watch club")
 g.addVertex("polo")
 g.addVertex("glamon")
+g.addVertex("fossil")
+g.addVertex("optik seis signature")
+g.addVertex("owl optical")
+g.addVertex("zeiss vision center")
+g.addVertex("lift 12") #INI lift yg tembusnya ke dalem h&m nek ga salah
 
 # Add edges with weights
 #lantai 1
@@ -197,60 +202,205 @@ g.addEdge("loccitane", "sociolla", 8)
 g.addEdge("sociolla", "loccitane", 8)
 g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
-
+ 
 
 
 #lantai 2
-
+g.addEdge("eskalator 11","lift 1",6)
+g.addEdge("lift 1","eskalator 11",6)
+g.addEdge("uniqlo","lift 1",15)
+g.addEdge("lift 1","uniqlo",15)
+g.addEdge("uniqlo","amarissa", 29)
+g.addEdge("amarissa","uniqlo", 29)
+g.addEdge("uniqlo","eskalator 12",19)
+g.addEdge("eskalator 12","uniqlo",19)
+g.addEdge("amarissa","bridges optical", 17)
+g.addEdge("bridges optical","amarissa", 17)
+g.addEdge("cheskee","bridges optical",5)
+g.addEdge("bridges optical","cheskee",5)
+g.addEdge("colorbox","cheskee",5)
+g.addEdge("cheskee","colorbox",5)
+g.addEdge("colorbox","the executive",15)
+g.addEdge("the executive","colorbox",15)
+g.addEdge("kkv lantai 1","urban & co", 9)
+g.addEdge("urban & co","kkv lantai 1", 9)
+g.addEdge("kkv lantai 1","koi the",4)
+g.addEdge("koi the","kkv lantai 1",4)
+g.addEdge("koi the","h&m lantai 1",12)
+g.addEdge("h&m lantai 1","koi the",12)
+g.addEdge("locknlock","miniso",4)
+g.addEdge("miniso","locknlock",4)
+g.addEdge("miniso","carla",10)
+g.addEdge("carla","miniso",10)
+g.addEdge("carla","h&m lantai 1",11)
+g.addEdge("h&m lantai 1","carla",11)
+g.addEdge("eskalator 13","carla", 4)
+g.addEdge("carla","eskalator 13", 4)
+g.addEdge("stop n go","dr. specs",7)
+g.addEdge("dr. specs","stop n go",7)
+g.addEdge("the executive","urban & co",8)
+g.addEdge("urban & co","the executive",8)
+g.addEdge("levi's","watch club",6)
+g.addEdge("watch club","levi's",6)
+g.addEdge("watch club","polo",15)
+g.addEdge("polo","watch club",15)
+g.addEdge("polo","glam on",6)
+g.addEdge("glam on","polo",6)
+g.addEdge("glam on","locknlock",6)
+g.addEdge("locknlock","glam on",6)
+g.addEdge("eskalator 23","miniso",9)
+g.addEdge("miniso","eskalator 23",9)
+g.addEdge("h&m lantai 1","lift 12", 16)
+g.addEdge("lift 12","h&m lantai 1",16)
 
 places = {
-    "max fashion": {
+    "h&m lantai g": {
         "lvl": 0,
         "lat": -7.275760544619828,
         "lon": 112.78073383888068
     },
-    "starbucks": {
+    "djournal coffe bar": {
         "lvl": 0,
         "lat": -7.276125502559864,
         "lon": 112.78065470125432
     },
-    "h&m": {
+    "starbucks reserve": {
         "lvl": 0,
         "lat": -7.276210888903719,
         "lon": 112.78063387556341
     },
-    "samsung": {
+    "mark & spencer": {
         "lvl": 0,
         "lat": -7.27635824916716,
         "lon": 112.78058805904277
     },
-    "uniqlo": {
+    "pandora": {
         "lvl": 0,
         "lat": -7.276370643953641,
         "lon": 112.78037008347354
     },
-    "miniso": {
+    "frank&co": {
         "lvl": 0,
         "lat": -7.276060774192601,
         "lon": 112.78045893975707
     },
-    "the gourmet": {
+    "tumi": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "pintu keluar 10": {
+        "lvl": 0,
+        "lat": -7.275735431786899,
+        "lon": 112.78065697106541
+    },
+    "elemis": {
+        "lvl": 0,
+        "lat": -7.275735431786899,
+        "lon": 112.78065697106541
+    },
+    "miss mondial": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "sociolla": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "ling's sister jewelerry": {
         "lvl": 0,
         "lat": -7.275720605807564,
         "lon": 112.78057834038714
     },
     "eskalator g1": {
         "lvl": 0,
-        "lat": -7.275735431786899,
-        "lon": 112.78065697106541
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
     },
-    "eskalator 11": {
-        "lvl": 1,
-        "lat": -7.275735431786899,
-        "lon": 112.78065697106541
+    "eskalator g2": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
     },
-    "kkv": {
-        "lvl": 1,
+    "melissa clube": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "adelle jewelerry": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "timberland": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "hyundai": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "elevatione": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "max fashion": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "the gourmet": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "pintu keluar 9": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "lift g": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "eskalator g3": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "marquine": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "axel vinesse": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "kopi kenangan": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "pintu keluar x": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "venchi": {
+        "lvl": 0,
+        "lat": -7.275720605807564,
+        "lon": 112.78057834038714
+    },
+    "loccitane": {
+        "lvl": 0,
         "lat": -7.275720605807564,
         "lon": 112.78057834038714
     }
