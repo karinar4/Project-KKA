@@ -58,8 +58,9 @@ class Graph:
 g = Graph() # Create an instance of the Graph class
 
 # Add vertices with heuristic values to the graph
-# lantai 1
-g.addVertex("h&m lantai 1")
+#BLOM TAK CEK KE DIRECTORY ASLINE
+# lantai g
+g.addVertex("h&m lantai g")
 g.addVertex("djournal")
 g.addVertex("starbuck")
 g.addVertex("mark&spencer")
@@ -89,20 +90,46 @@ g.addVertex("axel")
 g.addVertex("kopi kenangan")
 g.addVertex("pintu keluar x") #aku ga tau ini pintu keluar no berapa
 
+#lantai 1
+g.addVertex("eskalator 11") #dari deket lantai 1 yg deket max
+g.addVertex("lift 1")
+g.addVertex("uniqlo")
+g.addVertex("amarissa")
+g.addVertex("eskalator 12") #ke lantai 2
+g.addVertex("bridges eyewear")
+g.addVertex("cheesecake")
+g.addVertex("colorbox")
+g.addVertex("the executive")
+g.addVertex("kkv lantai 1")
+g.addVertex("urban")
+g.addVertex("koi")
+g.addVertex("h&m lantai 1")
+g.addVertex("locknlock")
+g.addVertex("miniso")
+g.addVertex("carla")
+g.addVertex("parkiran") #?? gamudeng
+g.addVertex("eskalator 13") #eskalator deket miniso
+g.addVertex("spec")
+g.addVertex("stopngo")
+g.addVertex("levis")
+g.addVertex("watchclub")
+g.addVertex("polo")
+g.addVertex("glamon")
+
 # Add edges with weights
 #lantai 1
-g.addEdge("h&m lantai 1", "djournal", 29)
-g.addEdge("djournal", "h&m lantai 1", 29)
-g.addEdge("h&m lantai 1", "starbuck", 29)
-g.addEdge("starbuck", "h&m lantai 1", 29)
+g.addEdge("h&m lantai g", "djournal", 29)
+g.addEdge("djournal", "h&m lantai g", 29)
+g.addEdge("h&m lantai g", "starbuck", 29)
+g.addEdge("starbuck", "h&m lantai g", 29)
 g.addEdge("djournal", "starbuck", 8)
 g.addEdge("starbuck", "djournal", 8)
-g.addEdge("h&m lantai 1", "mark&spencer", 12)
-g.addEdge("mark&spencer", "h&m lantai 1", 12)
+g.addEdge("h&m lantai g", "mark&spencer", 12)
+g.addEdge("mark&spencer", "h&m lantai g", 12)
 g.addEdge("mark&spencer", "pandora", 17)
 g.addEdge("pandora", "mark&spencer", 17)
-g.addEdge("h&m lantai 1", "frank&co", 18)
-g.addEdge("frank&co", "h&m lantai 1", 18)
+g.addEdge("h&m lantai g", "frank&co", 18)
+g.addEdge("frank&co", "h&m lantai g", 18)
 g.addEdge("pandora", "tumi", 6)
 g.addEdge("tumi", "pandora", 6)
 g.addEdge("pintu keluar 10", "tumi", 23)
@@ -131,8 +158,8 @@ g.addEdge("the gourmet", "pintu keluar 9", 19)
 g.addEdge("pintu keluar 9", "the gourmet", 19)
 g.addEdge("eskalator g3", "timberland", 5)
 g.addEdge("timberland", "eskalator g3", 5)
-g.addEdge("max fashion", "lift", 15)
-g.addEdge("lift", "max fashion", 15)
+g.addEdge("max fashion", "lift g", 15)
+g.addEdge("lift g", "max fashion", 15)
 g.addEdge("max fashion", "eskalator g3", 25)
 g.addEdge("eskalator g3", "max fashion", 25)
 g.addEdge("pandora", "frank&co", 10)
