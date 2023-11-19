@@ -58,16 +58,36 @@ class Graph:
 g = Graph() # Create an instance of the Graph class
 
 # Add vertices with heuristic values to the graph
+# lantai 1
+g.addVertex("h&m lantai 1")
+g.addVertex("djournal")
+g.addVertex("starbuck")
+g.addVertex("mark&spencer")
+g.addVertex("pandora")
+g.addVertex("frank&co")
+g.addVertex("tumi")
+g.addVertex("pintu keluar 10")
+g.addVertex("elemis")
+g.addVertex("mondial")
+g.addVertex("sociolla")
+g.addVertex("lings")
+g.addVertex("mondial")
+g.addVertex("eskalator g1") #deket h&m
+g.addVertex("eskalator g2") #eska tengah lobby
+g.addVertex("melisa")
+g.addVertex("adele")
+g.addVertex("timberland")
+g.addVertex("hyundai")
+g.addVertex("elevatione")
 g.addVertex("max fashion")
-g.addVertex("starbucks")
-g.addVertex("h&m")
-g.addVertex("samsung")
-g.addVertex("uniqlo")
-g.addVertex("miniso")
-g.addVertex("kkv")
 g.addVertex("the gourmet")
-g.addVertex("eskalator g1")
-g.addVertex("eskalator 11")
+g.addVertex("pintu keluar 9")
+g.addVertex("lift g")
+g.addVertex("eskalator g3") #deket gourmet
+g.addVertex("marquine")
+g.addVertex("axel")
+g.addVertex("kopi kenangan")
+g.addVertex("pintu keluar x") #aku ga tau ini pintu keluar no berapa
 
 # Add edges with weights
 g.addEdge("max fashion", "starbucks", 32)
