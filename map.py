@@ -63,7 +63,7 @@ g = Graph() # Create an instance of the Graph class
 g.addVertex("h&m lantai g")
 g.addVertex("djournal coffee bar")
 g.addVertex("starbucks reserve")
-g.addVertex("mark & spencer")
+g.addVertex("marks & spencer")
 g.addVertex("pandora")
 g.addVertex("frank&co")
 g.addVertex("tumi")
@@ -71,7 +71,7 @@ g.addVertex("pintu keluar 10")
 g.addVertex("elemis")
 g.addVertex("miss mondial")
 g.addVertex("sociolla")
-g.addVertex("ling's sister jewelery")
+g.addVertex("ling's sister jewellery")
 g.addVertex("eskalator g1") #deket h&m
 g.addVertex("eskalator g2") #eska tengah lobby
 g.addVertex("melissa clube")
@@ -92,11 +92,11 @@ g.addVertex("venchi") #INI BARU
 g.addVertex("loccitane") #INI JUGA BARU
 
 #lantai 1
-g.addVertex("eskalator 11") #dari deket lantai 1 yg deket max
+g.addVertex("eskalator 12 1") #dari deket lantai 1 yg deket max
 g.addVertex("lift 1") #ini yg terusan dari lift g
 g.addVertex("uniqlo")
 g.addVertex("amarissa")
-g.addVertex("eskalator 12") #ke lantai 2
+g.addVertex("eskalator g1 1") #ke lantai 2
 g.addVertex("bridges optical")
 g.addVertex("cheskee")
 g.addVertex("colorbox")
@@ -109,13 +109,13 @@ g.addVertex("locknlock")
 g.addVertex("miniso")
 g.addVertex("carla")
 g.addVertex("parkiran") #?? gamudeng
-g.addVertex("eskalator 13") #eskalator deket miniso
+g.addVertex("eskalator g1 3") #eskalator deket miniso
 g.addVertex("dr. specs")
 g.addVertex("stop n go")
 g.addVertex("levi's")
 g.addVertex("watch club")
 g.addVertex("polo")
-g.addVertex("glamon")
+g.addVertex("glam on")
 g.addVertex("fossil")
 g.addVertex("optik seis signature")
 g.addVertex("owl optical")
@@ -130,10 +130,10 @@ g.addEdge("h&m lantai g", "starbucks reserve", 29)
 g.addEdge("starbucks reserve", "h&m lantai g", 29)
 g.addEdge("djournal coffee bar", "starbucks reserve", 8)
 g.addEdge("starbucks reserve", "djournal coffee bar", 8)
-g.addEdge("h&m lantai g", "mark&spencer", 12)
-g.addEdge("mark&spencer", "h&m lantai g", 12)
-g.addEdge("mark&spencer", "pandora", 17)
-g.addEdge("pandora", "mark&spencer", 17)
+g.addEdge("h&m lantai g", "marks & spencer", 12)
+g.addEdge("marks & spencer", "h&m lantai g", 12)
+g.addEdge("marks & spencer", "pandora", 17)
+g.addEdge("pandora", "marks & spencer", 17)
 g.addEdge("h&m lantai g", "frank&co", 18)
 g.addEdge("frank&co", "h&m lantai g", 18)
 g.addEdge("pandora", "tumi", 6)
@@ -206,14 +206,14 @@ g.addEdge("loccitane", "elevatione", 9)
 
 
 #lantai 2
-g.addEdge("eskalator 11","lift 1",6)
-g.addEdge("lift 1","eskalator 11",6)
+g.addEdge("eskalator 12 1","lift 1",6)
+g.addEdge("lift 1","eskalator 12 1",6)
 g.addEdge("uniqlo","lift 1",15)
 g.addEdge("lift 1","uniqlo",15)
 g.addEdge("uniqlo","amarissa", 29)
 g.addEdge("amarissa","uniqlo", 29)
-g.addEdge("uniqlo","eskalator 12",19)
-g.addEdge("eskalator 12","uniqlo",19)
+g.addEdge("uniqlo","eskalator g1 1",19)
+g.addEdge("eskalator g1 1","uniqlo",19)
 g.addEdge("amarissa","bridges optical", 17)
 g.addEdge("bridges optical","amarissa", 17)
 g.addEdge("cheskee","bridges optical",5)
@@ -234,8 +234,8 @@ g.addEdge("miniso","carla",10)
 g.addEdge("carla","miniso",10)
 g.addEdge("carla","h&m lantai 1",11)
 g.addEdge("h&m lantai 1","carla",11)
-g.addEdge("eskalator 13","carla", 4)
-g.addEdge("carla","eskalator 13", 4)
+g.addEdge("eskalator g1 3","carla", 4)
+g.addEdge("carla","eskalator g1 3", 4)
 g.addEdge("stop n go","dr. specs",7)
 g.addEdge("dr. specs","stop n go",7)
 g.addEdge("the executive","urban & co",8)
@@ -254,300 +254,310 @@ g.addEdge("h&m lantai 1","lift 12", 16)
 g.addEdge("lift 12","h&m lantai 1",16)
 
 places = {
-    "h&m lantai g": {
+    "h&m lantai g": { # udh
         "lvl": 0,
-        "lat": -7.275760544619828,
-        "lon": 112.78073383888068
+        "lat": -7.27611653269939,
+        "lon": 112.7805770422953
     },
-    "djournal coffe bar": {
+    "djournal coffe bar": { # udh
         "lvl": 0,
-        "lat": -7.276125502559864,
-        "lon": 112.78065470125432
+        "lat": -7.2757956141528695,
+        "lon": 112.78075311626509
     },
-    "starbucks reserve": {
+    "starbucks reserve": { # udh
         "lvl": 0,
-        "lat": -7.276210888903719,
-        "lon": 112.78063387556341
+        "lat": -7.275835899256407,
+        "lon": 112.78080591201103
     },
-    "mark & spencer": {
+    "marks & spencer": { # udh
         "lvl": 0,
-        "lat": -7.27635824916716,
-        "lon": 112.78058805904277
+        "lat": -7.276106138078035,
+        "lon": 112.7804930116227
     },
-    "pandora": {
+    "pandora": { # udh
         "lvl": 0,
-        "lat": -7.276370643953641,
-        "lon": 112.78037008347354
+        "lat": -7.276370083709992,
+        "lon": 112.78046562730117
     },
-    "frank&co": {
+    "frank&co": { # udh
         "lvl": 0,
-        "lat": -7.276060774192601,
-        "lon": 112.78045893975707
+        "lat": -7.276383488317819,
+        "lon": 112.78054866202376
     },
-    "tumi": {
+    "tumi": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276425146770151,
+        "lon": 112.78046238347974
     },
-    "pintu keluar 10": {
+    "pintu keluar 10": { # udh
         "lvl": 0,
-        "lat": -7.275735431786899,
-        "lon": 112.78065697106541
+        "lat": -7.276483312236508,
+        "lon": 112.7807051567325
     },
-    "elemis": {
+    "elemis": { # udh
         "lvl": 0,
-        "lat": -7.275735431786899,
-        "lon": 112.78065697106541
+        "lat": -7.276591916555589,
+        "lon": 112.78057279021732
     },
-    "miss mondial": {
+    "miss mondial": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276643002486139,
+        "lon": 112.78056654417276
     },
-    "sociolla": {
+    "sociolla": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276772608642432,
+        "lon": 112.78045604842669
     },
-    "ling's sister jewelerry": {
+    "ling's sister jewellery": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276702077590642,
+        "lon": 112.7805381854883
     },
-    "eskalator g1": {
+    "eskalator g1": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276035075100978,
+        "lon": 112.78052649408858
     },
-    "eskalator g2": {
+    "eskalator g2": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276515355642729,
+        "lon": 112.78046920020836
     },
-    "melissa clube": {
+    "melissa clube": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276728635983375,
+        "lon": 112.78023240394253
     },
-    "adelle jewelerry": {
+    "adelle jewelerry": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2767093976786015,
+        "lon": 112.78031664144987
     },
-    "timberland": {
+    "timberland": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2767412558671225,
+        "lon": 112.78017024276835
     },
-    "hyundai": {
+    "hyundai": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276839263099518,
+        "lon": 112.78009735161282
     },
-    "elevatione": {
+    "elevatione": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276813954903375,
+        "lon": 112.78026235408043
     },
-    "max fashion": {
+    "max fashion": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276810819372429,
+        "lon": 112.77987295695544
     },
-    "the gourmet": {
+    "the gourmet": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276988806491687,
+        "lon": 112.77989553323062
     },
-    "pintu keluar 9": {
+    "pintu keluar 9": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.277096814789843,
+        "lon": 112.7799339154763
     },
-    "lift g": {
+    "lift g": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276691800599139,
+        "lon": 112.77999851778367
     },
-    "eskalator g3": {
+    "eskalator g3": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2767623316533445,
+        "lon": 112.78000587334157
     },
-    "marquine": {
+    "marquine": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276509883129208,
+        "lon": 112.78043047837997
     },
-    "axel vinesse": {
+    "axel vinesse": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276588926582775,
+        "lon": 112.78037040799222
     },
-    "kopi kenangan": {
+    "kopi kenangan": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276951423634216,
+        "lon": 112.77996441591858
     },
-    "pintu keluar x": {
+    "pintu keluar x": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2766511406737635,
+        "lon": 112.77988547319165
     },
-    "venchi": {
+    "venchi": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276545594141922,
+        "lon": 112.78057442361171
     },
-    "loccitane": {
+    "loccitane": { # udh
         "lvl": 0,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2767932820116386,
+        "lon": 112.78036900966748
     },
-    "eskalator 11": {
+    "toilet g": { # udh
+        "lvl": 0,
+        "lat": -7.27631967552702,
+        "lon": 112.78029433310826
+    },
+    "eskalator 12 1": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276756190913744,
+        "lon": 112.78007442736975
     },
-    "lift 1": {
+    "lift 1": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.2766917399328435,
+        "lon": 112.77999134403416
     },
-    "uniqlo": {
+    "uniqlo": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276841158338485,
+        "lon": 112.77986302821762
     },
-    "amarissa": {
+    "amarissa": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276846146822336,
+        "lon": 112.78009455237975
     },
-    "eskalator 12": {
+    "eskalator g1 1": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.27676952608293,
+        "lon": 112.77995343637633
     },
-    "bridges optical": {
+    "bridges optical": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276799409539052,
+        "lon": 112.78032508801687
     },
-    "cheskee": {
+    "cheskee": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.27679106359534,
+        "lon": 112.78038061849804
     },
-    "colorbox": {
+    "colorbox": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276762926183579,
+        "lon": 112.7804621981461
     },
-    "the executive": {
+    "the executive": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.27660579511398,
+        "lon": 112.78058161415652
     },
-    "kkv lantai 1": {
+    "kkv lantai 1": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276296664316362,
+        "lon": 112.7805859614005
     },
-    "urban & co": {
+    "urban & co": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276518604056193,
+        "lon": 112.78055963941671
     },
-    "koi the": {
+    "koi the": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.27607649716299,
+        "lon": 112.78061891360471
     },
-    "h&m lantai 1": {
+    "h&m lantai 1": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.275951510046681,
+        "lon": 112.78064411395263
     },
-    "locknlock": {
+    "locknlock": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276079621840211,
+        "lon": 112.78049921195407
     },
-    "miniso": {
+    "miniso": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.275995255540906,
+        "lon": 112.78049291186562
     },
-    "carla": {
+    "carla": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.275917138583381,
+        "lon": 112.78054961264974
     },
     "parkiran": {
         "lvl": 1,
         "lat": -7.275720605807564,
         "lon": 112.78057834038714
     },
-    "eskalator 13": {
+    "eskalator g1 3": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.275922284219092,
+        "lon": 112.78054357264517
     },
-    "dr. specs": {
+    "eskalator 12 3": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.275936386775456,
+        "lon": 112.78061536867665
     },
-    "stop n go": {
+    "dr. specs": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276713875996165,
+        "lon": 112.78015313354086
     },
-    "levi's": {
+    "stop n go": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276716977931656,
+        "lon": 112.78006212326454
     },
-    "watch club": {
+    "levi's": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276422201208618,
+        "lon": 112.78045167404906
     },
-    "polo": {
+    "watch club": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276361270040056,
+        "lon": 112.78045797413552
     },
-    "glamon": {
+    "polo": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276211285591501,
+        "lon": 112.78048002444109
     },
-    "fossil": {
+    "glam on": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276146802400476,
+        "lon": 112.78048818680031
     },
-    "optik seis signature": {
+    "fossil": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276500592181279,
+        "lon": 112.78040251334335
     },
-    "owl optical": {
+    "optik seis signature": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276570561245791,
+        "lon": 112.78035928044892
     },
-    "zeiss vision center": {
+    "owl optical": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.27668905790415,
+        "lon": 112.78030580843375
     },
-    "lift 12": {
+    "zeiss vision center": { # udh
         "lvl": 1,
-        "lat": -7.275720605807564,
-        "lon": 112.78057834038714
+        "lat": -7.276701912521091,
+        "lon": 112.78022973036184
+    },
+    "lift 12": { # udh
+        "lvl": 1,
+        "lat": -7.27606243611379,
+        "lon": 112.7807512154323
     }
 }
 #################################################################################

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Input dan Respons JavaScript</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    
+    <script src="static/data/lantai_G.geojson"></script>
+    <script src="static/data/lantai_1.geojson"></script>
+</head>
+<body>
+    <div class="container">
+        <div style="align-items: center; background-color: black; height: 75px;" class="row text-center">
+            <h1 class="text-white">Galaxy Mall 3 Maps</h1>
+        </div>
+        <div style="height: 100vh" class="row">
+            <div class="col-3 bg-dark m-0 p-0">
+                <div class="ms-2 p-3">
+                <form>
+                    <div class="mb-3">
+                      <label for="input1" class="form-label text-white">Your Position</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="input2" class="form-label text-white">Goal Position</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="d-grid ">
+                        <button type="submit" class="btn btn-primary ">Submit</button>
+                    </div>
+                  </form>
+                </div>
+                <div style="height: 425px">
+
+                </div>
+                <div style="background-color: antiquewhite; height: 50px;" class="align-bottom">
+
+                </div>
+                <!-- <form id="data-form">
+                    <\br>
+                    <label for="user-data">Masukkan Data:</label>
+                    <input type="text" id="user-data-1" name="user-data-1">
+                    <\br>
+                    <input type="text" id="user-data-2" name="user-data-2">
+                    <input type="submit" value="Kirim">
+                </form> -->
+            </div>
+            <div class="col-9">
+                <img src="https://th.bing.com/th/id/R.31ba7cc779eb847b2231c27ba7b2be40?rik=mCwnavpnTa1MEA&riu=http%3a%2f%2fweknowyourdreams.com%2fimages%2fgrey%2fgrey-03.jpg&ehk=s%2boBUbzdAoACCGJc7um6cnjwmDV7kMXv8pixrUyIdNk%3d&risl=&pid=ImgRaw&r=0" alt="map" width="100%" height="100%">
+                <!-- <div id="map" style="height: 100vh; width: 100%;"></div> -->
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="">
+          <h1 class="navbar-brand text-xl-center">Galaxy Mall 3 Maps</h1>
+          <a class="navbar-brand" href="#">Navbar</a>
+        </div>
+      </nav> -->
+    
+    <p id="response"></p>
+ 
+    </br>
+</body>
+</html>
