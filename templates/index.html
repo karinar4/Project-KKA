@@ -14,6 +14,22 @@
     <script src="static/data/lantai_G.geojson"></script>
     <script src="static/data/lantai_1.geojson"></script>
     <script src="static/data/bg.geojson"></script>
+
+    <style>
+        .result-box ul {
+            border-top: 1px solid #000;
+            padding: 15px 10px;
+        }
+        .result-box ul li{
+            list-style: none;
+            border-radius: 3px;
+            padding: 15px 10px;
+            cursor: pointer;
+        }
+        .result-box ul li:hover {
+            background-color: rgb(0, 0, 100);
+        }
+    </style>
 </head>
 <body style="overflow: hidden;">
     <div style="align-items: center; background-color: black; height: 75px;" class="row text-center">
@@ -26,22 +42,27 @@
             <form id="data-form">
                 <div class="mb-3">
                   <label for="input1" class="form-label text-white">Your Position</label>
-                  <input type="text" class="form-control" id="user-data-1" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="user-data-1" autocomplete="off">
                 </div>
                 <div class="mb-3">
                   <label for="input2" class="form-label text-white">Goal Position</label>
-                  <input type="text" class="form-control" id="user-data-2">
+                  <input type="text" class="form-control" id="user-data-2" autocomplete="off">
                 </div>
                 <div class="d-grid ">
                     <button type="submit" class="btn btn-primary ">Submit</button>
                 </div>
               </form>
             </div>
+
+            <div class="ms-2 result-box" style="max-height: 300px; overflow-y: scroll;">
+
+            </div>
         </div>
         <div id="map" class="col-9">
         </div>
     </div>
 
+    <script src="../static/js/autocomplete.js"></script>
     <script>
         let map;
 
