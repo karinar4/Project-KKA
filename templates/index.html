@@ -67,6 +67,14 @@
         let map;
 
         function updateMap(data){
+            let rute = data.path
+            let weight = data.dur
+            let goal = data.goal
+            console.log(rute)
+            console.log(weight)
+            console.log(goal[0])
+            console.log(goal[1])
+            console.log(goal[2])
             if (map && map.remove) {
                 map.off();
                 map.remove();
@@ -78,25 +86,41 @@
             });
             googleStreets.addTo(map);
 
-            var dasar_style = {
-                "color": "#ffffff",
-                "weight": 0,
-                "fillOpacity": 1
-            };
+            let goal_markerG = L.marker(goal[0]);
+            let goal_marker1 = L.marker(goal[1]);
+            let goal_marker2 = L.marker(goal[2]);
 
-            let dasar = L.geoJSON(base, {style: dasar_style})
-            let denahG = L.geoJSON(lantai_G);
-            let denah1 = L.geoJSON(lantai_1);
+            let dasar = L.geoJSON(base, {
+                style: {
+                    "color": "#ffffff",
+                    "weight": 0,
+                    "fillOpacity": 1
+                }
+            });
+            let denahG = L.geoJSON(lantai_G, {
+                onEachFeature: function (feature, layer) {
+                    if ("name" in feature.properties) {
+                        layer.bindPopup(feature.properties.name);
+                    }
+                }
+            });
+            let denah1 = L.geoJSON(lantai_1, {
+                onEachFeature: function (feature, layer) {
+                    if ("name" in feature.properties) {
+                        layer.bindPopup(feature.properties.name);
+                    }
+                }
+            });
 
-            let polyline0 = L.polyline(data[0], { color: 'blue' });
-            let polyline1 = L.polyline(data[1], { color: 'red' });
-            let polyline2 = L.polyline(data[2], { color: 'green' });
+            let polyline0 = L.polyline(rute[0], { color: 'blue' });
+            let polyline1 = L.polyline(rute[1], { color: 'red' });
+            let polyline2 = L.polyline(rute[2], { color: 'green' });
             console.log(polyline0);
             console.log(polyline1);
             console.log(polyline2);
 
-            let lantaiG = L.layerGroup([googleStreets, dasar, denahG, polyline0]);
-            let lantai1 = L.layerGroup([googleStreets, dasar, denah1, polyline1]);
+            let lantaiG = L.layerGroup([googleStreets, dasar, denahG, polyline0, goal_markerG]);
+            let lantai1 = L.layerGroup([googleStreets, dasar, denah1, polyline1, goal_marker1]);
             let lantai2 = L.layerGroup([googleStreets, dasar, polyline2]);
 
             let baseLayers = {
@@ -108,7 +132,12 @@
             let control = L.control.layers(baseLayers).addTo(map);
         };
 
-        updateMap([[],[],[]]);
+        let blank = {
+            "dur": 0,
+            "path": [[], [], []],
+            "goal": [[], [], []]
+        }
+        updateMap(blank);
 
         document.getElementById("data-form").addEventListener("submit", function(e) {
             e.preventDefault();

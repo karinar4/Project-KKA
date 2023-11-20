@@ -42,7 +42,7 @@ class Graph:
                 while current_vertex != start:
                     current_vertex = came_from[current_vertex]
                     path.append(current_vertex)
-                return path[::-1] 
+                return distance, path[::-1] 
 
             if current_vertex in self.graph:
                 for next_vertex, weight in self.graph[current_vertex].items():
@@ -53,7 +53,7 @@ class Graph:
                             came_from[next_vertex] = current_vertex
                             heapq.heappush(queue, (distance[next_vertex], next_vertex))
 
-        return None
+        return distance, None
 
 g = Graph() # Create an instance of the Graph class
 
@@ -573,9 +573,6 @@ places = {
 #################################################################################
 app = Flask(__name__)
 
-polylineCoordinates = []
-rute = [[] for _ in range(3)]
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -585,27 +582,31 @@ def process_data():
     data = request.json.get('data')  # Ambil data dari permintaan POST
     # Pastikan data adalah list dengan dua elemen
     if len(data) == 2:
-        global polylineCoordinates, rute
-        rute = [[] for _ in range(3)]
-        polylineCoordinates = [
-            [-7.275656970435648, 112.78073720330701],
-            [-7.275861870602128, 112.78094966850989] 
-        ];
+        rute = [[], [], []]
+        goal = [[], [], []]
         data1, data2 = data
         data1 = data1.lower()
         data2 = data2.lower()
         
-        path = g.dijkstra(data1, data2)
+        dist, path = g.dijkstra(data1, data2)
 
-        print(path)
+        if (path is not None):
+            print(path)
         
-        for place in path:
-            print(places[place]["lvl"])
-            rute[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
-        
+            for place in path:
+                print(places[place]["lvl"])
+                rute[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
+            
+            goal[places[path[-1]]["lvl"]] = [places[path[-1]]["lat"], places[path[-1]]["lon"]]
+            
         print("ini rute", rute)
         
-        return jsonify(rute)
+        resp = {
+            "path": rute,
+            "dur": dist[data2],
+            "goal": goal
+        }
+        return jsonify(resp)
     else:
         return "Data yang diterima tidak sesuai"
     
