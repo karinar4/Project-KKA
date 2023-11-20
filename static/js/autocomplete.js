@@ -1,6 +1,34 @@
 let availableKeywords = [
-    'H&M',
-    'Uniqlo'
+    'H&M lantai G',
+    'Uniqlo',
+    'Sociolla',
+    'Djournal Coffe Bar',
+    'Starbucks Reserve',
+    'Marks & Spencer',
+    'Pandora',
+    'Frank&Co',
+    'Tumi',
+    'Pintu Keluar 10',
+    'Elemis',
+    'Miss Mondial',
+    "Ling's Sister Jewellery",
+    'Melissa Clube',
+    'Adelle Jewelerry',
+    'Timberland',
+    'Hyundai',
+    'Elevatione',
+    'Max Fashion',
+    'The Gourmet',
+    'Pintu Keluar 9',
+    'Lift G',
+    'Axel Vinesse',
+    'Kopi Kenangan',
+    'Pintu Keluar X',
+    'Venchi',
+    'Loccitane',
+    'Eskalator G2',
+    'Eskalator G1',
+    'Eskalator G3'
 ];
 
 const resultsBox = document.querySelector(".result-box");
