@@ -15,6 +15,8 @@
     <script src="static/data/lantai_1.geojson"></script>
     <script src="static/data/bg.geojson"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         .result-box ul {
             border-top: 1px solid #000;
@@ -57,8 +59,25 @@
             <div class="ms-2 result-box" style="max-height: 300px; overflow-y: scroll;">
 
             </div>
+
+            <div class="ms-2 p-3 bg-white" style="height: 100px; width: 23.4%; position: fixed; left: 0px; bottom: 0px; border-radius: 15px;">
+                <div class="row" style="align-items: center;">
+                    <div class="col-6 text-center">
+                        <i class="fa-solid fa-shoe-prints" style="color: #000; font-size: 25px;"></i>
+                        <p id="step"></p>
+                    </div>
+    
+                    <div class="col-6 text-center">
+                        <i class="fa-regular fa-clock"  style="color: #000; font-size: 25px;"></i>
+                        <p id="duration"></p>
+                    </div>
+                </div>
+                
+            </div>
         </div>
+
         <div id="map" class="col-9">
+            
         </div>
     </div>
 
@@ -70,6 +89,13 @@
             let rute = data.path
             let weight = data.dur
             let goal = data.goal
+            if (weight == 0){
+                document.getElementById("duration").innerHTML = '';
+                document.getElementById("step").innerHTML = '';
+            } else {
+                document.getElementById("duration").innerHTML = weight + " seconds";
+                document.getElementById("step").innerHTML = weight * 2 + " steps";
+            }
             console.log(rute)
             console.log(weight)
             console.log(goal[0])
@@ -80,15 +106,15 @@
                 map.remove();
             }
             map = L.map('map').setView([-7.27650430356789, 112.78022015113328], 19);
-            let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-                maxZoom: 20,
-                subdomains:['mt0','mt1','mt2','mt3']
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 25
             });
-            googleStreets.addTo(map);
+            osm.addTo(map);
 
-            let goal_markerG = L.marker(goal[0]);
-            let goal_marker1 = L.marker(goal[1]);
-            let goal_marker2 = L.marker(goal[2]);
+            let goal_markerG = L.marker(goal[0], { color: '#29ADB2' });
+            let goal_marker1 = L.marker(goal[1], { color: '#29ADB2' });
+            let goal_marker2 = L.marker(goal[2], { color: '#29ADB2' });
 
             let dasar = L.geoJSON(base, {
                 style: {
@@ -98,6 +124,11 @@
                 }
             });
             let denahG = L.geoJSON(lantai_G, {
+                style: {
+                    "color": "#C5E898",
+                    "weight": 2,
+                    "fillOpacity": 0.5
+                },
                 onEachFeature: function (feature, layer) {
                     if ("name" in feature.properties) {
                         layer.bindPopup(feature.properties.name);
@@ -105,6 +136,11 @@
                 }
             });
             let denah1 = L.geoJSON(lantai_1, {
+                style: {
+                    "color": "#C5E898",
+                    "weight": 2,
+                    "fillOpacity": 0.5
+                },
                 onEachFeature: function (feature, layer) {
                     if ("name" in feature.properties) {
                         layer.bindPopup(feature.properties.name);
@@ -112,21 +148,21 @@
                 }
             });
 
-            let polyline0 = L.polyline(rute[0], { color: 'blue' });
-            let polyline1 = L.polyline(rute[1], { color: 'red' });
-            let polyline2 = L.polyline(rute[2], { color: 'green' });
+            let polyline0 = L.polyline(rute[0], { color: '#29ADB2' });
+            let polyline1 = L.polyline(rute[1], { color: '#29ADB2' });
+            let polyline2 = L.polyline(rute[2], { color: '#29ADB2' });
             console.log(polyline0);
             console.log(polyline1);
             console.log(polyline2);
 
-            let lantaiG = L.layerGroup([googleStreets, dasar, denahG, polyline0, goal_markerG]);
-            let lantai1 = L.layerGroup([googleStreets, dasar, denah1, polyline1, goal_marker1]);
-            let lantai2 = L.layerGroup([googleStreets, dasar, polyline2]);
+            let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
+            let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
+            let lantai2 = L.layerGroup([osm, dasar, polyline2]);
 
             let baseLayers = {
-                "G":lantaiG,
-                "1":lantai1,
-                "2":lantai2,
+                "GF":lantaiG,
+                "L1":lantai1,
+                "L2":lantai2,
             };
 
             let control = L.control.layers(baseLayers).addTo(map);

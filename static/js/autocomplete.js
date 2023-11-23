@@ -1,10 +1,9 @@
 let availableKeywords = [
 
     //lantai 0
-    'H&M lantai G',
-    'Uniqlo',
+    'H&M Lantai G',
     'Sociolla',
-    'Djournal Coffe Bar',
+    'Djournal Coffee Bar',
     'Starbucks Reserve',
     'Marks & Spencer',
     'Pandora',
@@ -15,7 +14,7 @@ let availableKeywords = [
     'Miss Mondial',
     "Ling's Sister Jewellery",
     'Melissa Clube',
-    'Adelle Jewelerry',
+    'Adelle Jewellery',
     'Timberland',
     'Hyundai',
     'Elevatione',
@@ -27,6 +26,7 @@ let availableKeywords = [
     'Pintu Keluar X', //lupa pintu keluar brp
     'Venchi',
     'Loccitane',
+    'Marquine',
 
     //lantai 1
 
@@ -52,7 +52,8 @@ let availableKeywords = [
     'Fossil',
     'Optik Seis Signature',
     'Owl Optical',
-    'Zeiss Vision Center'
+    'Zeiss Vision Center',
+    'H&M Lantai 1'
 
 ];
 
