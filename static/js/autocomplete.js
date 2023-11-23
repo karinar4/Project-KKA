@@ -1,4 +1,6 @@
 let availableKeywords = [
+
+    //lantai 0
     'H&M lantai G',
     'Uniqlo',
     'Sociolla',
@@ -20,15 +22,38 @@ let availableKeywords = [
     'Max Fashion',
     'The Gourmet',
     'Pintu Keluar 9',
-    'Lift G',
     'Axel Vinesse',
     'Kopi Kenangan',
-    'Pintu Keluar X',
+    'Pintu Keluar X', //lupa pintu keluar brp
     'Venchi',
     'Loccitane',
-    'Eskalator G2',
-    'Eskalator G1',
-    'Eskalator G3'
+
+    //lantai 1
+
+    'Uniqlo',
+    'Amarissa',
+    'Bridges Optical',
+    'Cheskee',
+    'Colorbox',
+    'The Executive',
+    'KKV Lantai 1',
+    'LockNLock',
+    'Miniso',
+    'Carla',
+    'Parkiran', //lupa parkiran yang mana
+    'Urban & Co',
+    'Koi The',
+    'Dr. Specs',
+    'Stop N Go',
+    "Levi's",
+    'Watch Club',
+    'Polo',
+    'Glam On',
+    'Fossil',
+    'Optik Seis Signature',
+    'Owl Optical',
+    'Zeiss Vision Center'
+
 ];
 
 const resultsBox = document.querySelector(".result-box");
