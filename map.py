@@ -133,7 +133,7 @@ g.addVertex("iuiga")
 g.addVertex("urban republic")
 g.addVertex("vans")
 g.addVertex("asics")
-g.addVertex("the atlehte's foot")
+g.addVertex("the athlete's foot")
 g.addVertex("puma")
 g.addVertex("new era")
 g.addVertex("the north face")
@@ -281,7 +281,6 @@ g.addEdge("sociolla", "loccitane", 8)
 g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
  
-
 #lantai 1
 g.addEdge("eskalator 1g 1","lift 1",6)
 g.addEdge("lift 1","eskalator 1g 1",6)
@@ -345,8 +344,35 @@ g.addEdge("dr. specs","zeiss vision center",5)
 g.addEdge("zeiss vision center","dr. specs",5)
 
 #lantai 2
+g.addEdge("home living", "payless shoes", 53)
+g.addEdge("payless shoes", "padre", 14)
+g.addEdge("padre", "urban republic", 29)
+g.addEdge("urban republic", "vans", 15)
+g.addEdge("vans", "the north face", 7)
+g.addEdge("the north face", "hoops", 7)
+g.addEdge("hoops", "seek", 10)
+g.addEdge("seek", "kkv lantai 2", 12)
+g.addEdge("kkv lantai 2", "lao fook", 20)
+g.addEdge("lao fook", "planet sports asia", 11)
+g.addEdge("planet sports asia", "pan & co", 20)
+g.addEdge("pan & co", "lao fook", 30)
+g.addEdge("planet sports asia", "converse", 15)
+g.addEdge("planet sports asia", "crocs", 2)
+g.addEdge("crocs", "tucano's", 9)
+g.addEdge("tucano's", "adidas", 14)
+g.addEdge("adidas", "wee nam kee", 22)
+g.addEdge("wee nam kee", "fila", 12)
+g.addEdge("fila", "new era", 9)
+g.addEdge("new era", "puma", 5)
+g.addEdge("puma", "the athlete's foot", 12)
+g.addEdge("the athlete's foot", "asics", 7)
+g.addEdge("asics", "iuiga", 9)
+g.addEdge("puma", "hoops", 16)
+g.addEdge("adidas", "lao fook", 17)
 
 #lantai 3
+
+#lantai 4
 
 places = {
     "h&m lantai g": { # udh
@@ -648,6 +674,326 @@ places = {
         "lvl": 0,
         "lat": -7.276035075100978,
         "lon": 112.78052649408858
+    },
+    "home & living": { # udh
+        "lvl": 2,
+        "lat": -7.27686304908741,
+        "lon": 112.77971581434093
+    },
+    "malinda furniture gallery": { # udh
+        "lvl": 2,
+        "lat": -7.27686304908741,
+        "lon": 112.77971581434093
+    },
+    "vivere": { # udh
+        "lvl": 2,
+        "lat": -7.27686304908741,
+        "lon": 112.77971581434093
+    },
+    "idemu": { # udh
+        "lvl": 2,
+        "lat": -7.27686304908741,
+        "lon": 112.77971581434093
+    },
+    "payless shoes": { # udh
+        "lvl": 2,
+        "lat": -7.276849722081877,
+        "lon": 112.78018659780525
+    },
+    "padre": { # udh
+        "lvl": 2,
+        "lat": -7.276831475385919,
+        "lon": 112.78031268588614
+    },
+    "iuiga": { # udh
+        "lvl": 2,
+        "lat": -7.2766531545685496,
+        "lon": 112.78033060327579
+    },
+    "urban republic": { # udh
+        "lvl": 2,
+        "lat": -7.276728581887198,
+        "lon": 112.78055675557425
+    },
+    "vans": { # udh
+        "lvl": 2,
+        "lat": -7.2765962353408895,
+        "lon": 112.7805921367094
+    },
+    "asics": { # udh
+        "lvl": 2,
+        "lat": -7.276560812400547,
+        "lon": 112.78035107084827
+    },
+    "the athlete's foot": { # udh
+        "lvl": 2,
+        "lat": -7.276501629656153,
+        "lon": 112.7803957800129
+    },
+    "puma": { # udh
+        "lvl": 2,
+        "lat": -7.276435278266959,
+        "lon": 112.78043585463121
+    },
+    "new era": { # udh
+        "lvl": 2,
+        "lat": -7.276377300060403,
+        "lon": 112.78044509115921
+    },
+    "the north face": { # udh
+        "lvl": 2,
+        "lat": -7.276538063601805,
+        "lon": 112.78057310077452
+    },
+    "hoops": { # udh
+        "lvl": 2,
+        "lat": -7.276453547076528,
+        "lon": 112.78057215407802
+    },
+    "seek": { # udh
+        "lvl": 2,
+        "lat": -7.276385934262834,
+        "lon": 112.7805844600353
+    },
+    "kkv lantai 2": { # udh
+        "lvl": 2,
+        "lat": -7.276281697174923,
+        "lon": 112.78059866040945
+    },
+    "lao fook": { # udh
+        "lvl": 2,
+        "lat": -7.276122976946809,
+        "lon": 112.78062793827587
+    },
+    "pan & co": { # udh
+        "lvl": 2,
+        "lat": -7.276052052578919,
+        "lon": 112.78084782542004
+    },
+    "planet sports asia": { # udh
+        "lvl": 2,
+        "lat": -7.276030683000869,
+        "lon": 112.78067189048073
+    },
+    "converse": { # udh
+        "lvl": 2,
+        "lat": -7.275926374273823,
+        "lon": 112.78062932669417
+    },
+    "crocs": { # udh
+        "lvl": 2,
+        "lat": -7.275917925521014,
+        "lon": 112.78061051958917
+    },
+    "tucano's": { # udh
+        "lvl": 2,
+        "lat": -7.275912415434632,
+        "lon": 112.78052379564468
+    },
+    "adidas": { # udh
+        "lvl": 2,
+        "lat": -7.27602351913221,
+        "lon": 112.78048049775208
+    },
+    "wee nam kee": { # udh
+        "lvl": 2,
+        "lat": -7.276190587163782,
+        "lon": 112.78047191131486
+    },
+    "fila": { # udh
+        "lvl": 2,
+        "lat": -7.276298731720942,
+        "lon": 112.78045581594648
+    },
+    "jiggle jungle": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "reformed exodus community": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "magal korean bbq": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "saga japanese restaurant": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "lincafe": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "boncafe": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "natural farm": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "shinjuku": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "mi store": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "guardian plus": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "vlife medical": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "huawei": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "oppo": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "house of david": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "scoop ideas": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "maison feerie": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "pure clinic": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "puro clinic": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "justice": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "samsung": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "willio": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "gingersnaps": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "mothercare": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "watsons gm3": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "nona manis": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "timezone gm3": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "atm bca gm3": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "bakmi gm": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "fusia": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "ichiban sushi": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "steak 21": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "food court": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "poke theory": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "burger king": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "crunchaus": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "jack & john": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "international christian assembly": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "shaburi & kintan": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
     }
 }
 #################################################################################
