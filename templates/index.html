@@ -14,6 +14,7 @@
     <script src="static/data/lantai_G.geojson"></script>
     <script src="static/data/lantai_1.geojson"></script>
     <script src="static/data/lantai_2.geojson"></script>
+    <script src="static/data/lantai_3.geojson"></script>
     <script src="static/data/bg.geojson"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -182,6 +183,18 @@
                     }
                 }
             });
+            let denah3 = L.geoJSON(lantai_3, {
+                style: {
+                    "color": "#C5E898",
+                    "weight": 2,
+                    "fillOpacity": 0.5
+                },
+                onEachFeature: function (feature, layer) {
+                    if ("name" in feature.properties) {
+                        layer.bindPopup(feature.properties.name);
+                    }
+                }
+            });
 
             let polyline0 = L.polyline(rute[0], { color: '#29ADB2' });
             let polyline1 = L.polyline(rute[1], { color: '#29ADB2' });
@@ -193,11 +206,13 @@
             let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
             let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
             let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2]);
+            let lantai3 = L.layerGroup([osm, dasar, denah3]);
 
             let baseLayers = {
                 "GF":lantaiG,
                 "L1":lantai1,
                 "L2":lantai2,
+                "L3":lantai3,
             };
 
             let control = L.control.layers(baseLayers).addTo(map);
