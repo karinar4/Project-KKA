@@ -13,6 +13,7 @@
     
     <script src="static/data/lantai_G.geojson"></script>
     <script src="static/data/lantai_1.geojson"></script>
+    <script src="static/data/lantai_2.geojson"></script>
     <script src="static/data/bg.geojson"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -29,7 +30,21 @@
             cursor: pointer;
         }
         .result-box ul li:hover {
-            background-color: rgb(0, 0, 100);
+            background-color: rgb(160, 209, 255);
+        }
+        .path-box ul {
+            /* padding: 15px 10px; */
+            padding-bottom: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .path-box ul li{
+            border: 1px solid #929292;
+            list-style: none;
+            border-radius: 3px;
+            padding: 15px 10px;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -39,15 +54,15 @@
     </div>
 
     <div style="height: 100vh" class="row">
-        <div class="col-3 bg-dark m-0 p-0">
+        <div class="col-3 bg-white m-0 p-0">
             <div class="ms-2 p-3">
             <form id="data-form">
                 <div class="mb-3">
-                  <label for="input1" class="form-label text-white">Your Position</label>
+                  <label for="input1" class="form-label">Your Position</label>
                   <input type="text" class="form-control" id="user-data-1" autocomplete="off">
                 </div>
                 <div class="mb-3">
-                  <label for="input2" class="form-label text-white">Goal Position</label>
+                  <label for="input2" class="form-label">Goal Position</label>
                   <input type="text" class="form-control" id="user-data-2" autocomplete="off">
                 </div>
                 <div class="d-grid ">
@@ -57,6 +72,10 @@
             </div>
 
             <div class="ms-2 result-box" style="max-height: 300px; overflow-y: scroll;">
+
+            </div>
+
+            <div class="ms-2 path-box" style="max-height: 300px; overflow-y: scroll;">
 
             </div>
 
@@ -84,11 +103,15 @@
     <script src="../static/js/autocomplete.js"></script>
     <script>
         let map;
+        // const pathsBox = document.querySelector(".path-box");
+
+        // pathsBox.innerHTML = '';
 
         function updateMap(data){
-            let rute = data.path
+            let rute = data.rute
             let weight = data.dur
             let goal = data.goal
+            let path = data.path
             if (weight == 0){
                 document.getElementById("duration").innerHTML = '';
                 document.getElementById("step").innerHTML = '';
@@ -147,6 +170,18 @@
                     }
                 }
             });
+            let denah2 = L.geoJSON(lantai_2, {
+                style: {
+                    "color": "#C5E898",
+                    "weight": 2,
+                    "fillOpacity": 0.5
+                },
+                onEachFeature: function (feature, layer) {
+                    if ("name" in feature.properties) {
+                        layer.bindPopup(feature.properties.name);
+                    }
+                }
+            });
 
             let polyline0 = L.polyline(rute[0], { color: '#29ADB2' });
             let polyline1 = L.polyline(rute[1], { color: '#29ADB2' });
@@ -157,7 +192,7 @@
 
             let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
             let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
-            let lantai2 = L.layerGroup([osm, dasar, polyline2]);
+            let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2]);
 
             let baseLayers = {
                 "GF":lantaiG,
@@ -170,8 +205,9 @@
 
         let blank = {
             "dur": 0,
-            "path": [[], [], []],
-            "goal": [[], [], []]
+            "rute": [[], [], []],
+            "goal": [[], [], []],
+            "path": []
         }
         updateMap(blank);
 
@@ -194,8 +230,66 @@
             .then(data => {
                 console.log(data);
                 updateMap(data);
+                displayPath(data.path);
             });
         }
+
+        function displayPath(path){
+
+            // --------------------------------------------------------
+            const pathsBox = document.querySelector(".path-box");
+            const content = path.map((list) => {
+                return "<li onclick = 'selectInput1(this)' class=''>" + list + "</li>";
+            });
+
+            pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+        }
+        // -------------------------------------------------------------------------------------------
+        // const pathsBox = document.querySelector(".path-box");
+        // const input1 = document.getElementById("user-data-1");
+        // const input2 = document.getElementById("user-data-2");
+
+        // document.body.addEventListener("click", function(event) {
+        //     // Check if the clicked element is outside of the pathsBox
+        //     if (!pathsBox.contains(event.target)) {
+        //         pathsBox.innerHTML = ''; // Clear the pathsBox
+        //     }
+        // });
+
+
+        // input1.onkeyup = function(){
+        //     let result = [];
+        //     let input = input1.value;
+        //     if (input.length){
+        //         result = availableKeywords.filter((keyword) => {
+        //             return keyword.toLowerCase().includes(input.toLowerCase());
+        //         });
+        //         console.log(result);
+        //     }
+        //     display1(result);
+
+        //     if (!result.length){
+        //         pathsBox.innerHTML = '';
+        //     }
+        // }
+
+        // function display1(result){
+        //     const content = result.map((list) => {
+        //         return "<li onclick = 'selectInput1(this)' class='text-white'>" + list + "</li>";
+        //     });
+
+        //     pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+        // }
+
+        // function selectInput1(list){
+        //     const parser = new DOMParser();
+        //     const decodedText = parser.parseFromString(list.innerHTML, 'text/html').body.textContent;
+        //     console.log(decodedText);
+
+        //     input1.value = decodedText;
+        //     pathsBox.innerHTML = '';
+        // }
+
     </script>
 </body>
 </html>

@@ -608,9 +608,10 @@ def process_data():
         print("ini rute", rute)
         
         resp = {
-            "path": rute,
+            "rute": rute,
             "dur": dist[data2],
-            "goal": goal
+            "goal": goal,
+            "path": path
         }
         return jsonify(resp)
     else:

@@ -58,6 +58,7 @@ let availableKeywords = [
 ];
 
 const resultsBox = document.querySelector(".result-box");
+const pathBox = document.querySelector(".path-box");
 const input1 = document.getElementById("user-data-1");
 const input2 = document.getElementById("user-data-2");
 
@@ -70,6 +71,7 @@ document.body.addEventListener("click", function(event) {
 
 
 input1.onkeyup = function(){
+    pathBox.innerHTML = '';
     let result = [];
     let input = input1.value;
     if (input.length){
@@ -87,7 +89,7 @@ input1.onkeyup = function(){
 
 function display1(result){
     const content = result.map((list) => {
-        return "<li onclick = 'selectInput1(this)' class='text-white'>" + list + "</li>";
+        return "<li onclick = 'selectInput1(this)' class=''>" + list + "</li>";
     });
 
     resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
@@ -103,6 +105,7 @@ function selectInput1(list){
 }
 
 input2.onkeyup = function(){
+    pathBox.innerHTML = '';
     let result = [];
     let input = input2.value;
     if (input.length){
@@ -120,7 +123,7 @@ input2.onkeyup = function(){
 
 function display2(result){
     const content = result.map((list) => {
-        return "<li onclick = 'selectInput2(this)' class='text-white'>" + list + "</li>";
+        return "<li onclick = 'selectInput2(this)' class=''>" + list + "</li>";
     });
 
     resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
