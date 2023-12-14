@@ -281,7 +281,6 @@ g.addEdge("sociolla", "loccitane", 8)
 g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
  
-
 #lantai 1
 g.addEdge("eskalator 1g 1","lift 1",6)
 g.addEdge("lift 1","eskalator 1g 1",6)
@@ -345,6 +344,31 @@ g.addEdge("dr. specs","zeiss vision center",5)
 g.addEdge("zeiss vision center","dr. specs",5)
 
 #lantai 2
+g.addEdge("home living", "payless shoes", 53)
+g.addEdge("payless shoes", "padre", 14)
+g.addEdge("padre", "urban republic", 29)
+g.addEdge("urban republic", "vans", 15)
+g.addEdge("vans", "the north face", 7)
+g.addEdge("the north face", "hoops", 7)
+g.addEdge("hoops", "seek", 10)
+g.addEdge("seek", "kkv lantai 2", 12)
+g.addEdge("kkv lantai 2", "lao fook", 20)
+g.addEdge("lao fook", "planet sports asia", 11)
+g.addEdge("planet sports asia", "pan & co", 20)
+g.addEdge("pan & co", "lao fook", 30)
+g.addEdge("planet sports asia", "converse", 15)
+g.addEdge("planet sports asia", "crocs", 2)
+g.addEdge("crocs", "tucano's", 9)
+g.addEdge("tucano's", "adidas", 14)
+g.addEdge("adidas", "wee nam kee", 22)
+g.addEdge("wee nam kee", "fila", 12)
+g.addEdge("fila", "new era", 9)
+g.addEdge("new era", "puma", 5)
+g.addEdge("puma", "the athlete's foot", 12)
+g.addEdge("the athlete's foot", "asics", 7)
+g.addEdge("asics", "iuiga", 9)
+g.addEdge("puma", "hoops", 16)
+g.addEdge("adidas", "lao fook", 17)
 
 #lantai 3
 
