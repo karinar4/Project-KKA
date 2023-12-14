@@ -282,95 +282,122 @@ g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
  
 #lantai 1
-g.addEdge("eskalator 1g 1","lift 1",6)
-g.addEdge("lift 1","eskalator 1g 1",6)
-g.addEdge("uniqlo","lift 1",15)
-g.addEdge("lift 1","uniqlo",15)
-g.addEdge("uniqlo","amarissa",29)
-g.addEdge("amarissa","uniqlo",29)
-g.addEdge("uniqlo","eskalator 1g 1",19)
-g.addEdge("eskalator 1g 1","uniqlo",19)
-g.addEdge("amarissa","bridges optical",17)
-g.addEdge("bridges optical","amarissa",17)
-g.addEdge("cheskee","bridges optical",5)
-g.addEdge("bridges optical","cheskee",5)
-g.addEdge("colorbox","cheskee",5)
-g.addEdge("cheskee","colorbox",5)
-g.addEdge("colorbox","the executive",15)
-g.addEdge("the executive","colorbox",15)
-g.addEdge("kkv lantai 1","urban & co",9)
-g.addEdge("urban & co","kkv lantai 1",9)
-g.addEdge("kkv lantai 1","koi the",4)
-g.addEdge("koi the","kkv lantai 1",4)
-g.addEdge("koi the","h&m lantai 1",12)
-g.addEdge("h&m lantai 1","koi the",12)
-g.addEdge("locknlock","miniso",4)
-g.addEdge("miniso","locknlock",4)
-g.addEdge("miniso","carla",10)
-g.addEdge("carla","miniso",10)
-g.addEdge("carla","h&m lantai 1",11)
-g.addEdge("h&m lantai 1","carla",11)
-g.addEdge("eskalator 1g 3","carla",4)
-g.addEdge("carla","eskalator 1g 3",4)
-g.addEdge("stop n go","dr. specs",7)
-g.addEdge("dr. specs","stop n go",7)
-g.addEdge("the executive","urban & co",8)
-g.addEdge("urban & co","the executive",8)
-g.addEdge("levi's","watch club",6)
-g.addEdge("watch club","levi's",6)
-g.addEdge("watch club","polo",15)
-g.addEdge("polo","watch club",15)
-g.addEdge("polo","glam on",6)
-g.addEdge("glam on","polo",6)
-g.addEdge("glam on","locknlock",6)
-g.addEdge("locknlock","glam on",6)
-g.addEdge("eskalator 1g 3","miniso",9)
-g.addEdge("miniso","eskalator 1g 3",9)
-g.addEdge("h&m lantai 1","lift 12", 16)
-g.addEdge("lift 12","h&m lantai 1",16)
-g.addEdge("fossil","levi's",5)
-g.addEdge("levi's","fossil",5)
-g.addEdge("fossil","optik seis signature",5)
-g.addEdge("optik seis signature","fossil",5)
-g.addEdge("optik seis signature","owl optical",8)
-g.addEdge("owl optical","optik seis signature",8)
-g.addEdge("eskalator 1g 2","optik seis signature",4)
-g.addEdge("optik seis signature","eskalator 1g 2",4)
-g.addEdge("owl optical","zeiss vision center",6)
-g.addEdge("zeiss vision center","owl optical",6)
-g.addEdge("eskalator 1g 2","owl optical",6)
-g.addEdge("owl optical","eskalator 1g 2",6)
-g.addEdge("dr. specs","zeiss vision center",5)
-g.addEdge("zeiss vision center","dr. specs",5)
+g.addEdge("eskalator 1g 1", "lift 1", 6)
+g.addEdge("lift 1", "eskalator 1g 1", 6)
+g.addEdge("uniqlo", "lift 1", 15)
+g.addEdge("lift 1", "uniqlo", 15)
+g.addEdge("uniqlo", "amarissa", 29)
+g.addEdge("amarissa", "uniqlo", 29)
+g.addEdge("uniqlo", "eskalator 1g 1", 19)
+g.addEdge("eskalator 1g 1", "uniqlo", 19)
+g.addEdge("amarissa", "bridges optical", 17)
+g.addEdge("bridges optical", "amarissa", 17)
+g.addEdge("cheskee", "bridges optical", 5)
+g.addEdge("bridges optical", "cheskee", 5)
+g.addEdge("colorbox", "cheskee", 5)
+g.addEdge("cheskee", "colorbox", 5)
+g.addEdge("colorbox", "the executive", 15)
+g.addEdge("the executive", "colorbox", 15)
+g.addEdge("kkv lantai 1", "urban & co", 9)
+g.addEdge("urban & co", "kkv lantai 1", 9)
+g.addEdge("kkv lantai 1", "koi the", 4)
+g.addEdge("koi the", "kkv lantai 1", 4)
+g.addEdge("koi the", "h&m lantai 1", 12)
+g.addEdge("h&m lantai 1", "koi the", 12)
+g.addEdge("locknlock", "miniso", 4)
+g.addEdge("miniso", "locknlock", 4)
+g.addEdge("miniso", "carla", 10)
+g.addEdge("carla", "miniso", 10)
+g.addEdge("carla", "h&m lantai 1", 11)
+g.addEdge("h&m lantai 1", "carla", 11)
+g.addEdge("eskalator 1g 3", "carla", 4)
+g.addEdge("carla", "eskalator 1g 3", 4)
+g.addEdge("stop n go", "dr. specs", 7)
+g.addEdge("dr. specs", "stop n go", 7)
+g.addEdge("the executive", "urban & co", 8)
+g.addEdge("urban & co", "the executive", 8)
+g.addEdge("levi's", "watch club", 6)
+g.addEdge("watch club", "levi's", 6)
+g.addEdge("watch club", "polo", 15)
+g.addEdge("polo", "watch club", 15)
+g.addEdge("polo", "glam on", 6)
+g.addEdge("glam on", "polo", 6)
+g.addEdge("glam on", "locknlock", 6)
+g.addEdge("locknlock", "glam on", 6)
+g.addEdge("eskalator 1g 3", "miniso", 9)
+g.addEdge("miniso", "eskalator 1g 3", 9)
+g.addEdge("h&m lantai 1", "lift 12", 16)
+g.addEdge("lift 12", "h&m lantai 1", 16)
+g.addEdge("fossil", "levi's", 5)
+g.addEdge("levi's", "fossil", 5)
+g.addEdge("fossil", "optik seis signature", 5)
+g.addEdge("optik seis signature", "fossil", 5)
+g.addEdge("optik seis signature", "owl optical", 8)
+g.addEdge("owl optical", "optik seis signature", 8)
+g.addEdge("eskalator 1g 2", "optik seis signature", 4)
+g.addEdge("optik seis signature", "eskalator 1g 2", 4)
+g.addEdge("owl optical", "zeiss vision center", 6)
+g.addEdge("zeiss vision center", "owl optical", 6)
+g.addEdge("eskalator 1g 2", "owl optical", 6)
+g.addEdge("owl optical", "eskalator 1g 2", 6)
+g.addEdge("dr. specs", "zeiss vision center", 5)
+g.addEdge("zeiss vision center", "dr. specs", 5)
 
 #lantai 2
-g.addEdge("home living", "payless shoes", 53)
-g.addEdge("payless shoes", "padre", 14)
-g.addEdge("padre", "urban republic", 29)
-g.addEdge("urban republic", "vans", 15)
-g.addEdge("vans", "the north face", 7)
-g.addEdge("the north face", "hoops", 7)
-g.addEdge("hoops", "seek", 10)
-g.addEdge("seek", "kkv lantai 2", 12)
-g.addEdge("kkv lantai 2", "lao fook", 20)
-g.addEdge("lao fook", "planet sports asia", 11)
-g.addEdge("planet sports asia", "pan & co", 20)
-g.addEdge("pan & co", "lao fook", 30)
-g.addEdge("planet sports asia", "converse", 15)
+g.addEdge("home living", "payless shoes", 44)
+g.addEdge("payless shoes", "padre", 12)
+g.addEdge("padre", "urban republic", 24)
+g.addEdge("urban republic", "vans", 12)
+g.addEdge("vans", "the north face", 6)
+g.addEdge("the north face", "hoops", 6)
+g.addEdge("hoops", "seek", 8)
+g.addEdge("seek", "kkv lantai 2", 10)
+g.addEdge("kkv lantai 2", "lao fook", 17)
+g.addEdge("lao fook", "planet sports asia", 9)
+g.addEdge("planet sports asia", "pan & co", 17)
+g.addEdge("pan & co", "lao fook", 25)
+g.addEdge("planet sports asia", "converse", 12)
 g.addEdge("planet sports asia", "crocs", 2)
-g.addEdge("crocs", "tucano's", 9)
-g.addEdge("tucano's", "adidas", 14)
-g.addEdge("adidas", "wee nam kee", 22)
-g.addEdge("wee nam kee", "fila", 12)
-g.addEdge("fila", "new era", 9)
-g.addEdge("new era", "puma", 5)
-g.addEdge("puma", "the athlete's foot", 12)
-g.addEdge("the athlete's foot", "asics", 7)
-g.addEdge("asics", "iuiga", 9)
-g.addEdge("puma", "hoops", 16)
-g.addEdge("adidas", "lao fook", 17)
+g.addEdge("crocs", "tucano's", 8)
+g.addEdge("tucano's", "adidas", 12)
+g.addEdge("adidas", "wee nam kee", 18)
+g.addEdge("wee nam kee", "fila", 10)
+g.addEdge("fila", "new era", 8)
+g.addEdge("new era", "puma", 4)
+g.addEdge("puma", "the athlete's foot", 10)
+g.addEdge("the athlete's foot", "asics", 6)
+g.addEdge("asics", "iuiga", 8)
+g.addEdge("puma", "hoops", 13)
+g.addEdge("adidas", "lao fook", 14)
 
 #lantai 3
+g.addEdge("jiggle jungle", "reformed exodus community", 12)
+g.addEdge("reformed exodus community", "magal korean bbq", 13)
+g.addEdge("magal korean bbq", "saga japanese restaurant", 19)
+g.addEdge("saga japanese restaurant", "lincafe", 10)
+g.addEdge("lincafe", "boncafe", 9)
+g.addEdge("boncafe", "guardian plus", 11)
+g.addEdge("guardian plus", "vlife medical", 6)
+g.addEdge("vlife medical", "huawei", 6)
+g.addEdge("huawei", "oppo", 6)
+g.addEdge("oppo", "house of david", 6)
+g.addEdge("house of david", "justice", 6)
+g.addEdge("justice", "samsung", 9)
+g.addEdge("samsung", "watsons gm3", 12)
+g.addEdge("watsons gm3", "nona manis", 29)
+g.addEdge("nona manis", "mothercare", 14)
+g.addEdge("mothercare", "gingersnaps", 13)
+g.addEdge("gingersnaps", "willio", 8)
+g.addEdge("willio", "puro clinic", 8)
+g.addEdge("puro clinic", "pure clinic", 6)
+g.addEdge("pure clinic", "maison feerie", 8)
+g.addEdge("maison feerie", "scoop ideas", 6)
+g.addEdge("scoop ideas", "mi store", 7)
+g.addEdge("mi store", "shinjuku", 23)
+g.addEdge("shinjuku", "natural farm", 7)
+g.addEdge("natural farm", "jiggle jungle", 28)
+g.addEdge("mi store", "boncafe", 15)
+g.addEdge("pure clinic", "house of david", 13)
 
 #lantai 4
 
@@ -805,130 +832,130 @@ places = {
         "lat": -7.276298731720942,
         "lon": 112.78045581594648
     },
-    "jiggle jungle": {
+    "jiggle jungle": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276814401852491,
+        "lon": 112.77979982294897
     },
-    "reformed exodus community": {
+    "reformed exodus community": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276931960161235,
+        "lon": 112.77984669743574
     },
-    "magal korean bbq": {
+    "magal korean bbq": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276907395741603,
+        "lon": 112.7799961651383
     },
-    "saga japanese restaurant": {
+    "saga japanese restaurant": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276831051529271,
+        "lon": 112.78019336245194
     },
-    "lincafe": {
+    "lincafe": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276816137413817,
+        "lon": 112.7803516743981
     },
-    "boncafe": {
+    "boncafe": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276788941159026,
+        "lon": 112.78045161394346
     },
-    "natural farm": {
+    "natural farm": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276698499333264,
+        "lon": 112.78008983249782
     },
-    "shinjuku": {
+    "shinjuku": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276700140659415,
+        "lon": 112.78015436394423
     },
-    "mi store": {
+    "mi store": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276632102832224,
+        "lon": 112.78032362119336
     },
-    "guardian plus": {
+    "guardian plus": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276718757074988,
+        "lon": 112.780545362917
     },
-    "vlife medical": {
+    "vlife medical": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276657346027477,
+        "lon": 112.78057366448189
     },
-    "huawei": {
+    "huawei": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276587948550514,
+        "lon": 112.78058368864305
     },
-    "oppo": {
+    "oppo": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276521306986368,
+        "lon": 112.78059319299018
     },
-    "house of david": {
+    "house of david": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276450787084471,
+        "lon": 112.78060258255806
     },
-    "scoop ideas": {
+    "scoop ideas": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276546753862036,
+        "lon": 112.78034347702385
     },
-    "maison feerie": {
+    "maison feerie": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276499155389459,
+        "lon": 112.78038649798867
     },
-    "pure clinic": {
+    "pure clinic": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276440067623824,
+        "lon": 112.7804278643008
     },
-    "puro clinic": {
+    "puro clinic": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276376055869875,
+        "lon": 112.78043779221525
     },
-    "justice": {
+    "justice": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276384258865448,
+        "lon": 112.78061465486007
     },
-    "samsung": {
+    "samsung": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27628712764691,
+        "lon": 112.78062538579496
     },
-    "willio": {
+    "willio": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27630219614133,
+        "lon": 112.7804477201297
     },
-    "gingersnaps": {
+    "gingersnaps": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276213564452547,
+        "lon": 112.78045930269843
     },
-    "mothercare": {
+    "mothercare": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276070225976127,
+        "lon": 112.78048202671278
     },
-    "watsons gm3": {
+    "watsons gm3": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276164715671527,
+        "lon": 112.78064282356365
     },
-    "nona manis": {
+    "nona manis": { # udh
         "lvl": 3,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275918541496296,
+        "lon": 112.78051537392577
     },
     "timezone gm3": {
         "lvl": 4,
