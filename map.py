@@ -651,10 +651,10 @@ places = {
         "lat": -7.276035075100978,
         "lon": 112.78052649408858
     },
-    "home & living": {
+    "home & living": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27686304908741,
+        "lon": 112.77971581434093
     },
     "malinda furniture gallery": {
         "lvl": 2,
@@ -671,10 +671,10 @@ places = {
         "lat": -7,
         "lon": 112
     },
-    "payless shoes": {
+    "payless shoes": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276849722081877,
+        "lon": 112.78018659780525
     },
     "padre": {
         "lvl": 2,
@@ -686,100 +686,100 @@ places = {
         "lat": -7,
         "lon": 112
     },
-    "urban republic": {
+    "urban republic": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276728581887198,
+        "lon": 112.78055675557425
     },
-    "vans": {
+    "vans": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.2765962353408895,
+        "lon": 112.7805921367094
     },
     "asics": {
         "lvl": 2,
         "lat": -7,
         "lon": 112
     },
-    "the atlehte's foot": {
+    "the athlete's foot": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276501629656153,
+        "lon": 112.7803957800129
     },
-    "puma": {
+    "puma": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276435278266959,
+        "lon": 112.78043585463121
     },
-    "new era": {
+    "new era": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276377300060403,
+        "lon": 112.78044509115921
     },
-    "the north face": {
+    "the north face": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276538063601805,
+        "lon": 112.78057310077452
     },
     "hoops": {
         "lvl": 2,
         "lat": -7,
         "lon": 112
     },
-    "seek": {
+    "seek": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276385934262834,
+        "lon": 112.7805844600353
     },
-    "kkv lantai 2": {
+    "kkv lantai 2": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276281697174923,
+        "lon": 112.78059866040945
     },
-    "lao fook": {
+    "lao fook": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276122976946809,
+        "lon": 112.78062793827587
     },
-    "pan & co": {
+    "pan & co": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276052052578919,
+        "lon": 112.78084782542004
     },
-    "planet sports asia": {
+    "planet sports asia": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276030683000869,
+        "lon": 112.78067189048073
     },
-    "converse": {
+    "converse": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275926374273823,
+        "lon": 112.78062932669417
     },
     "crocs": {
         "lvl": 2,
         "lat": -7,
         "lon": 112
     },
-    "tucano's": {
+    "tucano's": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275912415434632,
+        "lon": 112.78052379564468
     },
-    "adidas": {
+    "adidas": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27602351913221,
+        "lon": 112.78048049775208
     },
-    "wee nam kee": {
+    "wee nam kee": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276190587163782,
+        "lon": 112.78047191131486
     },
-    "fila": {
+    "fila": { # udh
         "lvl": 2,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276298731720942,
+        "lon": 112.78045581594648
     },
     "jiggle jungle": {
         "lvl": 3,
