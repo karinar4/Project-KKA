@@ -348,6 +348,8 @@ g.addEdge("zeiss vision center","dr. specs",5)
 
 #lantai 3
 
+#lantai 4
+
 places = {
     "h&m lantai g": { # udh
         "lvl": 0,
@@ -648,6 +650,326 @@ places = {
         "lvl": 0,
         "lat": -7.276035075100978,
         "lon": 112.78052649408858
+    },
+    "home & living": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "malinda furniture gallery": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "vivere": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "idemu": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "payless shoes": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "padre": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "iuiga": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "urban republic": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "vans": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "asics": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "the atlehte's foot": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "puma": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "new era": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "the north face": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "hoops": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "seek": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "kkv lantai 2": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "lao fook": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "pan & co": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "planet sports asia": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "converse": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "crocs": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "tucano's": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "adidas": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "wee nam kee": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "fila": {
+        "lvl": 2,
+        "lat": -7,
+        "lon": 112
+    },
+    "jiggle jungle": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "reformed exodus community": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "magal korean bbq": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "saga japanese restaurant": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "lincafe": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "boncafe": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "natural farm": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "shinjuku": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "mi store": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "guardian plus": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "vlife medical": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "huawei": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "oppo": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "house of david": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "scoop ideas": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "maison feerie": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "pure clinic": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "puro clinic": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "justice": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "samsung": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "willio": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "gingersnaps": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "mothercare": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "watsons gm3": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "nona manis": {
+        "lvl": 3,
+        "lat": -7,
+        "lon": 112
+    },
+    "timezone gm3": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "atm bca gm3": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "bakmi gm": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "fusia": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "ichiban sushi": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "steak 21": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "food court": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "poke theory": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "burger king": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "crunchaus": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "jack & john": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "international christian assembly": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
+    },
+    "shaburi & kintan": {
+        "lvl": 4,
+        "lat": -7,
+        "lon": 112
     }
 }
 #################################################################################
