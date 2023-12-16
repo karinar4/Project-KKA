@@ -17,6 +17,13 @@ class Graph:
             self.graph[start] = {}
         self.graph[start][end] = weight
 
+    def removeEdge(self, start, end):
+        if start in self.graph and end in self.graph[start]:
+            del self.graph[start][end]
+            print(f"Edge removed")
+        else:
+            print(f"Edge not found")
+
     def dijkstra(self, start, finish):
         distance = {vertex: float('inf') for vertex in self.vertices}
         distance[start] = 0
