@@ -64,9 +64,8 @@ class Graph:
 
 g = Graph() # Create an instance of the Graph class
 
-# Add vertices with heuristic values to the graph
-#BLOM TAK CEK KE DIRECTORY ASLINE
-# lantai g
+# Add vertices
+#---------------------- Lantai G ----------------------#
 g.addVertex("h&m lantai g")
 g.addVertex("djournal coffee bar")
 g.addVertex("starbucks reserve")
@@ -79,9 +78,9 @@ g.addVertex("elemis")
 g.addVertex("miss mondial")
 g.addVertex("sociolla")
 g.addVertex("ling's sister jewellery")
-g.addVertex("eskalator g1 1") #deket h&m
-g.addVertex("eskalator g1 2") #eska tengah lobby
-g.addVertex("eskalator g1 3") #eska tengah lobby
+g.addVertex("eskalator g1 1") 
+g.addVertex("eskalator g1 2")
+g.addVertex("eskalator g1 3")
 g.addVertex("melissa clube")
 g.addVertex("adelle jewellery")
 g.addVertex("timberland")
@@ -90,21 +89,22 @@ g.addVertex("elevatione")
 g.addVertex("max fashion")
 g.addVertex("the gourmet")
 g.addVertex("pintu keluar 9")
-g.addVertex("lift g") #deket gourmet
+g.addVertex("lift g") 
 g.addVertex("marquine")
 g.addVertex("axel vinesse")
 g.addVertex("kopi kenangan")
-g.addVertex("pintu keluar x") #aku ga tau ini pintu keluar no berapa
-g.addVertex("venchi") #INI BARU
-g.addVertex("loccitane") #INI JUGA BARU
+g.addVertex("pintu keluar x") 
+g.addVertex("venchi")
+g.addVertex("loccitane") 
+g.addVertex("toilet g")
 
-#lantai 1
-g.addVertex("eskalator 1g 1") #dari deket lantai 1 yg deket max
-g.addVertex("eskalator 1g 2") #dari deket lantai 1 yg deket max
-g.addVertex("eskalator 1g 3") #dari deket lantai 1 yg deket max
-g.addVertex("lift 1") #ini yg terusan dari lift g
+#---------------------- Lantai 1 ----------------------#
+g.addVertex("eskalator 1g 1") 
+g.addVertex("eskalator 1g 2") 
+g.addVertex("eskalator 1g 3") 
+g.addVertex("lift 1")
 g.addVertex("uniqlo")
-g.addVertex("amarissa") #ke lantai 2
+g.addVertex("amarissa")
 g.addVertex("bridges optical")
 g.addVertex("cheskee")
 g.addVertex("colorbox")
@@ -116,7 +116,7 @@ g.addVertex("h&m lantai 1")
 g.addVertex("locknlock")
 g.addVertex("miniso")
 g.addVertex("carla")
-g.addVertex("parkiran") #eskalator deket miniso
+g.addVertex("parkiran")
 g.addVertex("dr. specs")
 g.addVertex("stop n go")
 g.addVertex("levi's")
@@ -127,9 +127,9 @@ g.addVertex("fossil")
 g.addVertex("optik seis signature")
 g.addVertex("owl optical")
 g.addVertex("zeiss vision center")
-g.addVertex("lift 12") #INI lift yg tembusnya ke dalem h&m nek ga salah
+g.addVertex("lift 12") 
 
-#lantai 2
+#---------------------- Lantai 2 ----------------------#
 g.addVertex("home & living")
 g.addVertex("malinda furniture gallery")
 g.addVertex("vivere")
@@ -157,7 +157,7 @@ g.addVertex("adidas")
 g.addVertex("wee nam kee")
 g.addVertex("fila")
 
-#lantai 3
+#---------------------- Lantai 3 ----------------------#
 g.addVertex("jiggle jungle")
 g.addVertex("reformed exodus community")
 g.addVertex("magal korean bbq")
@@ -184,7 +184,7 @@ g.addVertex("mothercare")
 g.addVertex("watsons gm3")
 g.addVertex("nona manis")
 
-#lantai 4
+#---------------------- Lantai 4 ----------------------#
 g.addVertex("timezone gm3")
 g.addVertex("atm bca gm3")
 g.addVertex("bakmi gm")
@@ -200,7 +200,7 @@ g.addVertex("international christian assembly")
 g.addVertex("shaburi & kintan")
 
 # Add edges with weights
-#lantai G
+#---------------------- Lantai G ----------------------#
 g.addEdge("h&m lantai g", "djournal coffee bar", 29)
 g.addEdge("djournal coffee bar", "h&m lantai g", 29)
 g.addEdge("h&m lantai g", "starbucks reserve", 29)
@@ -288,7 +288,7 @@ g.addEdge("sociolla", "loccitane", 8)
 g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
  
-#lantai 1
+#---------------------- Lantai 1 ----------------------#
 g.addEdge("eskalator 1g 1", "lift 1", 6)
 g.addEdge("lift 1", "eskalator 1g 1", 6)
 g.addEdge("uniqlo", "lift 1", 15)
@@ -350,7 +350,7 @@ g.addEdge("owl optical", "eskalator 1g 2", 6)
 g.addEdge("dr. specs", "zeiss vision center", 5)
 g.addEdge("zeiss vision center", "dr. specs", 5)
 
-#lantai 2
+#---------------------- Lantai 2 ----------------------#
 g.addEdge("home living", "payless shoes", 44)
 g.addEdge("payless shoes", "home living", 44)
 g.addEdge("payless shoes", "padre", 12)
@@ -400,7 +400,7 @@ g.addEdge("puma", "hoops", 13)
 g.addEdge("lao fook", "adidas", 14)
 g.addEdge("adidas", "lao fook", 14)
 
-#lantai 3
+#---------------------- Lantai 3 ----------------------#
 g.addEdge("jiggle jungle", "reformed exodus community", 12)
 g.addEdge("reformed exodus community", "jiggle jungle", 12)
 g.addEdge("reformed exodus community", "magal korean bbq", 13)
@@ -456,215 +456,232 @@ g.addEdge("boncafe", "mi store", 15)
 g.addEdge("pure clinic", "house of david", 13)
 g.addEdge("house of david", "pure clinic", 13)
 
-#lantai 4
+#---------------------- Lantai 4 ----------------------#
 
 places = {
-    "h&m lantai g": { # udh
+    # Lantai G
+    "h&m lantai g": {
         "lvl": 0,
         "lat": -7.27611653269939,
         "lon": 112.7805770422953
     },
-    "djournal coffe bar": { # udh
+    "djournal coffe bar": { 
         "lvl": 0,
         "lat": -7.2757956141528695,
         "lon": 112.78075311626509
     },
-    "starbucks reserve": { # udh
+    "starbucks reserve": { 
         "lvl": 0,
         "lat": -7.275835899256407,
         "lon": 112.78080591201103
     },
-    "marks & spencer": { # udh
+    "marks & spencer": { 
         "lvl": 0,
         "lat": -7.276106138078035,
         "lon": 112.7804930116227
     },
-    "pandora": { # udh
+    "pandora": { 
         "lvl": 0,
         "lat": -7.276370083709992,
         "lon": 112.78046562730117
     },
-    "frank&co": { # udh
+    "frank&co": { 
         "lvl": 0,
         "lat": -7.276383488317819,
         "lon": 112.78054866202376
     },
-    "tumi": { # udh
+    "tumi": { 
         "lvl": 0,
         "lat": -7.276425146770151,
         "lon": 112.78046238347974
     },
-    "pintu keluar 10": { # udh
+    "pintu keluar 10": { 
         "lvl": 0,
         "lat": -7.276483312236508,
         "lon": 112.7807051567325
     },
-    "elemis": { # udh
+    "elemis": { 
         "lvl": 0,
         "lat": -7.276591916555589,
         "lon": 112.78057279021732
     },
-    "miss mondial": { # udh
+    "miss mondial": { 
         "lvl": 0,
         "lat": -7.276643002486139,
         "lon": 112.78056654417276
     },
-    "sociolla": { # udh
+    "sociolla": {
         "lvl": 0,
         "lat": -7.276772608642432,
         "lon": 112.78045604842669
     },
-    "ling's sister jewellery": { # udh
+    "ling's sister jewellery": { 
         "lvl": 0,
         "lat": -7.276702077590642,
         "lon": 112.7805381854883
     },
-    "melissa clube": { # udh
+    "melissa clube": { 
         "lvl": 0,
         "lat": -7.276728635983375,
         "lon": 112.78023240394253
     },
-    "adelle jewellery": { # udh
+    "adelle jewellery": { 
         "lvl": 0,
         "lat": -7.2767093976786015,
         "lon": 112.78031664144987
     },
-    "timberland": { # udh
+    "timberland": {
         "lvl": 0,
         "lat": -7.2767412558671225,
         "lon": 112.78017024276835
     },
-    "hyundai": { # udh
+    "hyundai": { 
         "lvl": 0,
         "lat": -7.276839263099518,
         "lon": 112.78009735161282
     },
-    "elevatione": { # udh
+    "elevatione": { 
         "lvl": 0,
         "lat": -7.276813954903375,
         "lon": 112.78026235408043
     },
-    "max fashion": { # udh
+    "max fashion": { 
         "lvl": 0,
         "lat": -7.276810819372429,
         "lon": 112.77987295695544
     },
-    "the gourmet": { # udh
+    "the gourmet": { 
         "lvl": 0,
         "lat": -7.276988806491687,
         "lon": 112.77989553323062
     },
-    "pintu keluar 9": { # udh
+    "pintu keluar 9": { 
         "lvl": 0,
         "lat": -7.277096814789843,
         "lon": 112.7799339154763
     },
-    "lift g": { # udh
+    "lift g": {
         "lvl": 0,
         "lat": -7.276691800599139,
         "lon": 112.77999851778367
     },
-    "marquine": { # udh
+    "marquine": {
         "lvl": 0,
         "lat": -7.276509883129208,
         "lon": 112.78043047837997
     },
-    "axel vinesse": { # udh
+    "axel vinesse": { 
         "lvl": 0,
         "lat": -7.276588926582775,
         "lon": 112.78037040799222
     },
-    "kopi kenangan": { # udh
+    "kopi kenangan": { 
         "lvl": 0,
         "lat": -7.276951423634216,
         "lon": 112.77996441591858
     },
-    "pintu keluar x": { # udh
+    "pintu keluar x": { 
         "lvl": 0,
         "lat": -7.2766511406737635,
         "lon": 112.77988547319165
     },
-    "venchi": { # udh
+    "venchi": { 
         "lvl": 0,
         "lat": -7.276545594141922,
         "lon": 112.78057442361171
     },
-    "loccitane": { # udh
+    "loccitane": { 
         "lvl": 0,
         "lat": -7.2767932820116386,
         "lon": 112.78036900966748
     },
-    "toilet g": { # udh
+    "toilet g": { 
         "lvl": 0,
         "lat": -7.27631967552702,
         "lon": 112.78029433310826
     },
-    "lift 1": { # udh
+    "eskalator g1 2": {
+        "lvl": 0,
+        "lat": -7.276515355642729,
+        "lon": 112.78046920020836
+    },
+    "eskalator g1 1": {
+        "lvl": 0,
+        "lat": -7.276751434411366,
+        "lon": 112.78006785734948
+    },
+    "eskalator g1 3": {
+        "lvl": 0,
+        "lat": -7.276035075100978,
+        "lon": 112.78052649408858
+    },
+    # Lantai 1
+    "lift 1": { 
         "lvl": 1,
         "lat": -7.2766917399328435,
         "lon": 112.77999134403416
     },
-    "uniqlo": { # udh
+    "uniqlo": { 
         "lvl": 1,
         "lat": -7.276841158338485,
         "lon": 112.77986302821762
     },
-    "amarissa": { # udh
+    "amarissa": {
         "lvl": 1,
         "lat": -7.276846146822336,
         "lon": 112.78009455237975
     },
-    "bridges optical": { # udh
+    "bridges optical": { 
         "lvl": 1,
         "lat": -7.276799409539052,
         "lon": 112.78032508801687
     },
-    "cheskee": { # udh
+    "cheskee": { 
         "lvl": 1,
         "lat": -7.27679106359534,
         "lon": 112.78038061849804
     },
-    "colorbox": { # udh
+    "colorbox": { 
         "lvl": 1,
         "lat": -7.276762926183579,
         "lon": 112.7804621981461
     },
-    "the executive": { # udh
+    "the executive": { 
         "lvl": 1,
         "lat": -7.27660579511398,
         "lon": 112.78058161415652
     },
-    "kkv lantai 1": { # udh
+    "kkv lantai 1": { 
         "lvl": 1,
         "lat": -7.276296664316362,
         "lon": 112.7805859614005
     },
-    "urban & co": { # udh
+    "urban & co": { 
         "lvl": 1,
         "lat": -7.276518604056193,
         "lon": 112.78055963941671
     },
-    "koi the": { # udh
+    "koi the": { 
         "lvl": 1,
         "lat": -7.27607649716299,
         "lon": 112.78061891360471
     },
-    "h&m lantai 1": { # udh
+    "h&m lantai 1": { 
         "lvl": 1,
         "lat": -7.275951510046681,
         "lon": 112.78064411395263
     },
-    "locknlock": { # udh
+    "locknlock": { 
         "lvl": 1,
         "lat": -7.276079621840211,
         "lon": 112.78049921195407
     },
-    "miniso": { # udh
+    "miniso": { 
         "lvl": 1,
         "lat": -7.275995255540906,
         "lon": 112.78049291186562
     },
-    "carla": { # udh
+    "carla": { 
         "lvl": 1,
         "lat": -7.275917138583381,
         "lon": 112.78054961264974
@@ -674,57 +691,57 @@ places = {
         "lat": -7.275720605807564,
         "lon": 112.78057834038714
     },
-    "dr. specs": { # udh
+    "dr. specs": { 
         "lvl": 1,
         "lat": -7.276713875996165,
         "lon": 112.78015313354086
     },
-    "stop n go": { # udh
+    "stop n go": { 
         "lvl": 1,
         "lat": -7.276716977931656,
         "lon": 112.78006212326454
     },
-    "levi's": { # udh
+    "levi's": { 
         "lvl": 1,
         "lat": -7.276422201208618,
         "lon": 112.78045167404906
     },
-    "watch club": { # udh
+    "watch club": { 
         "lvl": 1,
         "lat": -7.276361270040056,
         "lon": 112.78045797413552
     },
-    "polo": { # udh
+    "polo": { 
         "lvl": 1,
         "lat": -7.276211285591501,
         "lon": 112.78048002444109
     },
-    "glam on": { # udh
+    "glam on": { 
         "lvl": 1,
         "lat": -7.276146802400476,
         "lon": 112.78048818680031
     },
-    "fossil": { # udh
+    "fossil": { 
         "lvl": 1,
         "lat": -7.276500592181279,
         "lon": 112.78040251334335
     },
-    "optik seis signature": { # udh
+    "optik seis signature": { 
         "lvl": 1,
         "lat": -7.276570561245791,
         "lon": 112.78035928044892
     },
-    "owl optical": { # udh
+    "owl optical": { 
         "lvl": 1,
         "lat": -7.27668905790415,
         "lon": 112.78030580843375
     },
-    "zeiss vision center": { # udh
+    "zeiss vision center": { 
         "lvl": 1,
         "lat": -7.276701912521091,
         "lon": 112.78022973036184
     },
-    "lift 12": { # udh
+    "lift 12": { 
         "lvl": 1,
         "lat": -7.27606243611379,
         "lon": 112.7807512154323
@@ -744,276 +761,264 @@ places = {
         "lat": -7.275922284219092,
         "lon": 112.78054357264517
     },
-    "eskalator g1 2": {
-        "lvl": 0,
-        "lat": -7.276515355642729,
-        "lon": 112.78046920020836
-    },
-    "eskalator g1 1": {
-        "lvl": 0,
-        "lat": -7.276751434411366,
-        "lon": 112.78006785734948
-    },
-    "eskalator g1 3": {
-        "lvl": 0,
-        "lat": -7.276035075100978,
-        "lon": 112.78052649408858
-    },
-    "home & living": { # udh
+    # Lantai 2
+    "home & living": { 
         "lvl": 2,
         "lat": -7.27686304908741,
         "lon": 112.77971581434093
     },
-    "malinda furniture gallery": { # udh
+    "malinda furniture gallery": {
         "lvl": 2,
         "lat": -7.27686304908741,
         "lon": 112.77971581434093
     },
-    "vivere": { # udh
+    "vivere": {
         "lvl": 2,
         "lat": -7.27686304908741,
         "lon": 112.77971581434093
     },
-    "idemu": { # udh
+    "idemu": {
         "lvl": 2,
         "lat": -7.27686304908741,
         "lon": 112.77971581434093
     },
-    "payless shoes": { # udh
+    "payless shoes": {
         "lvl": 2,
         "lat": -7.276849722081877,
         "lon": 112.78018659780525
     },
-    "padre": { # udh
+    "padre": {
         "lvl": 2,
         "lat": -7.276831475385919,
         "lon": 112.78031268588614
     },
-    "iuiga": { # udh
+    "iuiga": {
         "lvl": 2,
         "lat": -7.2766531545685496,
         "lon": 112.78033060327579
     },
-    "urban republic": { # udh
+    "urban republic": {
         "lvl": 2,
         "lat": -7.276728581887198,
         "lon": 112.78055675557425
     },
-    "vans": { # udh
+    "vans": {
         "lvl": 2,
         "lat": -7.2765962353408895,
         "lon": 112.7805921367094
     },
-    "asics": { # udh
+    "asics": {
         "lvl": 2,
         "lat": -7.276560812400547,
         "lon": 112.78035107084827
     },
-    "the athlete's foot": { # udh
+    "the athlete's foot": {
         "lvl": 2,
         "lat": -7.276501629656153,
         "lon": 112.7803957800129
     },
-    "puma": { # udh
+    "puma": {
         "lvl": 2,
         "lat": -7.276435278266959,
         "lon": 112.78043585463121
     },
-    "new era": { # udh
+    "new era": {
         "lvl": 2,
         "lat": -7.276377300060403,
         "lon": 112.78044509115921
     },
-    "the north face": { # udh
+    "the north face": {
         "lvl": 2,
         "lat": -7.276538063601805,
         "lon": 112.78057310077452
     },
-    "hoops": { # udh
+    "hoops": {
         "lvl": 2,
         "lat": -7.276453547076528,
         "lon": 112.78057215407802
     },
-    "seek": { # udh
+    "seek": {
         "lvl": 2,
         "lat": -7.276385934262834,
         "lon": 112.7805844600353
     },
-    "kkv lantai 2": { # udh
+    "kkv lantai 2": {
         "lvl": 2,
         "lat": -7.276281697174923,
         "lon": 112.78059866040945
     },
-    "lao fook": { # udh
+    "lao fook": {
         "lvl": 2,
         "lat": -7.276122976946809,
         "lon": 112.78062793827587
     },
-    "pan & co": { # udh
+    "pan & co": {
         "lvl": 2,
         "lat": -7.276052052578919,
         "lon": 112.78084782542004
     },
-    "planet sports asia": { # udh
+    "planet sports asia": {
         "lvl": 2,
         "lat": -7.276030683000869,
         "lon": 112.78067189048073
     },
-    "converse": { # udh
+    "converse": {
         "lvl": 2,
         "lat": -7.275926374273823,
         "lon": 112.78062932669417
     },
-    "crocs": { # udh
+    "crocs": {
         "lvl": 2,
         "lat": -7.275917925521014,
         "lon": 112.78061051958917
     },
-    "tucano's": { # udh
+    "tucano's": {
         "lvl": 2,
         "lat": -7.275912415434632,
         "lon": 112.78052379564468
     },
-    "adidas": { # udh
+    "adidas": {
         "lvl": 2,
         "lat": -7.27602351913221,
         "lon": 112.78048049775208
     },
-    "wee nam kee": { # udh
+    "wee nam kee": {
         "lvl": 2,
         "lat": -7.276190587163782,
         "lon": 112.78047191131486
     },
-    "fila": { # udh
+    "fila": {
         "lvl": 2,
         "lat": -7.276298731720942,
         "lon": 112.78045581594648
     },
-    "jiggle jungle": { # udh
+    # Lantai 3
+    "jiggle jungle": {
         "lvl": 3,
         "lat": -7.276814401852491,
         "lon": 112.77979982294897
     },
-    "reformed exodus community": { # udh
+    "reformed exodus community": {
         "lvl": 3,
         "lat": -7.276931960161235,
         "lon": 112.77984669743574
     },
-    "magal korean bbq": { # udh
+    "magal korean bbq": {
         "lvl": 3,
         "lat": -7.276907395741603,
         "lon": 112.7799961651383
     },
-    "saga japanese restaurant": { # udh
+    "saga japanese restaurant": {
         "lvl": 3,
         "lat": -7.276831051529271,
         "lon": 112.78019336245194
     },
-    "lincafe": { # udh
+    "lincafe": {
         "lvl": 3,
         "lat": -7.276816137413817,
         "lon": 112.7803516743981
     },
-    "boncafe": { # udh
+    "boncafe": {
         "lvl": 3,
         "lat": -7.276788941159026,
         "lon": 112.78045161394346
     },
-    "natural farm": { # udh
+    "natural farm": {
         "lvl": 3,
         "lat": -7.276698499333264,
         "lon": 112.78008983249782
     },
-    "shinjuku": { # udh
+    "shinjuku": {
         "lvl": 3,
         "lat": -7.276700140659415,
         "lon": 112.78015436394423
     },
-    "mi store": { # udh
+    "mi store": {
         "lvl": 3,
         "lat": -7.276632102832224,
         "lon": 112.78032362119336
     },
-    "guardian plus": { # udh
+    "guardian plus": {
         "lvl": 3,
         "lat": -7.276718757074988,
         "lon": 112.780545362917
     },
-    "vlife medical": { # udh
+    "vlife medical": {
         "lvl": 3,
         "lat": -7.276657346027477,
         "lon": 112.78057366448189
     },
-    "huawei": { # udh
+    "huawei": {
         "lvl": 3,
         "lat": -7.276587948550514,
         "lon": 112.78058368864305
     },
-    "oppo": { # udh
+    "oppo": {
         "lvl": 3,
         "lat": -7.276521306986368,
         "lon": 112.78059319299018
     },
-    "house of david": { # udh
+    "house of david": {
         "lvl": 3,
         "lat": -7.276450787084471,
         "lon": 112.78060258255806
     },
-    "scoop ideas": { # udh
+    "scoop ideas": {
         "lvl": 3,
         "lat": -7.276546753862036,
         "lon": 112.78034347702385
     },
-    "maison feerie": { # udh
+    "maison feerie": {
         "lvl": 3,
         "lat": -7.276499155389459,
         "lon": 112.78038649798867
     },
-    "pure clinic": { # udh
+    "pure clinic": {
         "lvl": 3,
         "lat": -7.276440067623824,
         "lon": 112.7804278643008
     },
-    "puro clinic": { # udh
+    "puro clinic": {
         "lvl": 3,
         "lat": -7.276376055869875,
         "lon": 112.78043779221525
     },
-    "justice": { # udh
+    "justice": {
         "lvl": 3,
         "lat": -7.276384258865448,
         "lon": 112.78061465486007
     },
-    "samsung": { # udh
+    "samsung": {
         "lvl": 3,
         "lat": -7.27628712764691,
         "lon": 112.78062538579496
     },
-    "willio": { # udh
+    "willio": {
         "lvl": 3,
         "lat": -7.27630219614133,
         "lon": 112.7804477201297
     },
-    "gingersnaps": { # udh
+    "gingersnaps": {
         "lvl": 3,
         "lat": -7.276213564452547,
         "lon": 112.78045930269843
     },
-    "mothercare": { # udh
+    "mothercare": {
         "lvl": 3,
         "lat": -7.276070225976127,
         "lon": 112.78048202671278
     },
-    "watsons gm3": { # udh
+    "watsons gm3": {
         "lvl": 3,
         "lat": -7.276164715671527,
         "lon": 112.78064282356365
     },
-    "nona manis": { # udh
+    "nona manis": {
         "lvl": 3,
         "lat": -7.275918541496296,
         "lon": 112.78051537392577
     },
+    # Lantai 4
     "timezone gm3": {
         "lvl": 4,
         "lat": -7,
