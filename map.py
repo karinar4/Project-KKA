@@ -89,7 +89,8 @@ g.addVertex("elevatione")
 g.addVertex("max fashion")
 g.addVertex("the gourmet")
 g.addVertex("pintu keluar 9")
-g.addVertex("lift g") 
+g.addVertex("lift g 1") 
+g.addVertex("lift g 2") 
 g.addVertex("marquine")
 g.addVertex("axel vinesse")
 g.addVertex("kopi kenangan")
@@ -97,12 +98,16 @@ g.addVertex("pintu keluar x")
 g.addVertex("venchi")
 g.addVertex("loccitane") 
 g.addVertex("toilet g")
+g.addVertex("x")
 
 #---------------------- Lantai 1 ----------------------#
 g.addVertex("eskalator 1g 1") 
 g.addVertex("eskalator 1g 2") 
 g.addVertex("eskalator 1g 3") 
-g.addVertex("lift 1")
+g.addVertex("eskalator 12 1") 
+g.addVertex("eskalator 12 2") 
+g.addVertex("eskalator 12 3")
+g.addVertex("lift 1 1")
 g.addVertex("uniqlo")
 g.addVertex("amarissa")
 g.addVertex("bridges optical")
@@ -127,7 +132,11 @@ g.addVertex("fossil")
 g.addVertex("optik seis signature")
 g.addVertex("owl optical")
 g.addVertex("zeiss vision center")
-g.addVertex("lift 12") 
+g.addVertex("lift 1 2") 
+g.addVertex("y")
+g.addVertex("a")
+g.addVertex("b")
+g.addVertex("aa")
 
 #---------------------- Lantai 2 ----------------------#
 g.addVertex("home & living")
@@ -156,6 +165,29 @@ g.addVertex("tucano's")
 g.addVertex("adidas")
 g.addVertex("wee nam kee")
 g.addVertex("fila")
+g.addVertex("eskalator 21 1") 
+g.addVertex("eskalator 21 2") 
+g.addVertex("eskalator 21 3") 
+g.addVertex("eskalator 23 1") 
+g.addVertex("eskalator 23 2") 
+g.addVertex("eskalator 23 3")
+g.addVertex("lift 2 1")
+g.addVertex("lift 2 2")
+g.addVertex("c")
+g.addVertex("d")
+g.addVertex("e")
+g.addVertex("f")
+g.addVertex("g")
+g.addVertex("h")
+g.addVertex("i")
+g.addVertex("j")
+g.addVertex("k")
+g.addVertex("l")
+g.addVertex("m")
+g.addVertex("n")
+g.addVertex("o")
+g.addVertex("cc")
+g.addVertex("dd")
 
 #---------------------- Lantai 3 ----------------------#
 g.addVertex("jiggle jungle")
@@ -183,6 +215,18 @@ g.addVertex("gingersnaps")
 g.addVertex("mothercare")
 g.addVertex("watsons gm3")
 g.addVertex("nona manis")
+g.addVertex("eskalator 32 1") 
+g.addVertex("eskalator 32 2") 
+g.addVertex("eskalator 32 3") 
+g.addVertex("eskalator 34 1") 
+g.addVertex("eskalator 34 2") 
+g.addVertex("eskalator 34 3")
+g.addVertex("lift 3 1")
+g.addVertex("lift 3 2")
+g.addVertex("p")
+g.addVertex("q")
+g.addVertex("r")
+g.addVertex("s")
 
 #---------------------- Lantai 4 ----------------------#
 g.addVertex("timezone gm3")
@@ -237,6 +281,8 @@ g.addEdge("eskalator g1 2", "elemis", 9)
 g.addEdge("elemis", "eskalator g1 2", 9)
 g.addEdge("melissa clube", "timberland", 7)
 g.addEdge("timberland", "melissa clube", 7)
+g.addEdge("timberland", "x", 7)
+g.addEdge("x", "timberland", 7)
 g.addEdge("timberland", "hyundai", 11)
 g.addEdge("hyundai", "timberland", 11)
 g.addEdge("hyundai", "elevatione", 7)
@@ -245,10 +291,16 @@ g.addEdge("max fashion", "the gourmet", 4)
 g.addEdge("the gourmet", "max fashion", 4)
 g.addEdge("the gourmet", "pintu keluar 9", 19)
 g.addEdge("pintu keluar 9", "the gourmet", 19)
-g.addEdge("eskalator g1 1", "timberland", 5)
-g.addEdge("timberland", "eskalator g1 1", 5)
-g.addEdge("max fashion", "lift g", 15)
-g.addEdge("lift g", "max fashion", 15)
+g.addEdge("eskalator g1 1", "timberland", 10)
+g.addEdge("timberland", "eskalator g1 1", 10)
+g.addEdge("lift g 1", "timberland", 17)
+g.addEdge("timberland", "lift g 1", 17)
+g.addEdge("max fashion", "lift g 1", 15)
+g.addEdge("lift g 1", "lift 1 1", 9) # lift
+g.addEdge("lift g 2", "lift 1 2", 9) # lift
+g.addEdge("lift g 1", "max fashion", 15)
+g.addEdge("lift g 2", "h&m lantai g", 10)
+g.addEdge("h&m lantai g", "lift g 2", 10)
 g.addEdge("max fashion", "eskalator g1 1", 25)
 g.addEdge("eskalator g1 1", "max fashion", 25)
 g.addEdge("eskalator g1 1", "eskalator 1g 1", 30)
@@ -289,14 +341,34 @@ g.addEdge("elevatione", "loccitane", 9)
 g.addEdge("loccitane", "elevatione", 9)
  
 #---------------------- Lantai 1 ----------------------#
-g.addEdge("eskalator 1g 1", "lift 1", 6)
-g.addEdge("lift 1", "eskalator 1g 1", 6)
-g.addEdge("uniqlo", "lift 1", 15)
-g.addEdge("lift 1", "uniqlo", 15)
+g.addEdge("eskalator 1g 1", "lift 1 1", 8)
+g.addEdge("lift 1 1", "eskalator 1g 1", 8)
+g.addEdge("stop n go", "lift 1 1", 7)
+g.addEdge("lift 1 1", "stop n go", 7)
+g.addEdge("uniqlo", "lift 1 1", 18)
+g.addEdge("lift 1 1", "uniqlo", 18)
+g.addEdge("lift 1 1", "lift g 1", 9) #lift
+g.addEdge("lift 1 2", "lift g 2", 9) #lift
+g.addEdge("lift 1 1", "lift 2 1", 9) #lift
+g.addEdge("lift 1 2", "lift 2 2", 9) #lift
 g.addEdge("uniqlo", "amarissa", 29)
 g.addEdge("amarissa", "uniqlo", 29)
-g.addEdge("uniqlo", "eskalator 1g 1", 19)
-g.addEdge("eskalator 1g 1", "uniqlo", 19)
+g.addEdge("uniqlo", "eskalator 1g 1", 12)
+g.addEdge("eskalator 1g 1", "uniqlo", 12)
+g.addEdge("eskalator 1g 1", "stop n go", 12)
+g.addEdge("stop n go", "eskalator 1g 1", 12)
+g.addEdge("eskalator 12 1", "stop n go", 6)
+g.addEdge("stop n go", "eskalator 12 1", 6)
+g.addEdge("a", "eskalator 1g 1", 1)
+g.addEdge("eskalator 1g 1", "a", 1)
+g.addEdge("b", "a", 14)
+g.addEdge("a", "b", 14)
+g.addEdge("b", "eskalator 12 1", 1)
+g.addEdge("eskalator 12 1", "b", 1)
+g.addEdge("eskalator 1g 1", "aa", 8)
+g.addEdge("aa", "eskalator 1g 1", 8)
+g.addEdge("aa", "amarissa", 14)
+g.addEdge("amarissa", "aa", 14)
 g.addEdge("amarissa", "bridges optical", 17)
 g.addEdge("bridges optical", "amarissa", 17)
 g.addEdge("cheskee", "bridges optical", 5)
@@ -309,8 +381,10 @@ g.addEdge("kkv lantai 1", "urban & co", 9)
 g.addEdge("urban & co", "kkv lantai 1", 9)
 g.addEdge("kkv lantai 1", "koi the", 4)
 g.addEdge("koi the", "kkv lantai 1", 4)
-g.addEdge("koi the", "h&m lantai 1", 12)
-g.addEdge("h&m lantai 1", "koi the", 12)
+g.addEdge("koi the", "y", 5)
+g.addEdge("y", "koi the", 5)
+g.addEdge("y", "h&m lantai 1", 8)
+g.addEdge("h&m lantai 1", "y", 8)
 g.addEdge("locknlock", "miniso", 4)
 g.addEdge("miniso", "locknlock", 4)
 g.addEdge("miniso", "carla", 10)
@@ -321,6 +395,8 @@ g.addEdge("eskalator 1g 3", "carla", 4)
 g.addEdge("carla", "eskalator 1g 3", 4)
 g.addEdge("stop n go", "dr. specs", 7)
 g.addEdge("dr. specs", "stop n go", 7)
+g.addEdge("eskalator 12 1", "dr. specs", 7)
+g.addEdge("dr. specs", "eskalator 12 1", 7)
 g.addEdge("the executive", "urban & co", 8)
 g.addEdge("urban & co", "the executive", 8)
 g.addEdge("levi's", "watch club", 6)
@@ -333,8 +409,10 @@ g.addEdge("glam on", "locknlock", 6)
 g.addEdge("locknlock", "glam on", 6)
 g.addEdge("eskalator 1g 3", "miniso", 9)
 g.addEdge("miniso", "eskalator 1g 3", 9)
-g.addEdge("h&m lantai 1", "lift 12", 16)
-g.addEdge("lift 12", "h&m lantai 1", 16)
+g.addEdge("eskalator 12 3", "eskalator 1g 3", 6)
+g.addEdge("eskalator 1g 3", "eskalator 12 3", 6)
+g.addEdge("h&m lantai 1", "eskalator 12 3", 3)
+g.addEdge("eskalator 12 3", "h&m lantai 1", 3)
 g.addEdge("fossil", "levi's", 5)
 g.addEdge("levi's", "fossil", 5)
 g.addEdge("fossil", "optik seis signature", 5)
@@ -347,16 +425,82 @@ g.addEdge("owl optical", "zeiss vision center", 6)
 g.addEdge("zeiss vision center", "owl optical", 6)
 g.addEdge("eskalator 1g 2", "owl optical", 6)
 g.addEdge("owl optical", "eskalator 1g 2", 6)
+g.addEdge("eskalator 12 2", "owl optical", 3)
+g.addEdge("owl optical", "eskalator 12 2", 3)
+g.addEdge("eskalator 1g 2", "eskalator 12 2", 5)
+g.addEdge("eskalator 12 2", "eskalator 1g 2", 5)
 g.addEdge("dr. specs", "zeiss vision center", 5)
 g.addEdge("zeiss vision center", "dr. specs", 5)
+g.addEdge("y", "lift 1 2", 10)
+g.addEdge("lift 1 2", "y", 10)
 
 #---------------------- Lantai 2 ----------------------#
-g.addEdge("home living", "payless shoes", 44)
-g.addEdge("payless shoes", "home living", 44)
+g.addEdge("home & living", "h", 18)
+g.addEdge("h", "home & living", 18)
+g.addEdge("malinda furniture gallery", "h", 18)
+g.addEdge("h", "malinda furniture gallery", 18)
+g.addEdge("vivere", "h", 18)
+g.addEdge("h", "vivere", 18)
+g.addEdge("idemu", "h", 18)
+g.addEdge("h", "idemu", 18)
+g.addEdge("home & living", "c", 15)
+g.addEdge("c", "home & living", 15)
+g.addEdge("malinda furniture gallery", "c", 15)
+g.addEdge("c", "malinda furniture gallery", 15)
+g.addEdge("vivere", "c", 15)
+g.addEdge("c", "vivere", 15)
+g.addEdge("idemu", "c", 15)
+g.addEdge("c", "idemu", 15)
+g.addEdge("c", "l", 7)
+g.addEdge("l", "c", 7)
+g.addEdge("l", "lift 2 1", 8)
+g.addEdge("lift 2 1", "l", 8)
+g.addEdge("d", "lift 2 1", 8)
+g.addEdge("lift 2 1", "d", 8)
+g.addEdge("d", "l", 15)
+g.addEdge("l", "d", 15)
+g.addEdge("home & living", "eskalator 21 1", 21)
+g.addEdge("eskalator 21 1", "home & living", 21)
+g.addEdge("malinda furniture gallery", "eskalator 21 1", 21)
+g.addEdge("eskalator 21 1", "malinda furniture gallery", 21)
+g.addEdge("vivere", "eskalator 21 1", 21)
+g.addEdge("eskalator 21 1", "vivere", 21)
+g.addEdge("idemu", "eskalator 21 1", 21)
+g.addEdge("eskalator 21 1", "idemu", 21)
+g.addEdge("eskalator 21 1", "i", 13)
+g.addEdge("i", "eskalator 21 1", 13)
+g.addEdge("eskalator 21 1", "cc", 1)
+g.addEdge("cc", "eskalator 21 1", 1)
+g.addEdge("cc", "dd", 14)
+g.addEdge("dd", "cc", 14)
+g.addEdge("eskalator 23 1", "cc", 1)
+g.addEdge("cc", "eskalator 23 1", 1)
+g.addEdge("h", "i", 12)
+g.addEdge("i", "h", 12)
+g.addEdge("i", "j", 8)
+g.addEdge("j", "i", 8)
+g.addEdge("j", "payless shoes", 9)
+g.addEdge("payless shoes", "j", 9)
 g.addEdge("payless shoes", "padre", 12)
 g.addEdge("padre", "payless shoes", 12)
-g.addEdge("padre", "urban republic", 24)
-g.addEdge("urban republic", "padre", 24)
+g.addEdge("padre", "k", 11)
+g.addEdge("k", "padre", 11)
+g.addEdge("urban republic", "k", 13)
+g.addEdge("k", "urban republic", 13)
+g.addEdge("g", "m", 15)
+g.addEdge("m", "g", 15)
+g.addEdge("m", "eskalator 21 2", 3)
+g.addEdge("eskalator 21 2", "m", 3)
+g.addEdge("urban republic", "eskalator 21 2", 3)
+g.addEdge("eskalator 21 2", "urban republic", 3)
+g.addEdge("eskalator 21 2", "eskalator 23 2", 5)
+g.addEdge("eskalator 23 2", "eskalator 21 2", 5)
+g.addEdge("eskalator 23 2", "urban republic", 5)
+g.addEdge("urban republic", "eskalator 23 2", 5)
+g.addEdge("n", "eskalator 23 2", 5)
+g.addEdge("eskalator 23 2", "n", 5)
+g.addEdge("vans", "n", 6)
+g.addEdge("n", "vans", 6)
 g.addEdge("urban republic", "vans", 12)
 g.addEdge("vans", "urban republic", 12)
 g.addEdge("vans", "the north face", 6)
@@ -366,7 +510,7 @@ g.addEdge("hoops", "the north face", 6)
 g.addEdge("hoops", "seek", 8)
 g.addEdge("seek", "hoops", 8)
 g.addEdge("seek", "kkv lantai 2", 10)
-g.addEdge("kkv lantai 2", "kkv 2", 10)
+g.addEdge("kkv lantai 2", "seek", 10)
 g.addEdge("kkv lantai 2", "lao fook", 17)
 g.addEdge("lao fook", "kkv lantai 2", 17)
 g.addEdge("planet sports asia", "pan & co", 17)
@@ -382,6 +526,26 @@ g.addEdge("tucano's", "crocs", 8)
 g.addEdge("tucano's", "adidas", 12)
 g.addEdge("adidas", "tucano's", 12)
 g.addEdge("adidas", "wee nam kee", 18)
+g.addEdge("adidas", "eskalator 23 3", 8)
+g.addEdge("eskalator 23 3", "adidas", 8)
+g.addEdge("eskalator 23 3", "eskalator 21 3", 4)
+g.addEdge("eskalator 21 3", "eskalator 23 3", 4)
+g.addEdge("eskalator 21 3", "lao fook", 5)
+g.addEdge("lao fook", "eskalator 21 3", 5)
+g.addEdge("lao fook", "o", 4)
+g.addEdge("o", "lao fook", 4)
+g.addEdge("planet sports asia", "o", 3)
+g.addEdge("o", "planet sports asia", 3)
+g.addEdge("o", "lift 2 2", 10)
+g.addEdge("lift 2 2", "o", 10)
+g.addEdge("planet sports asia", "lift 2 2", 10)
+g.addEdge("lift 2 2", "planet sports asia", 10)
+g.addEdge("pan & co", "lift 2 2", 10)
+g.addEdge("lift 2 2", "pan & co", 10)
+g.addEdge("lift 2 1", "lift 1 1", 9) #lift
+g.addEdge("lift 2 2", "lift 1 2", 9) #lift
+g.addEdge("lift 2 1", "lift 3 1", 9) #lift
+g.addEdge("lift 2 2", "lift 3 2", 9) #lift
 g.addEdge("wee nam kee", "adidas", 18)
 g.addEdge("wee nam kee", "fila", 10)
 g.addEdge("fila", "wee nam kee", 10)
@@ -427,8 +591,6 @@ g.addEdge("justice", "samsung", 9)
 g.addEdge("samsung", "justice", 9)
 g.addEdge("samsung", "watsons gm3", 12)
 g.addEdge("watsons gm3", "samsung", 12)
-g.addEdge("watsons gm3", "nona manis", 29)
-g.addEdge("nona manis", "watsons gm3", 29)
 g.addEdge("nona manis", "mothercare", 14)
 g.addEdge("mothercare", "nona manis", 14)
 g.addEdge("mothercare", "gingersnaps", 13)
@@ -451,10 +613,58 @@ g.addEdge("shinjuku", "natural farm", 7)
 g.addEdge("natural farm", "shinjuku", 7)
 g.addEdge("natural farm", "jiggle jungle", 28)
 g.addEdge("jiggle jungle", "natural farm", 28)
+g.addEdge("jiggle jungle", "eskalator 32 1", 15)
+g.addEdge("eskalator 32 1", "jiggle jungle", 15)
+g.addEdge("eskalator 32 1", "lift 3 1", 10)
+g.addEdge("lift 3 1", "eskalator 32 1", 10)
+g.addEdge("eskalator 34 1", "lift 3 1", 12)
+g.addEdge("lift 3 1", "eskalator 34 1", 12)
+g.addEdge("lift 3 1", "natural farm", 7)
+g.addEdge("natural farm", "lift 3 1", 7)
+g.addEdge("eskalator 32 1", "reformed exodus community", 18)
+g.addEdge("reformed exodus community", "eskalator 32 1", 18)
+g.addEdge("magal korean bbq", "eskalator 32 1", 13)
+g.addEdge("eskalator 32 1", "magal korean bbq", 13)
+g.addEdge("eskalator 34 2", "maison feerie", 5)
+g.addEdge("maison feerie", "eskalator 34 2", 5)
+g.addEdge("pure clinic", "eskalator 34 2", 6)
+g.addEdge("eskalator 34 2", "pure clinic", 6)
+g.addEdge("eskalator 34 2", "eskalator 32 2", 7)
+g.addEdge("eskalator 32 2", "eskalator 34 2", 7)
+g.addEdge("eskalator 32 2", "oppo", 6)
+g.addEdge("oppo", "eskalator 32 2", 6)
+g.addEdge("huawei", "eskalator 32 2", 7)
+g.addEdge("eskalator 32 2", "huawei", 7)
+g.addEdge("eskalator 32 3", "nona manis", 2)
+g.addEdge("nona manis", "eskalator 32 3", 2)
+g.addEdge("mothercare", "p", 10)
+g.addEdge("p", "mothercare", 10)
+g.addEdge("p", "eskalator 32 3", 2)
+g.addEdge("eskalator 32 3", "p", 2)
+g.addEdge("mothercare", "eskalator 34 3", 5)
+g.addEdge("eskalator 34 3", "mothercare", 5)
+g.addEdge("eskalator 34 3", "watsons gm3", 11)
+g.addEdge("watsons gm3", "eskalator 34 3", 11)
 g.addEdge("mi store", "boncafe", 15)
 g.addEdge("boncafe", "mi store", 15)
+g.addEdge("watsons gm3", "r", 7)
+g.addEdge("r", "watsons gm3", 7)
+g.addEdge("r", "q", 9)
+g.addEdge("q", "r", 9)
+g.addEdge("r", "lift 3 2", 8)
+g.addEdge("lift 3 2", "r", 8)
+g.addEdge("nona manis", "q", 10)
+g.addEdge("q", "nona manis", 10)
 g.addEdge("pure clinic", "house of david", 13)
 g.addEdge("house of david", "pure clinic", 13)
+g.addEdge("watsons gm3", "s", 12)
+g.addEdge("s", "watsons gm3", 12)
+g.addEdge("s", "mothercare", 3)
+g.addEdge("mothercare", "s", 3)
+# g.addEdge("lift 3 1", "lift 4 1", 9) #lift
+# g.addEdge("lift 3 2", "lift 4 2", 9) #lift
+g.addEdge("lift 3 1", "lift 2 1", 9) #lift
+g.addEdge("lift 3 2", "lift 2 2", 9) #lift
 
 #---------------------- Lantai 4 ----------------------#
 
@@ -560,10 +770,20 @@ places = {
         "lat": -7.277096814789843,
         "lon": 112.7799339154763
     },
-    "lift g": {
+    "lift g 1": {
         "lvl": 0,
-        "lat": -7.276691800599139,
-        "lon": 112.77999851778367
+        "lat": -7.276694348726551,
+        "lon": 112.78000031309045
+    },
+    "lift g 2": {
+        "lvl": 0,
+        "lat": -7.276068503898244,
+        "lon": 112.78072156282406
+    },
+    "x": {
+        "lvl": 0,
+        "lat": -7.276738194892914,
+        "lon": 112.7800860111762
     },
     "marquine": {
         "lvl": 0,
@@ -616,10 +836,20 @@ places = {
         "lon": 112.78052649408858
     },
     # Lantai 1
-    "lift 1": { 
+    "lift 1 1": { 
         "lvl": 1,
-        "lat": -7.2766917399328435,
-        "lon": 112.77999134403416
+        "lat": -7.276685322893826,
+        "lon": 112.77998835796643
+    },
+    "lift 1 2": {
+        "lvl": 1,
+        "lat": -7.276067130444247,
+        "lon": 112.78075380185732
+    },
+    "y": {
+        "lvl": 1,
+        "lat": -7.276034574423221,
+        "lon": 112.78064743897329
     },
     "uniqlo": { 
         "lvl": 1,
@@ -761,262 +991,467 @@ places = {
         "lat": -7.275922284219092,
         "lon": 112.78054357264517
     },
+    "eskalator 12 1": {
+        "lvl": 1,
+        "lat": -7.276749303483015,
+        "lon": 112.7800890392362
+    },
+    "eskalator 12 2": {
+        "lvl": 1,
+        "lat": -7.276683838969902,
+        "lon": 112.78037130659726
+    },
+    "eskalator 12 3": {
+        "lvl": 1,
+        "lat": -7.275932819942739,
+        "lon": 112.78061942343106
+    },
+    "a": {
+        "lvl": 1,
+        "lat": -7.276743431982581,
+        "lon": 112.77995228926716
+    },
+    "b": {
+        "lvl": 1,
+        "lat": -7.276730899799716,
+        "lon": 112.78008115541769
+    },
+    "aa": {
+        "lvl": 1,
+        "lat": -7.27683835376088,
+        "lon": 112.77993627772213
+    },
     # Lantai 2
     "home & living": { 
         "lvl": 2,
-        "lat": -7.27686304908741,
-        "lon": 112.77971581434093
+        "lat": -7.276860724638212,
+        "lon": 112.77973573259476
     },
     "malinda furniture gallery": {
         "lvl": 2,
-        "lat": -7.27686304908741,
-        "lon": 112.77971581434093
+        "lat": -7.276860724638212,
+        "lon": 112.77973573259476
     },
     "vivere": {
         "lvl": 2,
-        "lat": -7.27686304908741,
-        "lon": 112.77971581434093
+        "lat": -7.276860724638212,
+        "lon": 112.77973573259476
     },
     "idemu": {
         "lvl": 2,
-        "lat": -7.27686304908741,
-        "lon": 112.77971581434093
+        "lat": -7.276860724638212,
+        "lon": 112.77973573259476
     },
     "payless shoes": {
         "lvl": 2,
-        "lat": -7.276849722081877,
-        "lon": 112.78018659780525
+        "lat": -7.276836937605751,
+        "lon": 112.78018308281861
     },
     "padre": {
         "lvl": 2,
-        "lat": -7.276831475385919,
+        "lat": -7.276818690908215,
         "lon": 112.78031268588614
     },
     "iuiga": {
         "lvl": 2,
-        "lat": -7.2766531545685496,
-        "lon": 112.78033060327579
+        "lat": -7.276640370086881,
+        "lon": 112.78034231989534
     },
     "urban republic": {
         "lvl": 2,
-        "lat": -7.276728581887198,
-        "lon": 112.78055675557425
+        "lat": -7.2767204463104065,
+        "lon": 112.78054386729116
     },
     "vans": {
         "lvl": 2,
         "lat": -7.2765962353408895,
-        "lon": 112.7805921367094
+        "lon": 112.78057924842744
     },
     "asics": {
         "lvl": 2,
-        "lat": -7.276560812400547,
-        "lon": 112.78035107084827
+        "lat": -7.276565461303477,
+        "lon": 112.78036161580701
     },
     "the athlete's foot": {
         "lvl": 2,
-        "lat": -7.276501629656153,
-        "lon": 112.7803957800129
+        "lat": -7.2765097652382025,
+        "lon": 112.78040749663381
     },
     "puma": {
         "lvl": 2,
         "lat": -7.276435278266959,
-        "lon": 112.78043585463121
+        "lon": 112.78044874291436
     },
     "new era": {
         "lvl": 2,
-        "lat": -7.276377300060403,
-        "lon": 112.78044509115921
+        "lat": -7.276379624512131,
+        "lon": 112.78045446445572
     },
     "the north face": {
         "lvl": 2,
-        "lat": -7.276538063601805,
-        "lon": 112.78057310077452
+        "lat": -7.276542712505048,
+        "lon": 112.78056372747807
     },
     "hoops": {
         "lvl": 2,
-        "lat": -7.276453547076528,
-        "lon": 112.78057215407802
+        "lat": -7.276451222625141,
+        "lon": 112.78056278078157
     },
     "seek": {
         "lvl": 2,
-        "lat": -7.276385934262834,
-        "lon": 112.7805844600353
+        "lat": -7.276381285357999,
+        "lon": 112.78057391507662
     },
     "kkv lantai 2": {
         "lvl": 2,
-        "lat": -7.276281697174923,
-        "lon": 112.78059866040945
+        "lat": -7.276278210494553,
+        "lon": 112.78058694378853
     },
     "lao fook": {
         "lvl": 2,
-        "lat": -7.276122976946809,
-        "lon": 112.78062793827587
+        "lat": -7.276106705768356,
+        "lon": 112.78061739331844
     },
     "pan & co": {
         "lvl": 2,
-        "lat": -7.276052052578919,
-        "lon": 112.78084782542004
+        "lat": -7.2760648370785646,
+        "lon": 112.78084431043465
     },
     "planet sports asia": {
         "lvl": 2,
-        "lat": -7.276030683000869,
-        "lon": 112.78067189048073
+        "lat": -7.276034169681878,
+        "lon": 112.78065314388778
     },
     "converse": {
         "lvl": 2,
-        "lat": -7.275926374273823,
-        "lon": 112.78062932669417
+        "lat": -7.2759379965479525,
+        "lon": 112.7806246400466
     },
     "crocs": {
         "lvl": 2,
-        "lat": -7.275917925521014,
-        "lon": 112.78061051958917
+        "lat": -7.275926061113751,
+        "lon": 112.78060466127937
     },
     "tucano's": {
         "lvl": 2,
-        "lat": -7.275912415434632,
-        "lon": 112.78052379564468
+        "lat": -7.275921713255016,
+        "lon": 112.78052965395449
     },
     "adidas": {
         "lvl": 2,
-        "lat": -7.27602351913221,
-        "lon": 112.78048049775208
+        "lat": -7.27601887022368,
+        "lon": 112.78049104271071
     },
     "wee nam kee": {
         "lvl": 2,
-        "lat": -7.276190587163782,
-        "lon": 112.78047191131486
+        "lat": -7.27618942493676,
+        "lon": 112.78048245627355
     },
     "fila": {
         "lvl": 2,
-        "lat": -7.276298731720942,
-        "lon": 112.78045581594648
+        "lat": -7.2763010561743755,
+        "lon": 112.78046753256609
+    },
+    "eskalator 21 1": {
+        "lvl": 2,
+        "lat": -7.276768553333966,
+        "lon": 112.77993624210023
+    },
+    "eskalator 21 2": {
+        "lvl": 2,
+        "lat": -7.276717892957947,
+        "lon": 112.78051579498236
+    },
+    "eskalator 21 3": {
+        "lvl": 2,
+        "lat": -7.276081333843109,
+        "lon": 112.78058241025713
+    },
+    "eskalator 23 1": {
+        "lvl": 2,
+        "lat": -7.276750932334124,
+        "lon": 112.78010500079404
+    },
+    "eskalator 23 2": {
+        "lvl": 2,
+        "lat": -7.276671588805115,
+        "lon": 112.78052526834352
+    },
+    "eskalator 23 3": {
+        "lvl": 2,
+        "lat": -7.276070320701251,
+        "lon": 112.7805357795653
+    },
+    "lift 2 1": {
+        "lvl": 2,
+        "lat": -7.2766848535805195,
+        "lon": 112.78000285737369
+    },
+    "lift 2 2": {
+        "lvl": 2,
+        "lat": -7.276068335734408,
+        "lon": 112.78074158628732
+    },
+    "c": {
+        "lvl": 2,
+        "lat": -7.2767354940717155,
+        "lon": 112.77984858382945
+    },
+    "d": {
+        "lvl": 2,
+        "lat": -7.276705726973944,
+        "lon": 112.78008643126907
+    },
+    "e": {
+        "lvl": 2,
+        "lat": -7.27671234188486,
+        "lon": 112.78015867464944
+    },
+    "f": {
+        "lvl": 2,
+        "lat": -7.276706829458405,
+        "lon": 112.78022758372055
+    },
+    "g": {
+        "lvl": 2,
+        "lat": -7.276690034557035,
+        "lon": 112.78034071688091
+    },
+    "h": {
+        "lvl": 2,
+        "lat": -7.276924370984631,
+        "lon": 112.77989501641031
+    },
+    "i": {
+        "lvl": 2,
+        "lat": -7.276880316109455,
+        "lon": 112.78000922022068
+    },
+    "j": {
+        "lvl": 2,
+        "lat": -7.276856190818805,
+        "lon": 112.78009698796382
+    },
+    "k": {
+        "lvl": 2,
+        "lat": -7.276784977442944,
+        "lon": 112.78042857503351
+    },
+    "l": {
+        "lvl": 2,
+        "lat": -7.276724607564603,
+        "lon": 112.77992220943213
+    },
+    "m": {
+        "lvl": 2,
+        "lat": -7.2767392846176335,
+        "lon": 112.78049941692763
+    },
+    "n": {
+        "lvl": 2,
+        "lat": -7.2766484734403605,
+        "lon": 112.78056892597806
+    },
+    "o": {
+        "lvl": 2,
+        "lat": -7.276056842374558,
+        "lon": 112.78063890103869
+    },
+    "cc": {
+        "lvl": 2,
+        "lat": -7.276748074104617,
+        "lon": 112.77993411470248
+    },
+    "dd": {
+        "lvl": 2,
+        "lat": -7.27673170334748,
+        "lon": 112.78010290232993
     },
     # Lantai 3
     "jiggle jungle": {
         "lvl": 3,
-        "lat": -7.276814401852491,
-        "lon": 112.77979982294897
+        "lat": -7.2768155807522135,
+        "lon": 112.77981203274476
     },
     "reformed exodus community": {
         "lvl": 3,
-        "lat": -7.276931960161235,
-        "lon": 112.77984669743574
+        "lat": -7.276920670469963,
+        "lon": 112.77985119964342
     },
     "magal korean bbq": {
         "lvl": 3,
-        "lat": -7.276907395741603,
-        "lon": 112.7799961651383
+        "lat": -7.276902572657988,
+        "lon": 112.77998229847361
     },
     "saga japanese restaurant": {
         "lvl": 3,
-        "lat": -7.276831051529271,
-        "lon": 112.78019336245194
+        "lat": -7.276819262534914,
+        "lon": 112.78019573939446
     },
     "lincafe": {
         "lvl": 3,
-        "lat": -7.276816137413817,
-        "lon": 112.7803516743981
+        "lat": -7.2768067062172435,
+        "lon": 112.78034097815214
     },
     "boncafe": {
         "lvl": 3,
-        "lat": -7.276788941159026,
-        "lon": 112.78045161394346
+        "lat": -7.276774794363888,
+        "lon": 112.78045280241543
     },
     "natural farm": {
         "lvl": 3,
-        "lat": -7.276698499333264,
-        "lon": 112.78008983249782
+        "lat": -7.276704393831949,
+        "lon": 112.78008507861017
     },
     "shinjuku": {
         "lvl": 3,
-        "lat": -7.276700140659415,
-        "lon": 112.78015436394423
+        "lat": -7.276710750756692,
+        "lon": 112.78015911783064
     },
     "mi store": {
         "lvl": 3,
         "lat": -7.276632102832224,
-        "lon": 112.78032362119336
+        "lon": 112.7803355059113
     },
     "guardian plus": {
         "lvl": 3,
-        "lat": -7.276718757074988,
-        "lon": 112.780545362917
+        "lat": -7.276709325876453,
+        "lon": 112.78053466667228
     },
     "vlife medical": {
         "lvl": 3,
-        "lat": -7.276657346027477,
-        "lon": 112.78057366448189
+        "lat": -7.276650272627975,
+        "lon": 112.78056177976526
     },
     "huawei": {
         "lvl": 3,
-        "lat": -7.276587948550514,
-        "lon": 112.78058368864305
+        "lat": -7.276585590749917,
+        "lon": 112.7805706154532
     },
     "oppo": {
         "lvl": 3,
-        "lat": -7.276521306986368,
-        "lon": 112.78059319299018
+        "lat": -7.276517770284954,
+        "lon": 112.78058249674416
     },
     "house of david": {
         "lvl": 3,
         "lat": -7.276450787084471,
-        "lon": 112.78060258255806
+        "lon": 112.7805918863121
     },
     "scoop ideas": {
         "lvl": 3,
-        "lat": -7.276546753862036,
-        "lon": 112.78034347702385
+        "lat": -7.276557363961814,
+        "lon": 112.78035773868555
     },
     "maison feerie": {
         "lvl": 3,
-        "lat": -7.276499155389459,
-        "lon": 112.78038649798867
+        "lat": -7.2765074076917955,
+        "lon": 112.78039719423464
     },
     "pure clinic": {
         "lvl": 3,
-        "lat": -7.276440067623824,
-        "lon": 112.7804278643008
+        "lat": -7.276441246523206,
+        "lon": 112.78044212596126
     },
     "puro clinic": {
         "lvl": 3,
-        "lat": -7.276376055869875,
-        "lon": 112.78043779221525
+        "lat": -7.276379592572368,
+        "lon": 112.78044967693313
     },
     "justice": {
         "lvl": 3,
-        "lat": -7.276384258865448,
-        "lon": 112.78061465486007
+        "lat": -7.27638543776763,
+        "lon": 112.78060039319831
     },
     "samsung": {
         "lvl": 3,
-        "lat": -7.27628712764691,
-        "lon": 112.78062538579496
+        "lat": -7.276280054241553,
+        "lon": 112.78061587802091
     },
     "willio": {
         "lvl": 3,
-        "lat": -7.27630219614133,
-        "lon": 112.7804477201297
+        "lat": -7.2762974805384175,
+        "lon": 112.78045960484764
     },
     "gingersnaps": {
         "lvl": 3,
-        "lat": -7.276213564452547,
-        "lon": 112.78045930269843
+        "lat": -7.276218280056312,
+        "lon": 112.78047118741506
     },
     "mothercare": {
         "lvl": 3,
-        "lat": -7.276070225976127,
-        "lon": 112.78048202671278
+        "lat": -7.276072583778202,
+        "lon": 112.78049628837323
     },
     "watsons gm3": {
         "lvl": 3,
-        "lat": -7.276164715671527,
-        "lon": 112.78064282356365
+        "lat": -7.276158821164358,
+        "lon": 112.78063212731763
     },
     "nona manis": {
         "lvl": 3,
-        "lat": -7.275918541496296,
-        "lon": 112.78051537392577
+        "lat": -7.2759244360052975,
+        "lon": 112.78052488169988
+    },
+    "eskalator 32 1": {
+        "lvl": 3,
+        "lat": -7.276764447523618,
+        "lon": 112.7799571083359
+    },
+    "eskalator 32 2": {
+        "lvl": 3,
+        "lat": -7.276528777251087,
+        "lon": 112.78052305072418
+    },
+    "eskalator 32 3": {
+        "lvl": 3,
+        "lat": -7.27593611346289,
+        "lon": 112.78053035672269
+    },
+    "eskalator 34 1": {
+        "lvl": 3,
+        "lat": -7.276746661091991,
+        "lon": 112.78011624461203
+    },
+    "eskalator 34 2": {
+        "lvl": 3,
+        "lat": -7.2765032092432875,
+        "lon": 112.7804546893666
+    },
+    "eskalator 34 3": {
+        "lvl": 3,
+        "lat": -7.276093968300472,
+        "lon": 112.7805269946881
+    },
+    "lift 3 1": {
+        "lvl": 3,
+        "lat": -7.276683296924531,
+        "lon": 112.78000978020265
+    },
+    "lift 3 2": {
+        "lvl": 3,
+        "lat": -7.276080470184809,
+        "lon": 112.7807317850224
+    },
+    "p": {
+        "lvl": 3,
+        "lat": -7.275943539344524,
+        "lon": 112.78050295489646
+    },
+    "q": {
+        "lvl": 3,
+        "lat": -7.275968394003243,
+        "lon": 112.78063783383567
+    },
+    "r": {
+        "lvl": 3,
+        "lat": -7.276067713553303,
+        "lon": 112.78064511852881
+    },
+    "s": {
+        "lvl": 3,
+        "lat": -7.276094932115541,
+        "lon": 112.7805122393861
     },
     # Lantai 4
     "timezone gm3": {
@@ -1097,8 +1532,8 @@ def process_data():
     data = request.json.get('data')  # Ambil data dari permintaan POST
     # Pastikan data adalah list dengan dua elemen
     if len(data) == 2:
-        rute = [[], [], []]
-        goal = [[], [], []]
+        rute = [[], [], [], [], []]
+        goal = [[], [], [], [], []]
         data1, data2 = data
         data1 = data1.lower()
         data2 = data2.lower()
@@ -1110,6 +1545,7 @@ def process_data():
         
             for place in path:
                 print(places[place]["lvl"])
+                print(place)
                 rute[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
             
             goal[places[path[-1]]["lvl"]] = [places[path[-1]]["lat"], places[path[-1]]["lon"]]

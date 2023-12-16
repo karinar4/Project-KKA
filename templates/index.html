@@ -212,6 +212,8 @@
             let polyline0 = L.polyline(rute[0], { color: '#29ADB2' });
             let polyline1 = L.polyline(rute[1], { color: '#29ADB2' });
             let polyline2 = L.polyline(rute[2], { color: '#29ADB2' });
+            let polyline3 = L.polyline(rute[3], { color: '#29ADB2' });
+            let polyline4 = L.polyline(rute[4], { color: '#29ADB2' });
             console.log(polyline0);
             console.log(polyline1);
             console.log(polyline2);
@@ -219,8 +221,8 @@
             let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
             let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
             let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2]);
-            let lantai3 = L.layerGroup([osm, dasar, denah3]);
-            let lantai4 = L.layerGroup([osm, dasar, denah4]);
+            let lantai3 = L.layerGroup([osm, dasar, denah3, polyline3]);
+            let lantai4 = L.layerGroup([osm, dasar, denah4, polyline4]);
 
             let baseLayers = {
                 "GF":lantaiG,
@@ -235,8 +237,8 @@
 
         let blank = {
             "dur": 0,
-            "rute": [[], [], []],
-            "goal": [[], [], []],
+            "rute": [[], [], [], [], []],
+            "goal": [[], [], [], [], []],
             "path": []
         }
         updateMap(blank);
@@ -269,7 +271,9 @@
             // --------------------------------------------------------
             const pathsBox = document.querySelector(".path-box");
             const content = path.map((list) => {
-                return "<li onclick = 'selectInput1(this)' class=''>" + list + "</li>";
+                if (list.length > 2){
+                    return "<li onclick = 'selectInput1(this)' class=''>" + list + "</li>";
+                }
             });
 
             pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
