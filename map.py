@@ -667,6 +667,39 @@ g.addEdge("lift 3 1", "lift 2 1", 9) #lift
 g.addEdge("lift 3 2", "lift 2 2", 9) #lift
 
 #---------------------- Lantai 4 ----------------------#
+g.addEdge("timezone gm3","atm bca gm3", 19)
+g.addEdge("atm bca gm3", "timezone gm3", 19)
+g.addEdge("atm bca gm3","bakmi gm",11)
+g.addEdge("bakmi gm", "atm bca gm3", 11)
+g.addEdge("timezone gm3","bakmi gm", 20)
+g.addEdge("bakmi gm","timezone gm3", 20)
+g.addEdge("ichiban sushi","bakmi gm",11)
+g.addEdge("bakmi gm","ichiban sushi",11)
+g.addEdge("steak 21", "fusia", 9)
+g.addEdge("fusia", "steak 21", 9)
+g.addEdge("ichiban sushi", "steak 21", 11)
+g.addEdge("steak 21", "ichiban sushi", 11)
+g.addEdge("bakmi gm","fusia", 20)
+g.addEdge("fusia","bakmi gm",20)
+g.addEdge("fusia","food court", 67)
+g.addEdge("food court","fusia", 67)
+g.addEdge("steak 21","food court", 51)
+g.addEdge("food court","steak 21", 51)
+g.addEdge("food court","poke theory", 29)
+g.addEdge("poke theory","food court",29)
+g.addEdge("poke theory","burger king",11)
+g.addEdge("burger king","poke theory",11)
+g.addEdge("burger king","crunchaus", 10)
+g.addEdge("crunchaus","burger king", 10)
+g.addEdge("crunchaus","jack & john", 8)
+g.addEdge("jack & john","crunchaus", 8)
+g.addEdge("jack & john","international christian assembly",7)
+g.addEdge("international christian assembly","jack & john",7)
+g.addEdge("shaburi & kintan","international christian assembly", 5)
+g.addEdge("international christian assembly","shaburi & kintan", 5)
+g.addEdge("food court","shaburi & kintan", 43)
+g.addEdge("shaburi & kintan","food court",43)
+
 
 places = {
     # Lantai G
@@ -1456,68 +1489,68 @@ places = {
     # Lantai 4
     "timezone gm3": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276838666980666,
+        "lon": 112.77990906241973
     },
     "atm bca gm3": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276904404240923,
+        "lon": 112.7801001416234
     },
     "bakmi gm": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276857047555168,
+        "lon": 112.7801318503428
     },
     "fusia": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.2768056696691445,
+        "lon": 112.78033114871192
     },
     "ichiban sushi": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276734269195828,
+        "lon": 112.78012774452685
     },
     "steak 21": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.2767300686801235,
+        "lon": 112.78025337164075
     },
     "food court": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.276336506793498,
+        "lon": 112.78053275973247
     },
     "poke theory": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27610589443195,
+        "lon": 112.78040224987262
     },
     "burger king": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.2759870766181365,
+        "lon": 112.78042351963882
     },
     "crunchaus": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275884916204745,
+        "lon": 112.78049068661892
     },
     "jack & john": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.27587381173241,
+        "lon": 112.7805925576011
     },
     "international christian assembly": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275927113198733,
+        "lon": 112.78065300851301
     },
     "shaburi & kintan": {
         "lvl": 4,
-        "lat": -7,
-        "lon": 112
+        "lat": -7.275981525105394,
+        "lon": 112.78067875612476
     }
 }
 #################################################################################
