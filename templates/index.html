@@ -36,15 +36,17 @@
         }
         .path-box ul {
             /* padding: 15px 10px; */
-            border-top: 1px solid #000;
+            
             padding-bottom: 15px;
             padding-left: 10px;
             padding-right: 10px;
         }
         .path-box ul li{
+            border-top: 1px solid #a0a0a0;
+            border-bottom: 1px solid #a0a0a0;
             list-style: none;
-            border-radius: 3px;
-            padding: 15px 10px;
+            margin-bottom: 10px;
+            padding: 10px 10px;
         }
         .choice-box ul {
             /* padding: 15px 10px; */
@@ -126,25 +128,20 @@
     <script src="../static/js/autocomplete.js"></script>
     <script>
         let map;
-        let esk;
+        let esk, count_eska = 0, count_lift = 0;
         // const pathsBox = document.querySelector(".path-box");
 
         // pathsBox.innerHTML = '';
 
         function updateMap(data, data_goal){
             let rute = data.rute
-            let weight = data.dur
             let goal = data_goal
             let path = data.path
-            if (weight == 0){
+            if (data.dur == 0){
                 document.getElementById("duration").innerHTML = '';
                 document.getElementById("step").innerHTML = '';
-            } else {
-                document.getElementById("duration").innerHTML = weight + " seconds";
-                document.getElementById("step").innerHTML = weight * 2 + " steps";
-            }
+            } 
             console.log(rute)
-            console.log(weight)
             console.log(goal[0])
             console.log(goal[1])
             console.log(goal[2])
@@ -162,6 +159,8 @@
             let goal_markerG = L.marker(goal[0], { color: '#29ADB2' });
             let goal_marker1 = L.marker(goal[1], { color: '#29ADB2' });
             let goal_marker2 = L.marker(goal[2], { color: '#29ADB2' });
+            let goal_marker3 = L.marker(goal[3], { color: '#29ADB2' });
+            let goal_marker4 = L.marker(goal[4], { color: '#29ADB2' });
 
             let dasar = L.geoJSON(base, {
                 style: {
@@ -242,9 +241,9 @@
 
             let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
             let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
-            let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2]);
-            let lantai3 = L.layerGroup([osm, dasar, denah3, polyline3]);
-            let lantai4 = L.layerGroup([osm, dasar, denah4, polyline4]);
+            let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2, goal_marker2]);
+            let lantai3 = L.layerGroup([osm, dasar, denah3, polyline3, goal_marker3]);
+            let lantai4 = L.layerGroup([osm, dasar, denah4, polyline4, goal_marker4]);
 
             let baseLayers = {
                 "GF":lantaiG,
@@ -281,19 +280,20 @@
             })
             .then(response => response.json())
             .then(data => {
-                esk = true;
+                esk = true, count_eska = 0, count_lift = 0;
                 console.log(data);
                 const ket = document.querySelector(".keterangan");
                 const path = document.querySelector(".path-box");
                 if (data.level){
-                    ket.innerHTML = '<p><small>Posisi Anda saat ini dan tempat tujuan berada di satu lantai.</small></p>'
+                    ket.innerHTML = '<p><small>Anda berada di lantai yang sama dengan tujuan Anda.</small></p>'
                     path.style.maxHeight = '400px'
                     updateMap(data.eskalator, data.goal);
-                    // choicesBox.innerHTML = ''
                     displayPath(data.eskalator.path);
+                    document.getElementById("duration").innerHTML = data.eskalator.dur + " detik";
+                    document.getElementById("step").innerHTML = data.eskalator.dur*2 + " langkah";
                 } else {
-                    ket.innerHTML = '<p><small>Posisi Anda saat ini dan tempat tujuan berada di lantai yang berbeda. Silakan pilih ingin menggunakan lift atau eskalator.</small></p>'
-                    path.style.maxHeight = '250px'
+                    ket.innerHTML = '<p><small>Anda berada di lantai yang berbeda dengan tujuan Anda, silakan pilih untuk menggunakan escalator atau lift.</small></p>'
+                    path.style.maxHeight = '280px'
                     displayChoice(data);
                 }
             });
@@ -311,7 +311,7 @@
 
             // Membuat elemen li (list item) untuk eska
             const eskaListItem = document.createElement("li");
-            eskaListItem.innerHTML = "<div>"+"<h5>Eskalator</h5>"+"<p> Durasi: "+eskaDuration+"</p>"+"</div>"
+            eskaListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Eskalator</h5>"+"<p style='margin: 0;'> Durasi: "+eskaDuration+"</p>"+"</div>"
            
             eskaListItem.onclick = function() {
                 selectEska(data);
@@ -322,7 +322,7 @@
 
             // Membuat elemen li (list item) untuk lift
             const liftListItem = document.createElement("li");
-            liftListItem.innerHTML = "<div>"+"<h5>Lift</h5>"+"<p> Durasi: "+liftDuration+"</p>"+"</div>"
+            liftListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Lift</h5>"+"<p style='margin: 0;'> Durasi: "+liftDuration+"</p>"+"</div>"
             liftListItem.onclick = function() {
                 selectLift(data);
             };
@@ -338,17 +338,23 @@
         }
 
         function selectEska(data) {
+            count_eska = 0;
             console.log("Selected Eska", data);
             updateMap(data.eskalator, data.goal);
             // choicesBox.innerHTML = ''
-            displayPath(data.eskalator.path)
+            displayPath(data.eskalator.path);
+            document.getElementById("duration").innerHTML = data.eskalator.dur + " detik";
+            document.getElementById("step").innerHTML = (data.eskalator.dur - count_eska*30)*2 + " langkah";
         }
 
         function selectLift(data) {
+            count_lift = 0;
             console.log("Selected Lift", data);
             updateMap(data.lift, data.goal);
             // choicesBox.innerHTML = ''
-            displayPath(data.lift.path)
+            displayPath(data.lift.path, data.lift.dur);
+            document.getElementById("duration").innerHTML = data.lift.dur + " detik";
+            document.getElementById("step").innerHTML = (data.lift.dur - count_lift*9)*2 + " langkah";
         }
 
         function displayPath(path){
@@ -356,18 +362,24 @@
             const content = path.map((item) => {
                 const tempat = item[0]
                 const jarak = item[1]
-                if (tempat.length > 2){
-                    if (tempat.includes("eskalator") && esk){
-                        esk = !esk
-                        return "<li onclick = 'selectInput1(this)' class=''>" + "Eskalator menuju lantai " + tempat[11] + " - " + jarak + "</li>";
-                    } else if (tempat.includes("eskalator") && !esk){
-                        esk = !esk
-                    } else {
-                        return "<li onclick = 'selectInput1(this)' class=''>" + tempat + " - " + jarak + "</li>";
-                    }
+                let level = item[2]
+                if (level == 0)
+                    level = 'G'
+
+                if (tempat.includes("eskalator") && esk){
+                    esk = !esk
+                    return "<li><div>" + '<p style="line-height: normal; vertical-align: middle; margin: 0;">Eskalator menuju lantai ' + tempat[11] + " - " + (jarak*1.2).toFixed(2) + " meter</p>" + '<p style="line-height: normal; margin: 0; vertical-align: middle;"><small>Lantai ' + level + "</small></p>" + "</div></li>";
+                } else if (tempat.includes("eskalator") && !esk){
+                    esk = !esk;
+                    count_eska++;
+                } else if (tempat.includes("lift")){
+                    count_lift++;
+                    return "<li>" + "Lift lantai " + tempat[5] + " - " + jarak + " detik</li>";
+                } else {
+                    return "<li><div>" + '<p style="line-height: normal; vertical-align: middle; margin: 0;">' + tempat + " - " + (jarak*1.2).toFixed(2) + " meter</p>" + '<p style="line-height: normal; margin: 0; vertical-align: middle;"><small>Lantai ' + level + "</small></p>" + "</div></li>";
                 }
             });
-
+            
             pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
             console.log(path);
         }

@@ -1,5 +1,4 @@
 let availableKeywords = [
-
     //lantai 0
     'H&M Lantai G',
     'Sociolla',
@@ -27,6 +26,7 @@ let availableKeywords = [
     'Venchi',
     'Loccitane',
     'Marquine',
+    'Toilet Lantai G',
 
     //lantai 1
 
@@ -54,6 +54,7 @@ let availableKeywords = [
     'Owl Optical',
     'Zeiss Vision Center',
     'H&M Lantai 1',
+    'Toilet Lantai 1',
 
     //lantai 2
     "Home & Living",
@@ -82,6 +83,7 @@ let availableKeywords = [
     'Adidas',
     'Wee Nam Kee',
     'Fila',
+    'Toilet Lantai 2',
 
     //lantai 3
     'Jiggle Jungle',
@@ -109,6 +111,7 @@ let availableKeywords = [
     'Mothercare',
     'Watsons GM3',
     'Nona Manis',
+    'Toilet Lantai 3',
 
     //lantai 4
     'Timezone GM3',
@@ -123,9 +126,8 @@ let availableKeywords = [
     'Crunchaus',
     'Jack & John',
     'Shaburi & Kintan',
-    'International Christian Assembly'
-
-
+    'International Christian Assembly',
+    'Toilet Lantai 4'
 ];
 
 const resultsBox = document.querySelector(".result-box");
@@ -134,6 +136,8 @@ const choiceBox = document.querySelector(".choice-box");
 const ket = document.querySelector(".keterangan");
 const input1 = document.getElementById("user-data-1");
 const input2 = document.getElementById("user-data-2");
+const dur = document.getElementById("duration");
+const step = document.getElementById("step");
 
 document.body.addEventListener("click", function(event) {
     // Check if the clicked element is outside of the resultsBox
@@ -147,6 +151,8 @@ input1.onkeyup = function(){
     pathBox.innerHTML = '';
     choiceBox.innerHTML = '';
     ket.innerHTML = '';
+    dur.innerHTML = '';
+    step.innerHTML = '';
 
     let result = [];
     let input = input1.value;
@@ -184,6 +190,8 @@ input2.onkeyup = function(){
     pathBox.innerHTML = '';
     choiceBox.innerHTML = '';
     ket.innerHTML = '';
+    dur.innerHTML = '';
+    step.innerHTML = '';
 
     let result = [];
     let input = input2.value;
