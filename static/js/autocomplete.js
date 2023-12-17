@@ -59,6 +59,8 @@ let availableKeywords = [
 
 const resultsBox = document.querySelector(".result-box");
 const pathBox = document.querySelector(".path-box");
+const choiceBox = document.querySelector(".choice-box");
+const ket = document.querySelector(".keterangan");
 const input1 = document.getElementById("user-data-1");
 const input2 = document.getElementById("user-data-2");
 
@@ -72,6 +74,9 @@ document.body.addEventListener("click", function(event) {
 
 input1.onkeyup = function(){
     pathBox.innerHTML = '';
+    choiceBox.innerHTML = '';
+    ket.innerHTML = '';
+
     let result = [];
     let input = input1.value;
     if (input.length){
@@ -106,6 +111,9 @@ function selectInput1(list){
 
 input2.onkeyup = function(){
     pathBox.innerHTML = '';
+    choiceBox.innerHTML = '';
+    ket.innerHTML = '';
+
     let result = [];
     let input = input2.value;
     if (input.length){

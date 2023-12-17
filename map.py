@@ -24,6 +24,9 @@ class Graph:
         else:
             print(f"Edge not found")
 
+    def getWeight(self, start, end):
+        return self.graph[start][end]
+
     def dijkstra(self, start, finish):
         distance = {vertex: float('inf') for vertex in self.vertices}
         distance[start] = 0
@@ -227,6 +230,7 @@ g.addVertex("p")
 g.addVertex("q")
 g.addVertex("r")
 g.addVertex("s")
+g.addVertex("t")
 
 #---------------------- Lantai 4 ----------------------#
 g.addVertex("timezone gm3")
@@ -258,8 +262,8 @@ g.addEdge("marks & spencer", "eskalator g1 3", 5)
 g.addEdge("eskalator g1 3", "marks & spencer", 5)
 g.addEdge("h&m lantai g", "eskalator g1 3", 7)
 g.addEdge("eskalator g1 3", "h&m lantai g", 7)
-g.addEdge("eskalator 1g 3", "eskalator g1 3", 30)
-g.addEdge("eskalator g1 3", "eskalator 1g 3", 30)
+g.addEdge("eskalator 1g 3", "eskalator g1 3", 30) #eskalator
+g.addEdge("eskalator g1 3", "eskalator 1g 3", 30) #eskalator
 g.addEdge("pandora", "marks & spencer", 17)
 g.addEdge("h&m lantai g", "frank&co", 18)
 g.addEdge("frank&co", "h&m lantai g", 18)
@@ -296,15 +300,15 @@ g.addEdge("timberland", "eskalator g1 1", 10)
 g.addEdge("lift g 1", "timberland", 17)
 g.addEdge("timberland", "lift g 1", 17)
 g.addEdge("max fashion", "lift g 1", 15)
-g.addEdge("lift g 1", "lift 1 1", 9) # lift
-g.addEdge("lift g 2", "lift 1 2", 9) # lift
+# g.addEdge("lift g 1", "lift 1 1", 9) # lift
+# g.addEdge("lift g 2", "lift 1 2", 9) # lift
 g.addEdge("lift g 1", "max fashion", 15)
 g.addEdge("lift g 2", "h&m lantai g", 10)
 g.addEdge("h&m lantai g", "lift g 2", 10)
 g.addEdge("max fashion", "eskalator g1 1", 25)
 g.addEdge("eskalator g1 1", "max fashion", 25)
-g.addEdge("eskalator g1 1", "eskalator 1g 1", 30)
-g.addEdge("eskalator 1g 1", "eskalator g1 1", 30)
+g.addEdge("eskalator g1 1", "eskalator 1g 1", 30) #eskalator
+g.addEdge("eskalator 1g 1", "eskalator g1 1", 30) #eskalator
 g.addEdge("pandora", "frank&co", 10)
 g.addEdge("frank&co", "pandora", 10)
 g.addEdge("elemis", "frank&co", 19)
@@ -313,8 +317,8 @@ g.addEdge("marquine", "tumi", 7)
 g.addEdge("tumi", "marquine", 7)
 g.addEdge("marquine", "eskalator g1 2", 3)
 g.addEdge("eskalator g1 2", "marquine", 3)
-g.addEdge("eskalator g1 2", "eskalator 1g 2", 30)
-g.addEdge("eskalator 1g 2", "eskalator g1 2", 30)
+g.addEdge("eskalator g1 2", "eskalator 1g 2", 30) #eskalator
+g.addEdge("eskalator 1g 2", "eskalator g1 2", 30) #eskalator
 g.addEdge("marquine", "axel vinesse", 6)
 g.addEdge("axel vinesse", "marquine", 6)
 g.addEdge("axel vinesse", "adelle jewellery", 7)
@@ -347,16 +351,18 @@ g.addEdge("stop n go", "lift 1 1", 7)
 g.addEdge("lift 1 1", "stop n go", 7)
 g.addEdge("uniqlo", "lift 1 1", 18)
 g.addEdge("lift 1 1", "uniqlo", 18)
-g.addEdge("lift 1 1", "lift g 1", 9) #lift
-g.addEdge("lift 1 2", "lift g 2", 9) #lift
-g.addEdge("lift 1 1", "lift 2 1", 9) #lift
-g.addEdge("lift 1 2", "lift 2 2", 9) #lift
+# g.addEdge("lift 1 1", "lift g 1", 9) #lift
+# g.addEdge("lift 1 2", "lift g 2", 9) #lift
+# g.addEdge("lift 1 1", "lift 2 1", 9) #lift
+# g.addEdge("lift 1 2", "lift 2 2", 9) #lift
 g.addEdge("uniqlo", "amarissa", 29)
 g.addEdge("amarissa", "uniqlo", 29)
 g.addEdge("uniqlo", "eskalator 1g 1", 12)
 g.addEdge("eskalator 1g 1", "uniqlo", 12)
-g.addEdge("eskalator 1g 1", "stop n go", 12)
-g.addEdge("stop n go", "eskalator 1g 1", 12)
+g.addEdge("a", "stop n go", 11)
+g.addEdge("stop n go", "a", 11)
+g.addEdge("a", "uniqlo", 13)
+g.addEdge("uniqlo", "a", 13)
 g.addEdge("eskalator 12 1", "stop n go", 6)
 g.addEdge("stop n go", "eskalator 12 1", 6)
 g.addEdge("a", "eskalator 1g 1", 1)
@@ -433,6 +439,12 @@ g.addEdge("dr. specs", "zeiss vision center", 5)
 g.addEdge("zeiss vision center", "dr. specs", 5)
 g.addEdge("y", "lift 1 2", 10)
 g.addEdge("lift 1 2", "y", 10)
+g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
+g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
+g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
+g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
+g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
+g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
 
 #---------------------- Lantai 2 ----------------------#
 g.addEdge("home & living", "h", 18)
@@ -542,10 +554,10 @@ g.addEdge("planet sports asia", "lift 2 2", 10)
 g.addEdge("lift 2 2", "planet sports asia", 10)
 g.addEdge("pan & co", "lift 2 2", 10)
 g.addEdge("lift 2 2", "pan & co", 10)
-g.addEdge("lift 2 1", "lift 1 1", 9) #lift
-g.addEdge("lift 2 2", "lift 1 2", 9) #lift
-g.addEdge("lift 2 1", "lift 3 1", 9) #lift
-g.addEdge("lift 2 2", "lift 3 2", 9) #lift
+# g.addEdge("lift 2 1", "lift 1 1", 9) #lift
+# g.addEdge("lift 2 2", "lift 1 2", 9) #lift
+# g.addEdge("lift 2 1", "lift 3 1", 9) #lift
+# g.addEdge("lift 2 2", "lift 3 2", 9) #lift
 g.addEdge("wee nam kee", "adidas", 18)
 g.addEdge("wee nam kee", "fila", 10)
 g.addEdge("fila", "wee nam kee", 10)
@@ -563,6 +575,12 @@ g.addEdge("hoops", "puma", 13)
 g.addEdge("puma", "hoops", 13)
 g.addEdge("lao fook", "adidas", 14)
 g.addEdge("adidas", "lao fook", 14)
+g.addEdge("eskalator 23 1", "eskalator 32 1", 30) #eskalator
+g.addEdge("eskalator 32 1", "eskalator 23 1", 30) #eskalator
+g.addEdge("eskalator 23 2", "eskalator 32 2", 30) #eskalator
+g.addEdge("eskalator 32 2", "eskalator 23 2", 30) #eskalator
+g.addEdge("eskalator 23 3", "eskalator 32 3", 30) #eskalator
+g.addEdge("eskalator 32 3", "eskalator 23 3", 30) #eskalator
 
 #---------------------- Lantai 3 ----------------------#
 g.addEdge("jiggle jungle", "reformed exodus community", 12)
@@ -577,6 +595,8 @@ g.addEdge("lincafe", "boncafe", 9)
 g.addEdge("boncafe", "lincafe", 9)
 g.addEdge("boncafe", "guardian plus", 11)
 g.addEdge("guardian plus", "boncafe", 11)
+g.addEdge("t", "boncafe", 13)
+g.addEdge("boncafe", "t", 13)
 g.addEdge("guardian plus", "vlife medical", 6)
 g.addEdge("vlife medical", "guardian plus", 6)
 g.addEdge("vlife medical", "huawei", 6)
@@ -585,6 +605,10 @@ g.addEdge("huawei", "oppo", 6)
 g.addEdge("oppo", "huawei", 6)
 g.addEdge("oppo", "house of david", 6)
 g.addEdge("house of david", "oppo", 6)
+g.addEdge("oppo", "pure clinic", 15)
+g.addEdge("pure clinic", "oppo", 15)
+g.addEdge("oppo", "maison feerie", 17)
+g.addEdge("maison feerie", "oppo", 17)
 g.addEdge("house of david", "justice", 6)
 g.addEdge("justice", "house of david", 6)
 g.addEdge("justice", "samsung", 9)
@@ -607,8 +631,10 @@ g.addEdge("maison feerie", "scoop ideas", 6)
 g.addEdge("scoop ideas", "maison feerie", 6)
 g.addEdge("scoop ideas", "mi store", 7)
 g.addEdge("mi store", "scoop ideas", 7)
-g.addEdge("mi store", "shinjuku", 23)
-g.addEdge("shinjuku", "mi store", 23)
+g.addEdge("shinjuku", "t", 18)
+g.addEdge("t", "shinjuku", 18)
+g.addEdge("t", "mi store", 5)
+g.addEdge("mi store", "t", 5)
 g.addEdge("shinjuku", "natural farm", 7)
 g.addEdge("natural farm", "shinjuku", 7)
 g.addEdge("natural farm", "jiggle jungle", 28)
@@ -635,6 +661,8 @@ g.addEdge("eskalator 32 2", "oppo", 6)
 g.addEdge("oppo", "eskalator 32 2", 6)
 g.addEdge("huawei", "eskalator 32 2", 7)
 g.addEdge("eskalator 32 2", "huawei", 7)
+g.addEdge("eskalator 32 2", "pure clinic", 10)
+g.addEdge("pure clinic", "eskalator 32 2", 10)
 g.addEdge("eskalator 32 3", "nona manis", 2)
 g.addEdge("nona manis", "eskalator 32 3", 2)
 g.addEdge("mothercare", "p", 10)
@@ -663,8 +691,14 @@ g.addEdge("s", "mothercare", 3)
 g.addEdge("mothercare", "s", 3)
 # g.addEdge("lift 3 1", "lift 4 1", 9) #lift
 # g.addEdge("lift 3 2", "lift 4 2", 9) #lift
-g.addEdge("lift 3 1", "lift 2 1", 9) #lift
-g.addEdge("lift 3 2", "lift 2 2", 9) #lift
+# g.addEdge("lift 3 1", "lift 2 1", 9) #lift
+# g.addEdge("lift 3 2", "lift 2 2", 9) #lift
+# g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
+# g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
+# g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
+# g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
+# g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
+# g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
 
 #---------------------- Lantai 4 ----------------------#
 
@@ -1453,6 +1487,11 @@ places = {
         "lat": -7.276094932115541,
         "lon": 112.7805122393861
     },
+    "t": {
+        "lvl": 3,
+        "lat": -7.276688034426414,
+        "lon": 112.78034095702168
+    },
     # Lantai 4
     "timezone gm3": {
         "lvl": 4,
@@ -1532,31 +1571,159 @@ def process_data():
     data = request.json.get('data')  # Ambil data dari permintaan POST
     # Pastikan data adalah list dengan dua elemen
     if len(data) == 2:
-        rute = [[], [], [], [], []]
+        rute_eska = [[], [], [], [], []]
+        rute_lift = [[], [], [], [], []]
         goal = [[], [], [], [], []]
+        selantai = 0
         data1, data2 = data
         data1 = data1.lower()
         data2 = data2.lower()
         
-        dist, path = g.dijkstra(data1, data2)
+        ################## ESKALATOR ##################
+        g.removeEdge("lift g 1", "lift 1 1")
+        g.removeEdge("lift g 2", "lift 1 2")
+        g.removeEdge("lift 1 1", "lift g 1")
+        g.removeEdge("lift 1 2", "lift g 2")
+        g.removeEdge("lift 1 1", "lift 2 1")
+        g.removeEdge("lift 1 2", "lift 2 2") 
+        g.removeEdge("lift 2 1", "lift 1 1")
+        g.removeEdge("lift 2 2", "lift 1 2")
+        g.removeEdge("lift 2 1", "lift 3 1")
+        g.removeEdge("lift 2 2", "lift 3 2")
+        g.removeEdge("lift 3 1", "lift 2 1") 
+        g.removeEdge("lift 3 2", "lift 2 2") 
 
+        g.addEdge("eskalator 1g 3", "eskalator g1 3", 30) 
+        g.addEdge("eskalator g1 3", "eskalator 1g 3", 30) 
+        g.addEdge("eskalator g1 1", "eskalator 1g 1", 30) 
+        g.addEdge("eskalator 1g 1", "eskalator g1 1", 30) 
+        g.addEdge("eskalator g1 2", "eskalator 1g 2", 30) 
+        g.addEdge("eskalator 1g 2", "eskalator g1 2", 30) 
+        g.addEdge("eskalator 12 1", "eskalator 21 1", 30) 
+        g.addEdge("eskalator 21 1", "eskalator 12 1", 30) 
+        g.addEdge("eskalator 12 2", "eskalator 21 2", 30) 
+        g.addEdge("eskalator 21 2", "eskalator 12 2", 30) 
+        g.addEdge("eskalator 12 3", "eskalator 21 3", 30) 
+        g.addEdge("eskalator 21 3", "eskalator 12 3", 30) 
+        g.addEdge("eskalator 23 1", "eskalator 32 1", 30) 
+        g.addEdge("eskalator 32 1", "eskalator 23 1", 30) 
+        g.addEdge("eskalator 23 2", "eskalator 32 2", 30) 
+        g.addEdge("eskalator 32 2", "eskalator 23 2", 30) 
+        g.addEdge("eskalator 23 3", "eskalator 32 3", 30) 
+        g.addEdge("eskalator 32 3", "eskalator 23 3", 30) 
+        # g.addEdge("eskalator 34 1", "eskalator 43 1", 30) 
+        # g.addEdge("eskalator 43 1", "eskalator 34 1", 30) 
+        # g.addEdge("eskalator 34 2", "eskalator 43 2", 30) 
+        # g.addEdge("eskalator 43 2", "eskalator 34 2", 30) 
+        # g.addEdge("eskalator 34 3", "eskalator 43 3", 30) 
+        # g.addEdge("eskalator 43 3", "eskalator 34 3", 30) 
+
+        dist_eska, path = g.dijkstra(data1, data2)
+        path_eska = []
+        before = after = data1
         if (path is not None):
+            if (places[data1]["lvl"] == places[data2]["lvl"]):
+                selantai = 1
             print(path)
         
             for place in path:
+                after = place
+
+                if (place == before):
+                    path_eska.append([place, 0])
+                else:
+                    path_eska.append([place, g.getWeight(before, after)])
+                
+                before = place
+
                 print(places[place]["lvl"])
                 print(place)
-                rute[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
+                rute_eska[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
             
             goal[places[path[-1]]["lvl"]] = [places[path[-1]]["lat"], places[path[-1]]["lon"]]
             
-        print("ini rute", rute)
+        print("ini rute_eska", rute_eska)
+        print(dist_eska[data2])
         
+        eskalator = {
+            "rute": rute_eska,
+            "dur": dist_eska[data2],
+            "path": path_eska
+        }
+
+        ################## LIFT ##################
+        g.removeEdge("eskalator 1g 3", "eskalator g1 3") 
+        g.removeEdge("eskalator g1 3", "eskalator 1g 3") 
+        g.removeEdge("eskalator g1 1", "eskalator 1g 1") 
+        g.removeEdge("eskalator 1g 1", "eskalator g1 1") 
+        g.removeEdge("eskalator g1 2", "eskalator 1g 2") 
+        g.removeEdge("eskalator 1g 2", "eskalator g1 2") 
+        g.removeEdge("eskalator 12 1", "eskalator 21 1") 
+        g.removeEdge("eskalator 21 1", "eskalator 12 1") 
+        g.removeEdge("eskalator 12 2", "eskalator 21 2") 
+        g.removeEdge("eskalator 21 2", "eskalator 12 2") 
+        g.removeEdge("eskalator 12 3", "eskalator 21 3") 
+        g.removeEdge("eskalator 21 3", "eskalator 12 3") 
+        g.removeEdge("eskalator 23 1", "eskalator 32 1") 
+        g.removeEdge("eskalator 32 1", "eskalator 23 1") 
+        g.removeEdge("eskalator 23 2", "eskalator 32 2") 
+        g.removeEdge("eskalator 32 2", "eskalator 23 2") 
+        g.removeEdge("eskalator 23 3", "eskalator 32 3") 
+        g.removeEdge("eskalator 32 3", "eskalator 23 3") 
+        # g.removeEdge("eskalator 34 1", "eskalator 43 1") 
+        # g.removeEdge("eskalator 43 1", "eskalator 34 1") 
+        # g.removeEdge("eskalator 34 2", "eskalator 43 2") 
+        # g.removeEdge("eskalator 43 2", "eskalator 34 2") 
+        # g.removeEdge("eskalator 34 3", "eskalator 43 3") 
+        # g.removeEdge("eskalator 43 3", "eskalator 34 3") 
+
+        g.addEdge("lift g 1", "lift 1 1", 9)
+        g.addEdge("lift g 2", "lift 1 2", 9)
+        g.addEdge("lift 1 1", "lift g 1", 9)
+        g.addEdge("lift 1 2", "lift g 2", 9)
+        g.addEdge("lift 1 1", "lift 2 1", 9)
+        g.addEdge("lift 1 2", "lift 2 2", 9) 
+        g.addEdge("lift 2 1", "lift 1 1", 9)
+        g.addEdge("lift 2 2", "lift 1 2", 9)
+        g.addEdge("lift 2 1", "lift 3 1", 9)
+        g.addEdge("lift 2 2", "lift 3 2", 9)
+        g.addEdge("lift 3 1", "lift 2 1", 9) 
+        g.addEdge("lift 3 2", "lift 2 2", 9) 
+
+        dist_lift, path = g.dijkstra(data1, data2)
+
+        before = after = data1
+        path_lift = []
+        if (path is not None):
+            print(path)
+
+            for place in path:
+                after = place
+
+                if (place == before):
+                    path_lift.append([place, 0])
+                else:
+                    path_lift.append([place, g.getWeight(before, after)])
+                
+                before = place
+                print(places[place]["lvl"])
+                print(place)
+                rute_lift[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
+            
+        print("ini rute_lift", rute_lift)
+        print(dist_lift[data2])
+        
+        lift = {
+            "rute": rute_lift,
+            "dur": dist_lift[data2],
+            "path": path_lift
+        }
+
         resp = {
-            "rute": rute,
-            "dur": dist[data2],
+            "eskalator": eskalator,
+            "lift": lift,
             "goal": goal,
-            "path": path
+            "level": selantai
         }
         return jsonify(resp)
     else:

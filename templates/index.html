@@ -36,17 +36,32 @@
         }
         .path-box ul {
             /* padding: 15px 10px; */
+            border-top: 1px solid #000;
             padding-bottom: 15px;
             padding-left: 10px;
             padding-right: 10px;
         }
         .path-box ul li{
-            border: 1px solid #929292;
             list-style: none;
             border-radius: 3px;
             padding: 15px 10px;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
+        }
+        .choice-box ul {
+            /* padding: 15px 10px; */
+            padding-bottom: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .choice-box ul li{
+            border: 1px solid #929292;
+            list-style: none;
+            border-radius: 3px;
+            padding: 8px;
+            margin: 0.5rem;
+            width: 50%;
+        }
+        .choice-box ul li:hover {
+            background-color: rgb(160, 209, 255);
         }
     </style>
 </head>
@@ -59,13 +74,17 @@
         <div class="col-3 bg-white m-0 p-0">
             <div class="ms-2 p-3">
             <form id="data-form">
-                <div class="mb-3">
-                  <label for="input1" class="form-label">Your Position</label>
-                  <input type="text" class="form-control" id="user-data-1" autocomplete="off">
+                <div class="mb-3" style="display: flex; align-items: center;">
+                  <label for="input1" class="form-label me-2">
+                    <i class="fa-regular fa-circle" style="color: #000; font-size: 14px;"></i>
+                  </label>
+                  <input type="text" class="form-control" id="user-data-1" autocomplete="off" placeholder="Masukkan lokasi Anda">
                 </div>
-                <div class="mb-3">
-                  <label for="input2" class="form-label">Goal Position</label>
-                  <input type="text" class="form-control" id="user-data-2" autocomplete="off">
+                <div class="mb-3" style="display: flex; align-items: center;">
+                  <label for="input2" class="form-label me-2">
+                    <i class="fa-solid fa-location-dot" style="color: #ff0000; font-size: 18px;"></i>
+                  </label>
+                  <input type="text" class="form-control" id="user-data-2" autocomplete="off" placeholder="Masukkan tujuan Anda">
                 </div>
                 <div class="d-grid ">
                     <button type="submit" class="btn btn-primary ">Submit</button>
@@ -73,15 +92,17 @@
               </form>
             </div>
 
-            <div class="ms-2 result-box" style="max-height: 300px; overflow-y: scroll;">
+            <div class="ms-4 me-2 mb-0 keterangan"></div>
 
-            </div>
+            <div class="ms-2 result-box" style="max-height: 300px; overflow-y: scroll;"></div>
 
-            <div class="ms-2 path-box" style="max-height: 300px; overflow-y: scroll;">
+            <div class="ms-2 choice-box" style="max-height: 300px; overflow: hidden;"></div>
 
-            </div>
+            <div class="ms-2 path-box" style="max-height: 300px; overflow-y: scroll;"></div>
 
-            <div class="ms-2 p-3 bg-white" style="height: 100px; width: 23.4%; position: fixed; left: 0px; bottom: 0px; border-radius: 15px;">
+            <!-- <div class="ms-2 p-3 bg-white" style="height: 100px; width: 23.4%; position: fixed; left: 0px; bottom: 0px; border-radius: 15px;"> -->
+            <div class="card ms-2 me-2" style="position: fixed; left: 0px; bottom: 0px; z-index: 0; width: 23.4%; height: 100px;">
+              <div class="card-body">
                 <div class="row" style="align-items: center;">
                     <div class="col-6 text-center">
                         <i class="fa-solid fa-shoe-prints" style="color: #000; font-size: 25px;"></i>
@@ -93,7 +114,7 @@
                         <p id="duration"></p>
                     </div>
                 </div>
-                
+              </div>
             </div>
         </div>
 
@@ -105,14 +126,15 @@
     <script src="../static/js/autocomplete.js"></script>
     <script>
         let map;
+        let esk;
         // const pathsBox = document.querySelector(".path-box");
 
         // pathsBox.innerHTML = '';
 
-        function updateMap(data){
+        function updateMap(data, data_goal){
             let rute = data.rute
             let weight = data.dur
-            let goal = data.goal
+            let goal = data_goal
             let path = data.path
             if (weight == 0){
                 document.getElementById("duration").innerHTML = '';
@@ -236,12 +258,11 @@
         };
 
         let blank = {
-            "dur": 0,
             "rute": [[], [], [], [], []],
-            "goal": [[], [], [], [], []],
+            "dur": 0,
             "path": []
         }
-        updateMap(blank);
+        updateMap(blank, [[], [], [], [], []]);
 
         document.getElementById("data-form").addEventListener("submit", function(e) {
             e.preventDefault();
@@ -260,69 +281,96 @@
             })
             .then(response => response.json())
             .then(data => {
+                esk = true;
                 console.log(data);
-                updateMap(data);
-                displayPath(data.path);
+                const ket = document.querySelector(".keterangan");
+                const path = document.querySelector(".path-box");
+                if (data.level){
+                    ket.innerHTML = '<p><small>Posisi Anda saat ini dan tempat tujuan berada di satu lantai.</small></p>'
+                    path.style.maxHeight = '400px'
+                    updateMap(data.eskalator, data.goal);
+                    // choicesBox.innerHTML = ''
+                    displayPath(data.eskalator.path);
+                } else {
+                    ket.innerHTML = '<p><small>Posisi Anda saat ini dan tempat tujuan berada di lantai yang berbeda. Silakan pilih ingin menggunakan lift atau eskalator.</small></p>'
+                    path.style.maxHeight = '250px'
+                    displayChoice(data);
+                }
             });
         }
 
-        function displayPath(path){
+        function displayChoice(data){
+            const choicesBox = document.querySelector(".choice-box");
 
-            // --------------------------------------------------------
+            const eskaDuration = data.eskalator.dur;
+            const liftDuration = data.lift.dur;
+
+            // Membuat elemen ul (unordered list)
+            const listElement = document.createElement("ul");
+            listElement.className = "list-group list-group-horizontal"
+
+            // Membuat elemen li (list item) untuk eska
+            const eskaListItem = document.createElement("li");
+            eskaListItem.innerHTML = "<div>"+"<h5>Eskalator</h5>"+"<p> Durasi: "+eskaDuration+"</p>"+"</div>"
+           
+            eskaListItem.onclick = function() {
+                selectEska(data);
+            };
+
+            // Menambahkan elemen li ke dalam unordered list
+            listElement.appendChild(eskaListItem);
+
+            // Membuat elemen li (list item) untuk lift
+            const liftListItem = document.createElement("li");
+            liftListItem.innerHTML = "<div>"+"<h5>Lift</h5>"+"<p> Durasi: "+liftDuration+"</p>"+"</div>"
+            liftListItem.onclick = function() {
+                selectLift(data);
+            };
+
+            // Menambahkan elemen li ke dalam unordered list
+            listElement.appendChild(liftListItem);
+
+            // Menghapus semua elemen child di dalam choicesBox
+            choicesBox.innerHTML = '';
+
+            // Menambahkan unordered list ke dalam choice-box
+            choicesBox.appendChild(listElement);
+        }
+
+        function selectEska(data) {
+            console.log("Selected Eska", data);
+            updateMap(data.eskalator, data.goal);
+            // choicesBox.innerHTML = ''
+            displayPath(data.eskalator.path)
+        }
+
+        function selectLift(data) {
+            console.log("Selected Lift", data);
+            updateMap(data.lift, data.goal);
+            // choicesBox.innerHTML = ''
+            displayPath(data.lift.path)
+        }
+
+        function displayPath(path){
             const pathsBox = document.querySelector(".path-box");
-            const content = path.map((list) => {
-                if (list.length > 2){
-                    return "<li onclick = 'selectInput1(this)' class=''>" + list + "</li>";
+            const content = path.map((item) => {
+                const tempat = item[0]
+                const jarak = item[1]
+                if (tempat.length > 2){
+                    if (tempat.includes("eskalator") && esk){
+                        esk = !esk
+                        return "<li onclick = 'selectInput1(this)' class=''>" + "Eskalator menuju lantai " + tempat[11] + " - " + jarak + "</li>";
+                    } else if (tempat.includes("eskalator") && !esk){
+                        esk = !esk
+                    } else {
+                        return "<li onclick = 'selectInput1(this)' class=''>" + tempat + " - " + jarak + "</li>";
+                    }
                 }
             });
 
             pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+            console.log(path);
         }
-        // -------------------------------------------------------------------------------------------
-        // const pathsBox = document.querySelector(".path-box");
-        // const input1 = document.getElementById("user-data-1");
-        // const input2 = document.getElementById("user-data-2");
-
-        // document.body.addEventListener("click", function(event) {
-        //     // Check if the clicked element is outside of the pathsBox
-        //     if (!pathsBox.contains(event.target)) {
-        //         pathsBox.innerHTML = ''; // Clear the pathsBox
-        //     }
-        // });
-
-
-        // input1.onkeyup = function(){
-        //     let result = [];
-        //     let input = input1.value;
-        //     if (input.length){
-        //         result = availableKeywords.filter((keyword) => {
-        //             return keyword.toLowerCase().includes(input.toLowerCase());
-        //         });
-        //         console.log(result);
-        //     }
-        //     display1(result);
-
-        //     if (!result.length){
-        //         pathsBox.innerHTML = '';
-        //     }
-        // }
-
-        // function display1(result){
-        //     const content = result.map((list) => {
-        //         return "<li onclick = 'selectInput1(this)' class='text-white'>" + list + "</li>";
-        //     });
-
-        //     pathsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
-        // }
-
-        // function selectInput1(list){
-        //     const parser = new DOMParser();
-        //     const decodedText = parser.parseFromString(list.innerHTML, 'text/html').body.textContent;
-        //     console.log(decodedText);
-
-        //     input1.value = decodedText;
-        //     pathsBox.innerHTML = '';
-        // }
 
     </script>
 </body>
