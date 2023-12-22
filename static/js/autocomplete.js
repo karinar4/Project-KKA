@@ -140,9 +140,8 @@ const dur = document.getElementById("duration");
 const step = document.getElementById("step");
 
 document.body.addEventListener("click", function(event) {
-    // Check if the clicked element is outside of the resultsBox
     if (!resultsBox.contains(event.target)) {
-        resultsBox.innerHTML = ''; // Clear the resultsBox
+        resultsBox.innerHTML = ''; 
     }
 });
 

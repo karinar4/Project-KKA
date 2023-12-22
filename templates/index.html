@@ -35,8 +35,6 @@
             background-color: rgb(160, 209, 255);
         }
         .path-box ul {
-            /* padding: 15px 10px; */
-            
             padding-bottom: 15px;
             padding-left: 10px;
             padding-right: 10px;
@@ -49,7 +47,6 @@
             padding: 10px 10px;
         }
         .choice-box ul {
-            /* padding: 15px 10px; */
             padding-bottom: 8px;
             padding-left: 8px;
             padding-right: 8px;
@@ -102,7 +99,6 @@
 
             <div class="ms-2 path-box" style="max-height: 300px; overflow-y: scroll;"></div>
 
-            <!-- <div class="ms-2 p-3 bg-white" style="height: 100px; width: 23.4%; position: fixed; left: 0px; bottom: 0px; border-radius: 15px;"> -->
             <div class="card ms-2 me-2" style="position: fixed; left: 0px; bottom: 0px; z-index: 0; width: 23.4%; height: 100px;">
               <div class="card-body">
                 <div class="row" style="align-items: center;">
@@ -129,22 +125,16 @@
     <script>
         let map;
         let esk, count_eska = 0, count_lift = 0;
-        // const pathsBox = document.querySelector(".path-box");
 
-        // pathsBox.innerHTML = '';
+        function updateMap(data, data_goal, data_start){
+            let rute = data.rute;
+            let path = data.path;
 
-        function updateMap(data, data_goal){
-            let rute = data.rute
-            let goal = data_goal
-            let path = data.path
             if (data.dur == 0){
                 document.getElementById("duration").innerHTML = '';
                 document.getElementById("step").innerHTML = '';
             } 
             console.log(rute)
-            console.log(goal[0])
-            console.log(goal[1])
-            console.log(goal[2])
             if (map && map.remove) {
                 map.off();
                 map.remove();
@@ -156,11 +146,11 @@
             });
             osm.addTo(map);
 
-            let goal_markerG = L.marker(goal[0], { color: '#29ADB2' });
-            let goal_marker1 = L.marker(goal[1], { color: '#29ADB2' });
-            let goal_marker2 = L.marker(goal[2], { color: '#29ADB2' });
-            let goal_marker3 = L.marker(goal[3], { color: '#29ADB2' });
-            let goal_marker4 = L.marker(goal[4], { color: '#29ADB2' });
+            var pin_icon = L.icon({
+                iconUrl: "static/data/pin.png",
+                iconSize:     [30, 30], 
+                iconAnchor:   [15, 30], 
+            });
 
             let dasar = L.geoJSON(base, {
                 style: {
@@ -169,7 +159,8 @@
                     "fillOpacity": 1
                 }
             });
-            let denahG = L.geoJSON(lantai_G, {
+            let denah = [];
+            denah[0] = L.geoJSON(lantai_G, {
                 style: {
                     "color": "#C5E898",
                     "weight": 2,
@@ -181,7 +172,7 @@
                     }
                 }
             });
-            let denah1 = L.geoJSON(lantai_1, {
+            denah[1] = L.geoJSON(lantai_1, {
                 style: {
                     "color": "#C5E898",
                     "weight": 2,
@@ -193,7 +184,7 @@
                     }
                 }
             });
-            let denah2 = L.geoJSON(lantai_2, {
+            denah[2] = L.geoJSON(lantai_2, {
                 style: {
                     "color": "#C5E898",
                     "weight": 2,
@@ -205,7 +196,7 @@
                     }
                 }
             });
-            let denah3 = L.geoJSON(lantai_3, {
+            denah[3] = L.geoJSON(lantai_3, {
                 style: {
                     "color": "#C5E898",
                     "weight": 2,
@@ -217,7 +208,7 @@
                     }
                 }
             });
-            let denah4 = L.geoJSON(lantai_4, {
+            denah[4] = L.geoJSON(lantai_4, {
                 style: {
                     "color": "#C5E898",
                     "weight": 2,
@@ -230,27 +221,33 @@
                 }
             });
 
-            let polyline0 = L.polyline(rute[0], { color: '#29ADB2' });
-            let polyline1 = L.polyline(rute[1], { color: '#29ADB2' });
-            let polyline2 = L.polyline(rute[2], { color: '#29ADB2' });
-            let polyline3 = L.polyline(rute[3], { color: '#29ADB2' });
-            let polyline4 = L.polyline(rute[4], { color: '#29ADB2' });
-            console.log(polyline0);
-            console.log(polyline1);
-            console.log(polyline2);
+            let polyline = [];
+            for (let i = 0; i < 5; i++){
+                polyline[i] = L.polyline(rute[i], { color: '#29ADB2' });
+            }
 
-            let lantaiG = L.layerGroup([osm, dasar, denahG, polyline0, goal_markerG]);
-            let lantai1 = L.layerGroup([osm, dasar, denah1, polyline1, goal_marker1]);
-            let lantai2 = L.layerGroup([osm, dasar, denah2, polyline2, goal_marker2]);
-            let lantai3 = L.layerGroup([osm, dasar, denah3, polyline3, goal_marker3]);
-            let lantai4 = L.layerGroup([osm, dasar, denah4, polyline4, goal_marker4]);
+            let lantai = [];
+            for (let i = 0; i < 5; i++){
+                lantai[i] = L.layerGroup([osm, dasar, denah[i], polyline[i]]);
+            }
 
+            if (data_goal[2] != -1 && data_start[2] != -1){
+                const goal = [data_goal[0], data_goal[1]];
+                const goal_lvl = data_goal[2];
+                const start = [data_start[0], data_start[1]];
+                const start_lvl = data_start[2];
+                const goal_marker = L.marker(goal);
+                lantai[goal_lvl].addLayer(goal_marker);
+                const start_marker = L.marker(start, {icon: pin_icon});
+                lantai[start_lvl].addLayer(start_marker);
+            }
+            
             let baseLayers = {
-                "GF":lantaiG,
-                "L1":lantai1,
-                "L2":lantai2,
-                "L3":lantai3,
-                "L4":lantai4,
+                "GF":lantai[0],
+                "L1":lantai[1],
+                "L2":lantai[2],
+                "L3":lantai[3],
+                "L4":lantai[4],
             };
 
             let control = L.control.layers(baseLayers).addTo(map);
@@ -261,7 +258,7 @@
             "dur": 0,
             "path": []
         }
-        updateMap(blank, [[], [], [], [], []]);
+        updateMap(blank, [0, 0, -1], [0, 0, -1]);
 
         document.getElementById("data-form").addEventListener("submit", function(e) {
             e.preventDefault();
@@ -287,7 +284,7 @@
                 if (data.level){
                     ket.innerHTML = '<p><small>Anda berada di lantai yang sama dengan tujuan Anda.</small></p>'
                     path.style.maxHeight = '400px'
-                    updateMap(data.eskalator, data.goal);
+                    updateMap(data.eskalator, data.goal, data.start);
                     displayPath(data.eskalator.path);
                     document.getElementById("duration").innerHTML = data.eskalator.dur + " detik";
                     document.getElementById("step").innerHTML = data.eskalator.dur*2 + " langkah";
@@ -305,43 +302,32 @@
             const eskaDuration = data.eskalator.dur;
             const liftDuration = data.lift.dur;
 
-            // Membuat elemen ul (unordered list)
             const listElement = document.createElement("ul");
             listElement.className = "list-group list-group-horizontal"
 
-            // Membuat elemen li (list item) untuk eska
             const eskaListItem = document.createElement("li");
-            eskaListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Eskalator</h5>"+"<p style='margin: 0;'> Durasi: "+eskaDuration+"</p>"+"</div>"
+            eskaListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Eskalator</h5>"+"<p style='margin: 0;'> Durasi: "+eskaDuration+" detik</p>"+"</div>"
            
             eskaListItem.onclick = function() {
                 selectEska(data);
             };
 
-            // Menambahkan elemen li ke dalam unordered list
             listElement.appendChild(eskaListItem);
 
-            // Membuat elemen li (list item) untuk lift
             const liftListItem = document.createElement("li");
-            liftListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Lift</h5>"+"<p style='margin: 0;'> Durasi: "+liftDuration+"</p>"+"</div>"
+            liftListItem.innerHTML = "<div>"+"<h5 style='margin: 0;'>Lift</h5>"+"<p style='margin: 0;'> Durasi: "+liftDuration+" detik</p>"+"</div>"
             liftListItem.onclick = function() {
                 selectLift(data);
             };
 
-            // Menambahkan elemen li ke dalam unordered list
             listElement.appendChild(liftListItem);
-
-            // Menghapus semua elemen child di dalam choicesBox
-            choicesBox.innerHTML = '';
-
-            // Menambahkan unordered list ke dalam choice-box
             choicesBox.appendChild(listElement);
         }
 
         function selectEska(data) {
             count_eska = 0;
             console.log("Selected Eska", data);
-            updateMap(data.eskalator, data.goal);
-            // choicesBox.innerHTML = ''
+            updateMap(data.eskalator, data.goal, data.start);
             displayPath(data.eskalator.path);
             document.getElementById("duration").innerHTML = data.eskalator.dur + " detik";
             document.getElementById("step").innerHTML = (data.eskalator.dur - count_eska*30)*2 + " langkah";
@@ -350,8 +336,7 @@
         function selectLift(data) {
             count_lift = 0;
             console.log("Selected Lift", data);
-            updateMap(data.lift, data.goal);
-            // choicesBox.innerHTML = ''
+            updateMap(data.lift, data.goal, data.start);
             displayPath(data.lift.path, data.lift.dur);
             document.getElementById("duration").innerHTML = data.lift.dur + " detik";
             document.getElementById("step").innerHTML = (data.lift.dur - count_lift*9)*2 + " langkah";

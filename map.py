@@ -7,7 +7,7 @@ class Graph:
         self.graph = {} # Dictionary to store the graph
         self.vertices = [] # Dictionary to store heuristic values for each vertex
 
-    # Function to add heuristic value
+    # Function to add vertex
     def addVertex(self, vertex):
         self.vertices.append(vertex)
 
@@ -23,9 +23,6 @@ class Graph:
             print(f"Edge removed")
         else:
             print(f"Edge not found")
-
-    def getWeight(self, start, end):
-        return self.graph[start][end]
 
     def dijkstra(self, start, finish):
         distance = {vertex: float('inf') for vertex in self.vertices}
@@ -283,8 +280,8 @@ g.addEdge("Marks & Spencer", "eskalator G1 3", 5)
 g.addEdge("eskalator G1 3", "Marks & Spencer", 5)
 g.addEdge("H&M Lantai G", "eskalator G1 3", 7)
 g.addEdge("eskalator G1 3", "H&M Lantai G", 7)
-g.addEdge("eskalator 1G 3", "eskalator G1 3", 30) #eskalator
-g.addEdge("eskalator G1 3", "eskalator 1G 3", 30) #eskalator
+# g.addEdge("eskalator 1G 3", "eskalator G1 3", 30) #eskalator
+# g.addEdge("eskalator G1 3", "eskalator 1G 3", 30) #eskalator
 g.addEdge("Pandora", "Marks & Spencer", 17)
 g.addEdge("H&M Lantai G", "Frank&Co", 18)
 g.addEdge("Frank&Co", "H&M Lantai G", 18)
@@ -328,8 +325,8 @@ g.addEdge("lift G 2", "H&M Lantai G", 10)
 g.addEdge("H&M Lantai G", "lift G 2", 10)
 g.addEdge("Max Fashion", "eskalator G1 1", 25)
 g.addEdge("eskalator G1 1", "Max Fashion", 25)
-g.addEdge("eskalator G1 1", "eskalator 1G 1", 30) #eskalator
-g.addEdge("eskalator 1G 1", "eskalator G1 1", 30) #eskalator
+# g.addEdge("eskalator G1 1", "eskalator 1G 1", 30) #eskalator
+# g.addEdge("eskalator 1G 1", "eskalator G1 1", 30) #eskalator
 g.addEdge("Pandora", "Frank&Co", 10)
 g.addEdge("Frank&Co", "Pandora", 10)
 g.addEdge("Elemis", "Frank&Co", 19)
@@ -338,8 +335,8 @@ g.addEdge("Marquine", "Tumi", 7)
 g.addEdge("Tumi", "Marquine", 7)
 g.addEdge("Marquine", "eskalator G1 2", 4)
 g.addEdge("eskalator G1 2", "Marquine", 4)
-g.addEdge("eskalator G1 2", "eskalator 1G 2", 30) #eskalator
-g.addEdge("eskalator 1G 2", "eskalator G1 2", 30) #eskalator
+# g.addEdge("eskalator G1 2", "eskalator 1G 2", 30) #eskalator
+# g.addEdge("eskalator 1G 2", "eskalator G1 2", 30) #eskalator
 g.addEdge("Marquine", "Axel Vinesse", 6)
 g.addEdge("Axel Vinesse", "Marquine", 6)
 g.addEdge("Axel Vinesse", "Adelle Jewellery", 7)
@@ -490,12 +487,12 @@ g.addEdge("Polo", "rr", 3)
 g.addEdge("rr", "Polo", 3)
 g.addEdge("Toilet Lantai 1", "rr", 10)
 g.addEdge("rr", "Toilet Lantai 1", 10)
-g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
-g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
-g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
-g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
-g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
-g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
+# g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
+# g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
+# g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
+# g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
+# g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
+# g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
 
 #---------------------- Lantai 2 ----------------------#
 g.addEdge("Home & Living", "h", 18)
@@ -626,12 +623,12 @@ g.addEdge("Hoops", "Puma", 13)
 g.addEdge("Puma", "Hoops", 13)
 g.addEdge("Lao Fook", "Adidas", 14)
 g.addEdge("Adidas", "Lao Fook", 14)
-g.addEdge("eskalator 23 1", "eskalator 32 1", 30) #eskalator
-g.addEdge("eskalator 32 1", "eskalator 23 1", 30) #eskalator
-g.addEdge("eskalator 23 2", "eskalator 32 2", 30) #eskalator
-g.addEdge("eskalator 32 2", "eskalator 23 2", 30) #eskalator
-g.addEdge("eskalator 23 3", "eskalator 32 3", 30) #eskalator
-g.addEdge("eskalator 32 3", "eskalator 23 3", 30) #eskalator
+# g.addEdge("eskalator 23 1", "eskalator 32 1", 30) #eskalator
+# g.addEdge("eskalator 32 1", "eskalator 23 1", 30) #eskalator
+# g.addEdge("eskalator 23 2", "eskalator 32 2", 30) #eskalator
+# g.addEdge("eskalator 32 2", "eskalator 23 2", 30) #eskalator
+# g.addEdge("eskalator 23 3", "eskalator 32 3", 30) #eskalator
+# g.addEdge("eskalator 32 3", "eskalator 23 3", 30) #eskalator
 g.addEdge("Fila", "ss", 5)
 g.addEdge("ss", "Fila", 5)
 g.addEdge("ss", "Wee Nam Kee", 6)
@@ -1816,7 +1813,8 @@ def process_data():
     if len(data) == 2:
         rute_eska = [[], [], [], [], []]
         rute_lift = [[], [], [], [], []]
-        goal = [[], [], [], [], []]
+        start = []
+        goal = []
         selantai = 0
         data1, data2 = data
         
@@ -1886,7 +1884,12 @@ def process_data():
                 print(place)
                 rute_eska[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
             
-            goal[places[path[-1]]["lvl"]] = [places[path[-1]]["lat"], places[path[-1]]["lon"]]
+            start.append(places[path[0]]["lat"]);
+            start.append(places[path[0]]["lon"]);
+            start.append(places[path[0]]["lvl"]);
+            goal.append(places[path[-1]]["lat"]);
+            goal.append(places[path[-1]]["lon"]);
+            goal.append(places[path[-1]]["lvl"]);
             
         print("ini rute_eska", rute_eska)
         print(dist_eska[data2])
@@ -1975,8 +1978,12 @@ def process_data():
             "eskalator": eskalator,
             "lift": lift,
             "goal": goal,
+            "start": start,
             "level": selantai
         }
+
+        print("finish", goal)
+        print("start", start)
         return jsonify(resp)
     else:
         return "Data yang diterima tidak sesuai"
