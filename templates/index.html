@@ -126,6 +126,7 @@
         let map;
         let esk, count_eska = 0, count_lift = 0;
 
+        // Fungsi untuk update map
         function updateMap(data, data_goal, data_start){
             let rute = data.rute;
             let path = data.path;
@@ -253,6 +254,7 @@
             let control = L.control.layers(baseLayers).addTo(map);
         };
 
+        // Map untuk pertama kali load website
         let blank = {
             "rute": [[], [], [], [], []],
             "dur": 0,
@@ -267,6 +269,7 @@
             sendDataToPython([userData1, userData2]);
         });
         
+        // Fungsi untuk mengirim data ke python
         function sendDataToPython(data) {
             fetch("/process_data", {
                 method: "POST",
@@ -296,6 +299,7 @@
             });
         }
 
+        // Fungsi untuk menampilkan pilihan esklator dan lift
         function displayChoice(data){
             const choicesBox = document.querySelector(".choice-box");
 
@@ -324,6 +328,7 @@
             choicesBox.appendChild(listElement);
         }
 
+        // Fungsi yang akan dijalankan ketika pengguna memilih eskalator
         function selectEska(data) {
             count_eska = 0;
             console.log("Selected Eska", data);
@@ -333,6 +338,7 @@
             document.getElementById("step").innerHTML = (data.eskalator.dur - count_eska*30)*2 + " langkah";
         }
 
+        // Fungsi yang akan dijalankan ketika pengguna memilih lift
         function selectLift(data) {
             count_lift = 0;
             console.log("Selected Lift", data);
@@ -342,6 +348,7 @@
             document.getElementById("step").innerHTML = (data.lift.dur - count_lift*9)*2 + " langkah";
         }
 
+        // Fungsi untuk menampilkan rincian rute
         function displayPath(path){
             const pathsBox = document.querySelector(".path-box");
             const content = path.map((item) => {

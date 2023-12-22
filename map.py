@@ -4,19 +4,20 @@ import heapq
 
 class Graph:
     def __init__(self):
-        self.graph = {} # Dictionary to store the graph
-        self.vertices = [] # Dictionary to store heuristic values for each vertex
+        self.graph = {} # Menyimpan graf
+        self.vertices = [] # Menyimpan vertex
 
-    # Function to add vertex
+    # Fungsi untuk menambah vertex
     def addVertex(self, vertex):
         self.vertices.append(vertex)
 
-    # Function to add an edge with a weight
+    # Fungsi untuk menambah edge dengan weight
     def addEdge(self, start, end, weight):
         if start not in self.graph:
             self.graph[start] = {}
         self.graph[start][end] = weight
 
+    # Fungsi untuk menghapus edge
     def removeEdge(self, start, end):
         if start in self.graph and end in self.graph[start]:
             del self.graph[start][end]
@@ -24,17 +25,20 @@ class Graph:
         else:
             print(f"Edge not found")
 
+    # Fungsi untuk melakukan algoritma dijkstra
     def dijkstra(self, start, finish):
+        # Variabel untuk menyimpan jarak dari start vertex
         distance = {vertex: float('inf') for vertex in self.vertices}
         distance[start] = 0
 
-        # Dictionary to store visited vertices
+        # Variabel untuk menyimpan vertex yang sudah dikunjungi
         visited = {vertex: False for vertex in self.vertices}
 
+        # Variabel untuk menyimpan parent vertex
         came_from = {vertex: None for vertex in self.vertices}
         came_from[start] = start
 
-        # Priority queue to store vertices based on their distance
+        # Priority queue 
         queue = [(0, start)]
 
         while queue:
@@ -44,6 +48,7 @@ class Graph:
             print(current_vertex)
             visited[current_vertex] = True
 
+            # Jika sudah sampai di tujuan akan mengembalikan jarak dan rute
             if current_vertex == finish:
                 path = [current_vertex]
                 while current_vertex != start:
@@ -62,9 +67,10 @@ class Graph:
 
         return distance, None
 
-g = Graph() # Create an instance of the Graph class
+# Instansiasi objek graf
+g = Graph() 
 
-# Add vertices
+# Menambah vertex
 #---------------------- Lantai G ----------------------#
 g.addVertex("H&M Lantai G")
 g.addVertex("Djournal Coffee Bar")
@@ -265,7 +271,7 @@ g.addVertex("eskalator 43 3")
 g.addVertex("lift 4 1")
 g.addVertex("lift 4 2")
 
-# Add edges with weights
+# Menambah edge dengan weight
 #---------------------- Lantai G ----------------------#
 g.addEdge("H&M Lantai G", "Djournal Coffee Bar", 29)
 g.addEdge("Djournal Coffee Bar", "H&M Lantai G", 29)
@@ -280,8 +286,6 @@ g.addEdge("Marks & Spencer", "eskalator G1 3", 5)
 g.addEdge("eskalator G1 3", "Marks & Spencer", 5)
 g.addEdge("H&M Lantai G", "eskalator G1 3", 7)
 g.addEdge("eskalator G1 3", "H&M Lantai G", 7)
-# g.addEdge("eskalator 1G 3", "eskalator G1 3", 30) #eskalator
-# g.addEdge("eskalator G1 3", "eskalator 1G 3", 30) #eskalator
 g.addEdge("Pandora", "Marks & Spencer", 17)
 g.addEdge("H&M Lantai G", "Frank&Co", 18)
 g.addEdge("Frank&Co", "H&M Lantai G", 18)
@@ -318,15 +322,11 @@ g.addEdge("Timberland", "eskalator G1 1", 10)
 g.addEdge("lift G 1", "Timberland", 17)
 g.addEdge("Timberland", "lift G 1", 17)
 g.addEdge("Max Fashion", "lift G 1", 15)
-# g.addEdge("lift G 1", "lift 1 1", 9) # lift
-# g.addEdge("lift G 2", "lift 1 2", 9) # lift
 g.addEdge("lift G 1", "Max Fashion", 15)
 g.addEdge("lift G 2", "H&M Lantai G", 10)
 g.addEdge("H&M Lantai G", "lift G 2", 10)
 g.addEdge("Max Fashion", "eskalator G1 1", 25)
 g.addEdge("eskalator G1 1", "Max Fashion", 25)
-# g.addEdge("eskalator G1 1", "eskalator 1G 1", 30) #eskalator
-# g.addEdge("eskalator 1G 1", "eskalator G1 1", 30) #eskalator
 g.addEdge("Pandora", "Frank&Co", 10)
 g.addEdge("Frank&Co", "Pandora", 10)
 g.addEdge("Elemis", "Frank&Co", 19)
@@ -335,8 +335,6 @@ g.addEdge("Marquine", "Tumi", 7)
 g.addEdge("Tumi", "Marquine", 7)
 g.addEdge("Marquine", "eskalator G1 2", 4)
 g.addEdge("eskalator G1 2", "Marquine", 4)
-# g.addEdge("eskalator G1 2", "eskalator 1G 2", 30) #eskalator
-# g.addEdge("eskalator 1G 2", "eskalator G1 2", 30) #eskalator
 g.addEdge("Marquine", "Axel Vinesse", 6)
 g.addEdge("Axel Vinesse", "Marquine", 6)
 g.addEdge("Axel Vinesse", "Adelle Jewellery", 7)
@@ -393,10 +391,6 @@ g.addEdge("Stop N Go", "lift 1 1", 7)
 g.addEdge("lift 1 1", "Stop N Go", 7)
 g.addEdge("Uniqlo", "lift 1 1", 18)
 g.addEdge("lift 1 1", "Uniqlo", 18)
-# g.addEdge("lift 1 1", "lift G 1", 9) #lift
-# g.addEdge("lift 1 2", "lift G 2", 9) #lift
-# g.addEdge("lift 1 1", "lift 2 1", 9) #lift
-# g.addEdge("lift 1 2", "lift 2 2", 9) #lift
 g.addEdge("Uniqlo", "Amarissa", 29)
 g.addEdge("Amarissa", "Uniqlo", 29)
 g.addEdge("Uniqlo", "eskalator 1G 1", 12)
@@ -487,12 +481,6 @@ g.addEdge("Polo", "rr", 3)
 g.addEdge("rr", "Polo", 3)
 g.addEdge("Toilet Lantai 1", "rr", 10)
 g.addEdge("rr", "Toilet Lantai 1", 10)
-# g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
-# g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
-# g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
-# g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
-# g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
-# g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
 
 #---------------------- Lantai 2 ----------------------#
 g.addEdge("Home & Living", "h", 18)
@@ -602,10 +590,6 @@ g.addEdge("Planet Sports Asia", "lift 2 2", 10)
 g.addEdge("lift 2 2", "Planet Sports Asia", 10)
 g.addEdge("Pan & Co", "lift 2 2", 10)
 g.addEdge("lift 2 2", "Pan & Co", 10)
-# g.addEdge("lift 2 1", "lift 1 1", 9) #lift
-# g.addEdge("lift 2 2", "lift 1 2", 9) #lift
-# g.addEdge("lift 2 1", "lift 3 1", 9) #lift
-# g.addEdge("lift 2 2", "lift 3 2", 9) #lift
 g.addEdge("Wee Nam Kee", "Adidas", 18)
 g.addEdge("Wee Nam Kee", "Fila", 10)
 g.addEdge("Fila", "Wee Nam Kee", 10)
@@ -623,12 +607,6 @@ g.addEdge("Hoops", "Puma", 13)
 g.addEdge("Puma", "Hoops", 13)
 g.addEdge("Lao Fook", "Adidas", 14)
 g.addEdge("Adidas", "Lao Fook", 14)
-# g.addEdge("eskalator 23 1", "eskalator 32 1", 30) #eskalator
-# g.addEdge("eskalator 32 1", "eskalator 23 1", 30) #eskalator
-# g.addEdge("eskalator 23 2", "eskalator 32 2", 30) #eskalator
-# g.addEdge("eskalator 32 2", "eskalator 23 2", 30) #eskalator
-# g.addEdge("eskalator 23 3", "eskalator 32 3", 30) #eskalator
-# g.addEdge("eskalator 32 3", "eskalator 23 3", 30) #eskalator
 g.addEdge("Fila", "ss", 5)
 g.addEdge("ss", "Fila", 5)
 g.addEdge("ss", "Wee Nam Kee", 6)
@@ -749,16 +727,6 @@ g.addEdge("GingerSnaps", "tt", 3)
 g.addEdge("tt", "GingerSnaps", 3)
 g.addEdge("tt", "Toilet Lantai 3", 10)
 g.addEdge("Toilet Lantai 3", "tt", 10)
-# g.addEdge("lift 3 1", "lift 4 1", 9) #lift
-# g.addEdge("lift 3 2", "lift 4 2", 9) #lift
-# g.addEdge("lift 3 1", "lift 2 1", 9) #lift
-# g.addEdge("lift 3 2", "lift 2 2", 9) #lift
-# g.addEdge("eskalator 12 1", "eskalator 21 1", 30) #eskalator
-# g.addEdge("eskalator 21 1", "eskalator 12 1", 30) #eskalator
-# g.addEdge("eskalator 12 2", "eskalator 21 2", 30) #eskalator
-# g.addEdge("eskalator 21 2", "eskalator 12 2", 30) #eskalator
-# g.addEdge("eskalator 12 3", "eskalator 21 3", 30) #eskalator
-# g.addEdge("eskalator 21 3", "eskalator 12 3", 30) #eskalator
 
 #---------------------- Lantai 4 ----------------------#
 g.addEdge("Timezone GM3", "ATM BCA GM3", 11)
@@ -836,6 +804,7 @@ g.addEdge("vv", "Poke Theory", 25)
 g.addEdge("vv", "Food Court", 29)
 g.addEdge("Food Court", "vv", 29)
 
+# Menambah detail setiap tempat (lantai, latitude, longitude)
 places = {
     # Lantai G
     "H&M Lantai G": {
@@ -1802,23 +1771,26 @@ places = {
 #################################################################################
 app = Flask(__name__)
 
+# Rute awal website
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# Mengambil data dari website
 @app.route('/process_data', methods=['POST'])
 def process_data():
-    data = request.json.get('data')  # Ambil data dari permintaan POST
-    # Pastikan data adalah list dengan dua elemen
+    data = request.json.get('data')  # Mendapatkan data
     if len(data) == 2:
-        rute_eska = [[], [], [], [], []]
-        rute_lift = [[], [], [], [], []]
-        start = []
-        goal = []
-        selantai = 0
-        data1, data2 = data
+        # Inisialisasi
+        rute_eska = [[], [], [], [], []] # Rute yang akan digambar untuk eskalator
+        rute_lift = [[], [], [], [], []] # Rute yang akan digambar untuk lift
+        start = [] # Menyimpan titik awal
+        goal = [] # Menyimpan titik akhir
+        selantai = 0 # Flag untuk menandai apakah titik awal berada di 1 lantai atau tidak (0 = tidak, 1 = iya)
+        data1, data2 = data # data1 = titik awal, data2 = titik akhir
         
-        ################## ESKALATOR ##################
+        ################## Mencari Rute Menggunakan Eskalator ##################
+        # Menghapus edge yang menghubungkan lift
         g.removeEdge("lift G 1", "lift 1 1")
         g.removeEdge("lift G 2", "lift 1 2")
         g.removeEdge("lift 1 1", "lift G 1")
@@ -1836,6 +1808,7 @@ def process_data():
         g.removeEdge("lift 4 1", "lift 3 1") 
         g.removeEdge("lift 4 2", "lift 3 2") 
 
+        # Menambah edge yang menghubungkan eskalator
         g.addEdge("eskalator 1G 3", "eskalator G1 3", 30) 
         g.addEdge("eskalator G1 3", "eskalator 1G 3", 30) 
         g.addEdge("eskalator G1 1", "eskalator 1G 1", 30) 
@@ -1861,15 +1834,17 @@ def process_data():
         g.addEdge("eskalator 34 3", "eskalator 43 3", 30) 
         g.addEdge("eskalator 43 3", "eskalator 34 3", 30) 
 
-        dist_eska, path = g.dijkstra(data1, data2)
-        path_eska = []
+        dist_eska, path = g.dijkstra(data1, data2) # Algoritma Dijkstra
+        path_eska = [] # Rute yang akan ditampilkan untuk eskalator
         before = after = data1
         if (path is not None):
+            # Memeriksa apakah 1 lantai atau tidak
             if (places[data1]["lvl"] == places[data2]["lvl"]):
                 selantai = 1
             print(path)
         
             for place in path:
+                # Menambahkan rincian rute yang akan ditampilkan
                 if (len(place) > 2):
                     after = place
                     if (place == before):
@@ -1882,11 +1857,16 @@ def process_data():
 
                 print(places[place]["lvl"])
                 print(place)
+
+                # Menambahkan rute yang akan digambar
                 rute_eska[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
             
+            # Menambah detail titik awal
             start.append(places[path[0]]["lat"]);
             start.append(places[path[0]]["lon"]);
             start.append(places[path[0]]["lvl"]);
+            
+            # Menambah detail titik akhir
             goal.append(places[path[-1]]["lat"]);
             goal.append(places[path[-1]]["lon"]);
             goal.append(places[path[-1]]["lvl"]);
@@ -1894,13 +1874,15 @@ def process_data():
         print("ini rute_eska", rute_eska)
         print(dist_eska[data2])
         
+        # Data-data untuk jalur eskalator
         eskalator = {
             "rute": rute_eska,
             "dur": dist_eska[data2],
             "path": path_eska
         }
 
-        ################## LIFT ##################
+        ################## Mencari Rute Menggunakan Lift ##################
+        # Menghapus edge yang menghubungkan eskalator
         g.removeEdge("eskalator 1G 3", "eskalator G1 3") 
         g.removeEdge("eskalator G1 3", "eskalator 1G 3") 
         g.removeEdge("eskalator G1 1", "eskalator 1G 1") 
@@ -1926,6 +1908,7 @@ def process_data():
         g.removeEdge("eskalator 34 3", "eskalator 43 3") 
         g.removeEdge("eskalator 43 3", "eskalator 34 3") 
 
+        # Menambah edge yang menghubungkan lift
         g.addEdge("lift G 1", "lift 1 1", 9)
         g.addEdge("lift G 2", "lift 1 2", 9)
         g.addEdge("lift 1 1", "lift G 1", 9)
@@ -1943,14 +1926,14 @@ def process_data():
         g.addEdge("lift 4 1", "lift 3 1", 9) 
         g.addEdge("lift 4 2", "lift 3 2", 9) 
 
-        dist_lift, path = g.dijkstra(data1, data2)
-
+        dist_lift, path = g.dijkstra(data1, data2) # Algoritma Dijkstra
+        path_lift = [] # Rute yang akan ditampilkan untuk lift
         before = after = data1
-        path_lift = []
         if (path is not None):
             print(path)
 
             for place in path:
+                # Menambahkan rincian rute yang akan ditampilkan
                 if (len(place) > 2):
                     after = place
                     if (place == before):
@@ -1963,17 +1946,21 @@ def process_data():
 
                 print(places[place]["lvl"])
                 print(place)
+
+                # Menambahkan rute yang akan digambar
                 rute_lift[places[place]["lvl"]].append([places[place]["lat"], places[place]["lon"]])
             
         print("ini rute_lift", rute_lift)
         print(dist_lift[data2])
         
+        # Data-data untuk jalur lift
         lift = {
             "rute": rute_lift,
             "dur": dist_lift[data2],
             "path": path_lift
         }
 
+        # Data yang akan dikirim sebagai response
         resp = {
             "eskalator": eskalator,
             "lift": lift,
@@ -1981,9 +1968,7 @@ def process_data():
             "start": start,
             "level": selantai
         }
-
-        print("finish", goal)
-        print("start", start)
+        
         return jsonify(resp)
     else:
         return "Data yang diterima tidak sesuai"
